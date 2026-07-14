@@ -171,6 +171,177 @@
           "official_solution": "solutions/03-order-by/q015.sql"
         }
       ]
+    },
+    {
+      "slug": "04-expressions",
+      "title": "Expressions",
+      "description": "Derive values with arithmetic, aliases, and boolean expressions.",
+      "exercises": [
+        {
+          "id": "Q016",
+          "topic": "Expressions",
+          "difficulty": 1,
+          "learning_objective": "Create a numeric expression and name its result.",
+          "statement": "Return order_id, product_id, quantity, unit_price, and line_total (quantity multiplied by unit_price) for every order item.",
+          "ordering": "Order by order_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/04-expressions/q016.sql"
+        },
+        {
+          "id": "Q017",
+          "topic": "Expressions",
+          "difficulty": 1,
+          "learning_objective": "Use arithmetic to calculate a difference.",
+          "statement": "Return warehouse_id, product_id, quantity_on_hand, reorder_point, and units_above_reorder (quantity_on_hand minus reorder_point) for all inventory rows.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/04-expressions/q017.sql"
+        },
+        {
+          "id": "Q018",
+          "topic": "Expressions",
+          "difficulty": 2,
+          "learning_objective": "Combine multiple columns into a derived total.",
+          "statement": "Return order_id, shipping_fee, and shipping_fee plus 18 percent tax as shipping_fee_with_tax for every order.",
+          "ordering": "Order by order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/04-expressions/q018.sql"
+        },
+        {
+          "id": "Q019",
+          "topic": "Expressions",
+          "difficulty": 2,
+          "learning_objective": "Create a boolean expression in the SELECT list.",
+          "statement": "Return product_id, name, unit_price, and a boolean is_premium that is true when unit_price is at least 1,000.00.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/04-expressions/q019.sql"
+        },
+        {
+          "id": "Q020",
+          "topic": "Expressions",
+          "difficulty": 3,
+          "learning_objective": "Use a scalar expression to convert a monetary amount to another unit.",
+          "statement": "Return product_id, sku, unit_price, and price_in_cents, where price_in_cents is unit_price multiplied by 100.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/04-expressions/q020.sql"
+        }
+      ]
+    },
+    {
+      "slug": "05-null",
+      "title": "NULL",
+      "description": "Handle missing values correctly with null-aware predicates and expressions.",
+      "exercises": [
+        {
+          "id": "Q021",
+          "topic": "NULL",
+          "difficulty": 1,
+          "learning_objective": "Find missing values with IS NULL.",
+          "statement": "Return employee_id, first_name, last_name, and manager_id for employees who do not have a manager.",
+          "ordering": "Order by employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/05-null/q021.sql"
+        },
+        {
+          "id": "Q022",
+          "topic": "NULL",
+          "difficulty": 1,
+          "learning_objective": "Find present values with IS NOT NULL.",
+          "statement": "Return shipment_id, order_id, shipped_at, and delivered_at for shipments that have been delivered.",
+          "ordering": "Order by shipment_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/05-null/q022.sql"
+        },
+        {
+          "id": "Q023",
+          "topic": "NULL",
+          "difficulty": 2,
+          "learning_objective": "Substitute a fallback value with COALESCE.",
+          "statement": "Return shipment_id, order_id, delivered_at, and latest_known_event_at. Use delivered_at when available; otherwise use shipped_at.",
+          "ordering": "Order by shipment_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/05-null/q023.sql"
+        },
+        {
+          "id": "Q024",
+          "topic": "NULL",
+          "difficulty": 2,
+          "learning_objective": "Use a NULL condition together with another predicate.",
+          "statement": "Return order_id, customer_id, ordered_at, and status for cancelled orders that have no promotion applied.",
+          "ordering": "Order by order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/05-null/q024.sql"
+        },
+        {
+          "id": "Q025",
+          "topic": "NULL",
+          "difficulty": 3,
+          "learning_objective": "Use COALESCE to produce a display-ready text value.",
+          "statement": "Return review_id, product_id, customer_id, rating, and review_text. Replace a NULL review body with the text No written review.",
+          "ordering": "Order by review_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/05-null/q025.sql"
+        }
+      ]
+    },
+    {
+      "slug": "06-aggregate-functions",
+      "title": "Aggregate Functions",
+      "description": "Summarize sets of rows with COUNT, SUM, AVG, MIN, and MAX.",
+      "exercises": [
+        {
+          "id": "Q026",
+          "topic": "Aggregate Functions",
+          "difficulty": 1,
+          "learning_objective": "Count rows that meet a condition.",
+          "statement": "Return one column named active_product_count containing the number of active products.",
+          "ordering": "The result has one row; no ordering is needed.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/06-aggregate-functions/q026.sql"
+        },
+        {
+          "id": "Q027",
+          "topic": "Aggregate Functions",
+          "difficulty": 1,
+          "learning_objective": "Count rows using an aggregate with a filter predicate.",
+          "statement": "Return one column named completed_payment_count containing the number of completed payments.",
+          "ordering": "The result has one row; no ordering is needed.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/06-aggregate-functions/q027.sql"
+        },
+        {
+          "id": "Q028",
+          "topic": "Aggregate Functions",
+          "difficulty": 2,
+          "learning_objective": "Sum a numeric column.",
+          "statement": "Return one column named total_units_on_hand containing the total quantity_on_hand across all inventory rows.",
+          "ordering": "The result has one row; no ordering is needed.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/06-aggregate-functions/q028.sql"
+        },
+        {
+          "id": "Q029",
+          "topic": "Aggregate Functions",
+          "difficulty": 2,
+          "learning_objective": "Calculate an average and round its presentation value.",
+          "statement": "Return one column named average_unit_price containing the average product unit_price rounded to two decimal places.",
+          "ordering": "The result has one row; no ordering is needed.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/06-aggregate-functions/q029.sql"
+        },
+        {
+          "id": "Q030",
+          "topic": "Aggregate Functions",
+          "difficulty": 2,
+          "learning_objective": "Find the earliest and latest values in a set.",
+          "statement": "Return first_ordered_at and last_ordered_at: the earliest and latest ordered_at values among all orders.",
+          "ordering": "The result has one row; no ordering is needed.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/06-aggregate-functions/q030.sql"
+        }
+      ]
     }
   ]
 }

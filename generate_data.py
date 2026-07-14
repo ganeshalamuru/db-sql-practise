@@ -76,7 +76,7 @@ def main() -> None:
     review_pairs: set[tuple[int, int]] = set()
     while len(review_pairs) < review_count:
         review_pairs.add((rng.randint(1, products), rng.randint(1, customers)))
-    emit("reviews", ("product_id", "customer_id", "rating", "body", "created_at"), [(product_id, customer_id, rng.randint(1, 5), "Generated review", now - timedelta(days=rng.randint(1, 365))) for product_id, customer_id in sorted(review_pairs)])
+    emit("reviews", ("product_id", "customer_id", "rating", "body", "created_at"), [(product_id, customer_id, rng.randint(1, 5), None if product_id % 7 == 0 else "Generated review", now - timedelta(days=rng.randint(1, 365))) for product_id, customer_id in sorted(review_pairs)])
     print("COMMIT;")
     output_file.close()
 

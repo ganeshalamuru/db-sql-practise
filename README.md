@@ -36,3 +36,4 @@ Add structured metadata to `exercise_catalog.json`, create the matching instruct
 `dev` is fast for local iteration. `full` targets approximately 5,000 customers, 2,000 products, 50,000 orders, and 250,000 order items. Both use the same fixed seed.
 
 See [the architecture notes](docs/architecture.md) for component responsibilities.
+The full sequence and release status are in the [curriculum roadmap](docs/curriculum.md).

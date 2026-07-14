@@ -103,5 +103,110 @@
     "answer": "answers/03-order-by/q015.sql",
     "ordering_required": true,
     "duplicates_matter": true
+  },
+  "Q016": {
+    "topic": "Expressions",
+    "solution": "solutions/04-expressions/q016.sql",
+    "answer": "answers/04-expressions/q016.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q017": {
+    "topic": "Expressions",
+    "solution": "solutions/04-expressions/q017.sql",
+    "answer": "answers/04-expressions/q017.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q018": {
+    "topic": "Expressions",
+    "solution": "solutions/04-expressions/q018.sql",
+    "answer": "answers/04-expressions/q018.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q019": {
+    "topic": "Expressions",
+    "solution": "solutions/04-expressions/q019.sql",
+    "answer": "answers/04-expressions/q019.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q020": {
+    "topic": "Expressions",
+    "solution": "solutions/04-expressions/q020.sql",
+    "answer": "answers/04-expressions/q020.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q021": {
+    "topic": "NULL",
+    "solution": "solutions/05-null/q021.sql",
+    "answer": "answers/05-null/q021.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q022": {
+    "topic": "NULL",
+    "solution": "solutions/05-null/q022.sql",
+    "answer": "answers/05-null/q022.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q023": {
+    "topic": "NULL",
+    "solution": "solutions/05-null/q023.sql",
+    "answer": "answers/05-null/q023.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q024": {
+    "topic": "NULL",
+    "solution": "solutions/05-null/q024.sql",
+    "answer": "answers/05-null/q024.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q025": {
+    "topic": "NULL",
+    "solution": "solutions/05-null/q025.sql",
+    "answer": "answers/05-null/q025.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q026": {
+    "topic": "Aggregate Functions",
+    "solution": "solutions/06-aggregate-functions/q026.sql",
+    "answer": "answers/06-aggregate-functions/q026.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q027": {
+    "topic": "Aggregate Functions",
+    "solution": "solutions/06-aggregate-functions/q027.sql",
+    "answer": "answers/06-aggregate-functions/q027.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q028": {
+    "topic": "Aggregate Functions",
+    "solution": "solutions/06-aggregate-functions/q028.sql",
+    "answer": "answers/06-aggregate-functions/q028.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q029": {
+    "topic": "Aggregate Functions",
+    "solution": "solutions/06-aggregate-functions/q029.sql",
+    "answer": "answers/06-aggregate-functions/q029.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q030": {
+    "topic": "Aggregate Functions",
+    "solution": "solutions/06-aggregate-functions/q030.sql",
+    "answer": "answers/06-aggregate-functions/q030.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
   }
 }
