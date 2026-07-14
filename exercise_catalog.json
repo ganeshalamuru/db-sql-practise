@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "slug": "01-select",
+      "title": "SELECT",
+      "description": "Project data from a single relation with deliberate column choices.",
+      "exercises": [
+        {
+          "id": "Q001",
+          "topic": "SELECT",
+          "difficulty": 1,
+          "learning_objective": "Select named columns from a relation.",
+          "statement": "Return each active product's product_id, sku, name, and unit_price.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/01-select/q001.sql"
+        },
+        {
+          "id": "Q002",
+          "topic": "SELECT",
+          "difficulty": 1,
+          "learning_objective": "Use DISTINCT to remove repeated values.",
+          "statement": "Return the distinct payment methods that have been used by completed payments.",
+          "ordering": "Order alphabetically by payment_method.",
+          "duplicates_matter": false,
+          "official_solution": "solutions/01-select/q002.sql"
+        },
+        {
+          "id": "Q003",
+          "topic": "SELECT",
+          "difficulty": 2,
+          "learning_objective": "Alias projected columns for a clear result contract.",
+          "statement": "Return each warehouse's code as warehouse_code, name as warehouse_name, and capacity_units as capacity.",
+          "ordering": "Order by warehouse_code ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/01-select/q003.sql"
+        },
+        {
+          "id": "Q004",
+          "topic": "SELECT",
+          "difficulty": 2,
+          "learning_objective": "Project derived values with arithmetic expressions.",
+          "statement": "For every order item, return order_id, product_id, quantity, unit_price, and the line total (quantity multiplied by unit_price) as line_total.",
+          "ordering": "Order by order_id, then product_id.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/01-select/q004.sql"
+        },
+        {
+          "id": "Q005",
+          "topic": "SELECT",
+          "difficulty": 2,
+          "learning_objective": "Select a complete row shape only when it is the required contract.",
+          "statement": "Return all columns for countries in the reference data.",
+          "ordering": "Order by country_code ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/01-select/q005.sql"
+        }
+      ]
+    },
+    {
+      "slug": "02-where",
+      "title": "WHERE",
+      "description": "Filter rows with predicates, ranges, and boolean conditions.",
+      "exercises": [
+        {
+          "id": "Q006",
+          "topic": "WHERE",
+          "difficulty": 1,
+          "learning_objective": "Filter rows using an equality predicate.",
+          "statement": "Return customer_id, email, first_name, and last_name for active customers.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/02-where/q006.sql"
+        },
+        {
+          "id": "Q007",
+          "topic": "WHERE",
+          "difficulty": 1,
+          "learning_objective": "Filter numeric values with a comparison predicate.",
+          "statement": "Return product_id, sku, name, and unit_price for active products priced above 1,000.00.",
+          "ordering": "Order by unit_price ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/02-where/q007.sql"
+        },
+        {
+          "id": "Q008",
+          "topic": "WHERE",
+          "difficulty": 2,
+          "learning_objective": "Combine predicates with AND.",
+          "statement": "Return order_id, customer_id, ordered_at, and status for delivered orders placed during 2024.",
+          "ordering": "Order by ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/02-where/q008.sql"
+        },
+        {
+          "id": "Q009",
+          "topic": "WHERE",
+          "difficulty": 2,
+          "learning_objective": "Filter values with IN.",
+          "statement": "Return payment_id, order_id, payment_method, amount, and status for completed payments made by card or wallet.",
+          "ordering": "Order by payment_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/02-where/q009.sql"
+        },
+        {
+          "id": "Q010",
+          "topic": "WHERE",
+          "difficulty": 2,
+          "learning_objective": "Compare one column to another in a row predicate.",
+          "statement": "Return warehouse_id, product_id, quantity_on_hand, and reorder_point for inventory rows at or below their reorder point.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/02-where/q010.sql"
+        }
+      ]
+    },
+    {
+      "slug": "03-order-by",
+      "title": "ORDER BY",
+      "description": "Control result ordering with columns, directions, and tie-breakers.",
+      "exercises": [
+        {
+          "id": "Q011",
+          "topic": "ORDER BY",
+          "difficulty": 1,
+          "learning_objective": "Sort a result by one column in descending order.",
+          "statement": "Return product_id, name, and unit_price for active products.",
+          "ordering": "Order by unit_price descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/03-order-by/q011.sql"
+        },
+        {
+          "id": "Q012",
+          "topic": "ORDER BY",
+          "difficulty": 1,
+          "learning_objective": "Sort text values alphabetically with a deterministic tie-breaker.",
+          "statement": "Return supplier_id, name, and contact_email for all suppliers.",
+          "ordering": "Order by name ascending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/03-order-by/q012.sql"
+        },
+        {
+          "id": "Q013",
+          "topic": "ORDER BY",
+          "difficulty": 2,
+          "learning_objective": "Sort timestamps from newest to oldest.",
+          "statement": "Return order_id, customer_id, ordered_at, and status for all orders.",
+          "ordering": "Order by ordered_at descending, then order_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/03-order-by/q013.sql"
+        },
+        {
+          "id": "Q014",
+          "topic": "ORDER BY",
+          "difficulty": 2,
+          "learning_objective": "Order by a computed expression.",
+          "statement": "Return order_id, product_id, quantity, unit_price, and line_total (quantity multiplied by unit_price) for all order items.",
+          "ordering": "Order by line_total descending, then order_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/03-order-by/q014.sql"
+        },
+        {
+          "id": "Q015",
+          "topic": "ORDER BY",
+          "difficulty": 3,
+          "learning_objective": "Control the placement of NULL values while sorting.",
+          "statement": "Return employee_id, first_name, last_name, and manager_id for all employees.",
+          "ordering": "Order by manager_id ascending with NULL manager_id values last, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/03-order-by/q015.sql"
+        }
+      ]
+    }
+  ]
+}

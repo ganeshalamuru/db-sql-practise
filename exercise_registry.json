@@ -1,0 +1,107 @@
+{
+  "Q001": {
+    "topic": "SELECT",
+    "solution": "solutions/01-select/q001.sql",
+    "answer": "answers/01-select/q001.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q002": {
+    "topic": "SELECT",
+    "solution": "solutions/01-select/q002.sql",
+    "answer": "answers/01-select/q002.sql",
+    "ordering_required": true,
+    "duplicates_matter": false
+  },
+  "Q003": {
+    "topic": "SELECT",
+    "solution": "solutions/01-select/q003.sql",
+    "answer": "answers/01-select/q003.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q004": {
+    "topic": "SELECT",
+    "solution": "solutions/01-select/q004.sql",
+    "answer": "answers/01-select/q004.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q005": {
+    "topic": "SELECT",
+    "solution": "solutions/01-select/q005.sql",
+    "answer": "answers/01-select/q005.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q006": {
+    "topic": "WHERE",
+    "solution": "solutions/02-where/q006.sql",
+    "answer": "answers/02-where/q006.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q007": {
+    "topic": "WHERE",
+    "solution": "solutions/02-where/q007.sql",
+    "answer": "answers/02-where/q007.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q008": {
+    "topic": "WHERE",
+    "solution": "solutions/02-where/q008.sql",
+    "answer": "answers/02-where/q008.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q009": {
+    "topic": "WHERE",
+    "solution": "solutions/02-where/q009.sql",
+    "answer": "answers/02-where/q009.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q010": {
+    "topic": "WHERE",
+    "solution": "solutions/02-where/q010.sql",
+    "answer": "answers/02-where/q010.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q011": {
+    "topic": "ORDER BY",
+    "solution": "solutions/03-order-by/q011.sql",
+    "answer": "answers/03-order-by/q011.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q012": {
+    "topic": "ORDER BY",
+    "solution": "solutions/03-order-by/q012.sql",
+    "answer": "answers/03-order-by/q012.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q013": {
+    "topic": "ORDER BY",
+    "solution": "solutions/03-order-by/q013.sql",
+    "answer": "answers/03-order-by/q013.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q014": {
+    "topic": "ORDER BY",
+    "solution": "solutions/03-order-by/q014.sql",
+    "answer": "answers/03-order-by/q014.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q015": {
+    "topic": "ORDER BY",
+    "solution": "solutions/03-order-by/q015.sql",
+    "answer": "answers/03-order-by/q015.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  }
+}
