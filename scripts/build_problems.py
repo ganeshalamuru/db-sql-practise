@@ -24,6 +24,9 @@ def main() -> None:
         for exercise in module["exercises"]:
             filename = f"{str(exercise['id']).lower()}.md"
             answer_path = f"answers/{module['slug']}/{str(exercise['id']).lower()}.sql"
+            answer_file = ROOT / answer_path
+            if not answer_file.exists():
+                answer_file.touch()
             (module_dir / filename).write_text(render_problem(exercise, answer_path), encoding="utf-8")
             registry[str(exercise["id"])] = {
                 "topic": exercise["topic"],

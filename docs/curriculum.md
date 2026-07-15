@@ -10,12 +10,12 @@ Each topic contains five focused exercises. Modules are released in order so tha
 | 04 | Expressions | Available (Q016–Q020) |
 | 05 | NULL | Available (Q021–Q025) |
 | 06 | Aggregate Functions | Available (Q026–Q030) |
-| 07 | GROUP BY | Planned |
-| 08 | HAVING | Planned |
-| 09 | INNER JOIN | Planned |
-| 10 | OUTER JOIN | Planned |
-| 11 | SELF JOIN | Planned |
-| 12 | CROSS JOIN | Planned |
+| 07 | GROUP BY | Available (Q031–Q035) |
+| 08 | HAVING | Available (Q036–Q040) |
+| 09 | INNER JOIN | Available (Q041–Q045) |
+| 10 | OUTER JOIN | Available (Q046–Q050) |
+| 11 | SELF JOIN | Available (Q051–Q055) |
+| 12 | CROSS JOIN | Available (Q056–Q060) |
 | 13 | Subqueries | Planned |
 | 14 | EXISTS | Planned |
 | 15 | IN | Planned |

@@ -8,7 +8,7 @@ A PostgreSQL-based SQL curriculum designed as a durable, metadata-driven learnin
 2. Create and activate a virtual environment, then install dependencies: `python -m pip install -r requirements.txt`.
 3. Run the complete setup with your PostgreSQL `postgres` role: `python setup_database.py --recreate --scale dev --password YOUR_PASSWORD`.
 4. Render exercises: `python scripts/build_problems.py`.
-5. Copy a query into `answers/01-select/q001.sql`, then grade it: `python grader.py --problem Q001 --password YOUR_PASSWORD`.
+5. The renderer creates a blank answer file for every exercise. Write your query in `answers/01-select/q001.sql`, then grade it: `python grader.py --problem Q001 --password YOUR_PASSWORD`.
 
 Set `SQL_PRACTICE_DSN` if your PostgreSQL connection differs from the default `postgresql://postgres@localhost:5432/sql_practice`. `setup_database.py` accepts `--password`; alternatively set `PGPASSWORD` before running it so the password does not appear in shell history.
 
@@ -30,6 +30,8 @@ psql -U postgres -d sql_practice -f data.sql
 ## Authoring exercises
 
 Add structured metadata to `exercise_catalog.json`, create the matching instructor solution in `solutions/`, and run `python scripts/build_problems.py`. The renderer creates the Markdown problem statement and the registry automatically. Keep `solutions/` in a private instructor repository or release artifact if students must not see answers; GitHub cannot hide files committed to a public repository.
+
+The renderer also creates missing blank files in the matching `answers/<topic>/` folder. Existing answer files are never overwritten.
 
 ## Dataset scales
 

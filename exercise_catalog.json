@@ -294,9 +294,9 @@
         {
           "id": "Q026",
           "topic": "Aggregate Functions",
-          "difficulty": 1,
-          "learning_objective": "Count rows that meet a condition.",
-          "statement": "Return one column named active_product_count containing the number of active products.",
+          "difficulty": 2,
+          "learning_objective": "Use conditional aggregate filters to count multiple subsets in one result.",
+          "statement": "Return active_customer_count, suspended_customer_count, and closed_customer_count: the number of customers in each respective status.",
           "ordering": "The result has one row; no ordering is needed.",
           "duplicates_matter": true,
           "official_solution": "solutions/06-aggregate-functions/q026.sql"
@@ -304,9 +304,9 @@
         {
           "id": "Q027",
           "topic": "Aggregate Functions",
-          "difficulty": 1,
-          "learning_objective": "Count rows using an aggregate with a filter predicate.",
-          "statement": "Return one column named completed_payment_count containing the number of completed payments.",
+          "difficulty": 3,
+          "learning_objective": "Combine COUNT, SUM, and AVG after filtering the input rows.",
+          "statement": "For completed payments only, return completed_payment_count, completed_payment_total, and average_completed_payment_amount. Round the average amount to two decimal places.",
           "ordering": "The result has one row; no ordering is needed.",
           "duplicates_matter": true,
           "official_solution": "solutions/06-aggregate-functions/q027.sql"
@@ -314,9 +314,9 @@
         {
           "id": "Q028",
           "topic": "Aggregate Functions",
-          "difficulty": 2,
-          "learning_objective": "Sum a numeric column.",
-          "statement": "Return one column named total_units_on_hand containing the total quantity_on_hand across all inventory rows.",
+          "difficulty": 3,
+          "learning_objective": "Aggregate multiple columns and derive a value from aggregate results.",
+          "statement": "Return total_units_on_hand, total_reorder_point, and units_above_reorder across all inventory rows. units_above_reorder is the sum of quantity_on_hand minus reorder_point only for rows where quantity_on_hand is greater than reorder_point; do not let below-reorder rows reduce this value.",
           "ordering": "The result has one row; no ordering is needed.",
           "duplicates_matter": true,
           "official_solution": "solutions/06-aggregate-functions/q028.sql"
@@ -324,9 +324,9 @@
         {
           "id": "Q029",
           "topic": "Aggregate Functions",
-          "difficulty": 2,
-          "learning_objective": "Calculate an average and round its presentation value.",
-          "statement": "Return one column named average_unit_price containing the average product unit_price rounded to two decimal places.",
+          "difficulty": 4,
+          "learning_objective": "Produce a compact statistical summary from filtered rows.",
+          "statement": "For active products only, return active_product_count, lowest_active_product_price, highest_active_product_price, and average_active_product_price. Round the average price to two decimal places.",
           "ordering": "The result has one row; no ordering is needed.",
           "duplicates_matter": true,
           "official_solution": "solutions/06-aggregate-functions/q029.sql"
@@ -334,12 +334,354 @@
         {
           "id": "Q030",
           "topic": "Aggregate Functions",
-          "difficulty": 2,
-          "learning_objective": "Find the earliest and latest values in a set.",
-          "statement": "Return first_ordered_at and last_ordered_at: the earliest and latest ordered_at values among all orders.",
+          "difficulty": 4,
+          "learning_objective": "Combine date filtering with timestamp and numeric aggregates.",
+          "statement": "For orders placed during 2024, return first_ordered_at, last_ordered_at, order_count, and average_shipping_fee. Round the average shipping fee to two decimal places.",
           "ordering": "The result has one row; no ordering is needed.",
           "duplicates_matter": true,
           "official_solution": "solutions/06-aggregate-functions/q030.sql"
+        }
+      ]
+    },
+    {
+      "slug": "07-group-by",
+      "title": "GROUP BY",
+      "description": "Produce one aggregate result per group of related rows.",
+      "exercises": [
+        {
+          "id": "Q031",
+          "topic": "GROUP BY",
+          "difficulty": 2,
+          "learning_objective": "Calculate multiple aggregates for each categorical group.",
+          "statement": "Return status, order_count, and total_shipping_fee: the number of orders and the sum of shipping_fee for each order status.",
+          "ordering": "Order by total_shipping_fee descending, then status ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/07-group-by/q031.sql"
+        },
+        {
+          "id": "Q032",
+          "topic": "GROUP BY",
+          "difficulty": 3,
+          "learning_objective": "Group rows by a foreign-key value while summarizing a date range.",
+          "statement": "Return customer_id, order_count, first_ordered_at, and last_ordered_at for each customer who has placed at least one order.",
+          "ordering": "Order by order_count descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/07-group-by/q032.sql"
+        },
+        {
+          "id": "Q033",
+          "topic": "GROUP BY",
+          "difficulty": 3,
+          "learning_objective": "Summarize multiple inventory measures per group.",
+          "statement": "Return warehouse_id, total_units_on_hand, total_reorder_point, and units_above_reorder. For each warehouse, units_above_reorder is the sum of quantity_on_hand minus reorder_point only for rows where quantity_on_hand is greater than reorder_point; below-reorder rows must not reduce this value.",
+          "ordering": "Order by units_above_reorder ascending, then warehouse_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/07-group-by/q033.sql"
+        },
+        {
+          "id": "Q034",
+          "topic": "GROUP BY",
+          "difficulty": 4,
+          "learning_objective": "Combine COUNT and a rounded AVG, then sort by aggregate results.",
+          "statement": "Return product_id, review_count, and average_rating for each reviewed product. average_rating must be rounded to two decimal places.",
+          "ordering": "Order by average_rating descending, then review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/07-group-by/q034.sql"
+        },
+        {
+          "id": "Q035",
+          "topic": "GROUP BY",
+          "difficulty": 4,
+          "learning_objective": "Filter rows before grouping and calculate multiple aggregates for each group.",
+          "statement": "For active products only, return supplier_id, active_product_count, and average_active_product_price. Round average_active_product_price to two decimal places.",
+          "ordering": "Order by average_active_product_price descending, then active_product_count descending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/07-group-by/q035.sql"
+        }
+      ]
+    },
+    {
+      "slug": "08-having",
+      "title": "HAVING",
+      "description": "Filter aggregate groups using conditions evaluated after GROUP BY.",
+      "exercises": [
+        {
+          "id": "Q036",
+          "topic": "HAVING",
+          "difficulty": 3,
+          "learning_objective": "Keep only groups whose row count meets a threshold.",
+          "statement": "Return payment_method and completed_payment_count for payment methods with at least 100 completed payments.",
+          "ordering": "Order by completed_payment_count descending, then payment_method ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/08-having/q036.sql"
+        },
+        {
+          "id": "Q037",
+          "topic": "HAVING",
+          "difficulty": 3,
+          "learning_objective": "Use HAVING to filter grouped sums.",
+          "statement": "Return warehouse_id and total_units_on_hand for warehouses whose total quantity_on_hand is greater than 50,000.",
+          "ordering": "Order by total_units_on_hand descending, then warehouse_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/08-having/q037.sql"
+        },
+        {
+          "id": "Q038",
+          "topic": "HAVING",
+          "difficulty": 4,
+          "learning_objective": "Filter groups using an aggregate of a derived expression.",
+          "statement": "Return product_id and total_sales_value for products whose total value across all order items exceeds 25,000.00. Compute each line's value as quantity multiplied by unit_price.",
+          "ordering": "Order by total_sales_value descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/08-having/q038.sql"
+        },
+        {
+          "id": "Q039",
+          "topic": "HAVING",
+          "difficulty": 4,
+          "learning_objective": "Combine WHERE and HAVING so row filters and group filters occur at the correct stages.",
+          "statement": "Return supplier_id and active_product_count for suppliers with at least 10 active products. Exclude inactive products before forming groups.",
+          "ordering": "Order by active_product_count descending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/08-having/q039.sql"
+        },
+        {
+          "id": "Q040",
+          "topic": "HAVING",
+          "difficulty": 5,
+          "learning_objective": "Apply multiple aggregate conditions to retain qualifying groups.",
+          "statement": "Return product_id, review_count, and average_rating for products that have at least 5 reviews and an average review rating of at least 4.00. Round average_rating to two decimal places.",
+          "ordering": "Order by average_rating descending, then review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/08-having/q040.sql"
+        }
+      ]
+    },
+    {
+      "slug": "09-inner-join",
+      "title": "INNER JOIN",
+      "description": "Combine related rows that have matching keys in both tables.",
+      "exercises": [
+        {
+          "id": "Q041",
+          "topic": "INNER JOIN",
+          "difficulty": 3,
+          "learning_objective": "Join two related tables using a foreign key.",
+          "statement": "Return product_id, product_name, supplier_name, and unit_price for active products.",
+          "ordering": "Order by supplier_name ascending, then product_name ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/09-inner-join/q041.sql"
+        },
+        {
+          "id": "Q042",
+          "topic": "INNER JOIN",
+          "difficulty": 3,
+          "learning_objective": "Join order records to customer details after filtering rows.",
+          "statement": "Return order_id, ordered_at, status, customer_id, customer_first_name, and customer_last_name for delivered orders.",
+          "ordering": "Order by ordered_at descending, then order_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/09-inner-join/q042.sql"
+        },
+        {
+          "id": "Q043",
+          "topic": "INNER JOIN",
+          "difficulty": 4,
+          "learning_objective": "Join order headers to line items and calculate a derived value.",
+          "statement": "Return order_id, ordered_at, product_id, quantity, unit_price, and line_total for order items on paid, shipped, or delivered orders. line_total is quantity multiplied by unit_price.",
+          "ordering": "Order by ordered_at descending, then order_id descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/09-inner-join/q043.sql"
+        },
+        {
+          "id": "Q044",
+          "topic": "INNER JOIN",
+          "difficulty": 4,
+          "learning_objective": "Combine three tables to enrich an event with related names.",
+          "statement": "Return review_id, product_name, customer_id, customer_first_name, customer_last_name, rating, and created_at for reviews with a rating of 4 or 5.",
+          "ordering": "Order by created_at descending, then review_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/09-inner-join/q044.sql"
+        },
+        {
+          "id": "Q045",
+          "topic": "INNER JOIN",
+          "difficulty": 5,
+          "learning_objective": "Traverse several foreign-key relationships in one query.",
+          "statement": "Return shipment_id, shipment_status, warehouse_code, warehouse_name, city_name, and country_name for delivered shipments.",
+          "ordering": "Order by country_name ascending, city_name ascending, warehouse_code ascending, then shipment_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/09-inner-join/q045.sql"
+        }
+      ]
+    },
+    {
+      "slug": "10-outer-join",
+      "title": "OUTER JOIN",
+      "description": "Preserve unmatched rows while combining optional relationships.",
+      "exercises": [
+        {
+          "id": "Q046",
+          "topic": "OUTER JOIN",
+          "difficulty": 3,
+          "learning_objective": "Use a LEFT JOIN to find rows with no related match.",
+          "statement": "Return customer_id, email, first_name, and last_name for customers who have never placed an order.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/10-outer-join/q046.sql"
+        },
+        {
+          "id": "Q047",
+          "topic": "OUTER JOIN",
+          "difficulty": 4,
+          "learning_objective": "Count optional related rows while retaining rows with no matches.",
+          "statement": "Return product_id, product_name, and review_count for every active product, including products with no reviews.",
+          "ordering": "Order by review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/10-outer-join/q047.sql"
+        },
+        {
+          "id": "Q048",
+          "topic": "OUTER JOIN",
+          "difficulty": 4,
+          "learning_objective": "Place a related-table filter in the join condition to preserve unmatched rows.",
+          "statement": "Return supplier_id, supplier_name, and active_product_count for every supplier, including suppliers with no active products.",
+          "ordering": "Order by active_product_count descending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/10-outer-join/q048.sql"
+        },
+        {
+          "id": "Q049",
+          "topic": "OUTER JOIN",
+          "difficulty": 5,
+          "learning_objective": "Use COALESCE with an outer join to return zero instead of NULL aggregate results.",
+          "statement": "Return warehouse_id, warehouse_code, and total_units_on_hand for every warehouse, including warehouses with no inventory rows. Show 0 rather than NULL for total_units_on_hand.",
+          "ordering": "Order by total_units_on_hand descending, then warehouse_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/10-outer-join/q049.sql"
+        },
+        {
+          "id": "Q050",
+          "topic": "OUTER JOIN",
+          "difficulty": 5,
+          "learning_objective": "Count conditionally matched rows without removing unmatched parent rows.",
+          "statement": "Return product_id, product_name, and open_return_count for every active product. Count only returns whose status is requested or approved, and include products with no such returns.",
+          "ordering": "Order by open_return_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/10-outer-join/q050.sql"
+        }
+      ]
+    },
+    {
+      "slug": "11-self-join",
+      "title": "SELF JOIN",
+      "description": "Join a table to itself to navigate hierarchical and peer relationships.",
+      "exercises": [
+        {
+          "id": "Q051",
+          "topic": "SELF JOIN",
+          "difficulty": 3,
+          "learning_objective": "Join an employee to its manager in the same table.",
+          "statement": "Return employee_id, employee_first_name, employee_last_name, manager_id, manager_first_name, and manager_last_name for employees who have a manager.",
+          "ordering": "Order by manager_id ascending, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/11-self-join/q051.sql"
+        },
+        {
+          "id": "Q052",
+          "topic": "SELF JOIN",
+          "difficulty": 4,
+          "learning_objective": "Use a LEFT self join to retain hierarchy roots.",
+          "statement": "Return employee_id, employee_first_name, employee_last_name, manager_first_name, and manager_last_name for every employee, including employees who have no manager.",
+          "ordering": "Order by employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/11-self-join/q052.sql"
+        },
+        {
+          "id": "Q053",
+          "topic": "SELF JOIN",
+          "difficulty": 4,
+          "learning_objective": "Navigate an optional parent-child hierarchy within one table.",
+          "statement": "Return category_id, category_name, parent_category_id, and parent_category_name for every category, including root categories with no parent.",
+          "ordering": "Order by parent_category_name ascending with NULL values first, then category_name ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/11-self-join/q053.sql"
+        },
+        {
+          "id": "Q054",
+          "topic": "SELF JOIN",
+          "difficulty": 5,
+          "learning_objective": "Count child rows per parent while retaining rows with no children.",
+          "statement": "Return employee_id, first_name, last_name, and direct_report_count for every employee, including employees with no direct reports.",
+          "ordering": "Order by direct_report_count descending, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/11-self-join/q054.sql"
+        },
+        {
+          "id": "Q055",
+          "topic": "SELF JOIN",
+          "difficulty": 5,
+          "learning_objective": "Chain self joins to navigate more than one hierarchy level.",
+          "statement": "Return employee_id, employee_first_name, employee_last_name, manager_first_name, manager_last_name, grandmanager_first_name, and grandmanager_last_name for employees whose manager also has a manager.",
+          "ordering": "Order by employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/11-self-join/q055.sql"
+        }
+      ]
+    },
+    {
+      "slug": "12-cross-join",
+      "title": "CROSS JOIN",
+      "description": "Build deliberate combinations of rows from independent sets.",
+      "exercises": [
+        {
+          "id": "Q056",
+          "topic": "CROSS JOIN",
+          "difficulty": 3,
+          "learning_objective": "Produce every possible pair from two reference tables.",
+          "statement": "Return country_code, country_name, warehouse_code, and warehouse_name for every possible country-and-warehouse combination.",
+          "ordering": "Order by country_code ascending, then warehouse_code ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/12-cross-join/q056.sql"
+        },
+        {
+          "id": "Q057",
+          "topic": "CROSS JOIN",
+          "difficulty": 4,
+          "learning_objective": "Create combinations first, then exclude pairs that do not meet a comparison rule.",
+          "statement": "Return store_id, store_code, warehouse_id, and warehouse_code for every store-and-warehouse pair located in different cities.",
+          "ordering": "Order by store_id ascending, then warehouse_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/12-cross-join/q057.sql"
+        },
+        {
+          "id": "Q058",
+          "topic": "CROSS JOIN",
+          "difficulty": 4,
+          "learning_objective": "Create a planning matrix between two business dimensions.",
+          "statement": "Return supplier_id, supplier_name, category_id, and category_name for every possible supplier-and-category combination.",
+          "ordering": "Order by supplier_id ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/12-cross-join/q058.sql"
+        },
+        {
+          "id": "Q059",
+          "topic": "CROSS JOIN",
+          "difficulty": 5,
+          "learning_objective": "Use a CROSS JOIN to construct a filtered allocation grid.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, and unit_price for every warehouse-and-product combination where the product is active and priced at least 1,000.00.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/12-cross-join/q059.sql"
+        },
+        {
+          "id": "Q060",
+          "topic": "CROSS JOIN",
+          "difficulty": 5,
+          "learning_objective": "Cross join a table with a derived value set to generate a complete reference matrix.",
+          "statement": "Return country_code, country_name, and payment_method for every country-and-payment-method combination. The payment methods are card, wallet, bank_transfer, and cash_on_delivery.",
+          "ordering": "Order by country_code ascending, then payment_method ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/12-cross-join/q060.sql"
         }
       ]
     }
