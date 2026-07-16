@@ -418,5 +418,250 @@
     "answer": "answers/12-cross-join/q060.sql",
     "ordering_required": true,
     "duplicates_matter": true
+  },
+  "Q061": {
+    "topic": "SUBQUERIES",
+    "solution": "solutions/13-subqueries/q061.sql",
+    "answer": "answers/13-subqueries/q061.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q062": {
+    "topic": "SUBQUERIES",
+    "solution": "solutions/13-subqueries/q062.sql",
+    "answer": "answers/13-subqueries/q062.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q063": {
+    "topic": "SUBQUERIES",
+    "solution": "solutions/13-subqueries/q063.sql",
+    "answer": "answers/13-subqueries/q063.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q064": {
+    "topic": "SUBQUERIES",
+    "solution": "solutions/13-subqueries/q064.sql",
+    "answer": "answers/13-subqueries/q064.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q065": {
+    "topic": "SUBQUERIES",
+    "solution": "solutions/13-subqueries/q065.sql",
+    "answer": "answers/13-subqueries/q065.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q066": {
+    "topic": "EXISTS",
+    "solution": "solutions/14-exists/q066.sql",
+    "answer": "answers/14-exists/q066.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q067": {
+    "topic": "EXISTS",
+    "solution": "solutions/14-exists/q067.sql",
+    "answer": "answers/14-exists/q067.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q068": {
+    "topic": "EXISTS",
+    "solution": "solutions/14-exists/q068.sql",
+    "answer": "answers/14-exists/q068.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q069": {
+    "topic": "EXISTS",
+    "solution": "solutions/14-exists/q069.sql",
+    "answer": "answers/14-exists/q069.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q070": {
+    "topic": "EXISTS",
+    "solution": "solutions/14-exists/q070.sql",
+    "answer": "answers/14-exists/q070.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q071": {
+    "topic": "IN",
+    "solution": "solutions/15-in/q071.sql",
+    "answer": "answers/15-in/q071.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q072": {
+    "topic": "IN",
+    "solution": "solutions/15-in/q072.sql",
+    "answer": "answers/15-in/q072.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q073": {
+    "topic": "IN",
+    "solution": "solutions/15-in/q073.sql",
+    "answer": "answers/15-in/q073.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q074": {
+    "topic": "IN",
+    "solution": "solutions/15-in/q074.sql",
+    "answer": "answers/15-in/q074.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q075": {
+    "topic": "IN",
+    "solution": "solutions/15-in/q075.sql",
+    "answer": "answers/15-in/q075.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q076": {
+    "topic": "ANY",
+    "solution": "solutions/16-any/q076.sql",
+    "answer": "answers/16-any/q076.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q077": {
+    "topic": "ANY",
+    "solution": "solutions/16-any/q077.sql",
+    "answer": "answers/16-any/q077.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q078": {
+    "topic": "ANY",
+    "solution": "solutions/16-any/q078.sql",
+    "answer": "answers/16-any/q078.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q079": {
+    "topic": "ANY",
+    "solution": "solutions/16-any/q079.sql",
+    "answer": "answers/16-any/q079.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q080": {
+    "topic": "ANY",
+    "solution": "solutions/16-any/q080.sql",
+    "answer": "answers/16-any/q080.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q081": {
+    "topic": "ALL",
+    "solution": "solutions/17-all/q081.sql",
+    "answer": "answers/17-all/q081.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q082": {
+    "topic": "ALL",
+    "solution": "solutions/17-all/q082.sql",
+    "answer": "answers/17-all/q082.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q083": {
+    "topic": "ALL",
+    "solution": "solutions/17-all/q083.sql",
+    "answer": "answers/17-all/q083.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q084": {
+    "topic": "ALL",
+    "solution": "solutions/17-all/q084.sql",
+    "answer": "answers/17-all/q084.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q085": {
+    "topic": "ALL",
+    "solution": "solutions/17-all/q085.sql",
+    "answer": "answers/17-all/q085.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q086": {
+    "topic": "CTE",
+    "solution": "solutions/18-cte/q086.sql",
+    "answer": "answers/18-cte/q086.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q087": {
+    "topic": "CTE",
+    "solution": "solutions/18-cte/q087.sql",
+    "answer": "answers/18-cte/q087.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q088": {
+    "topic": "CTE",
+    "solution": "solutions/18-cte/q088.sql",
+    "answer": "answers/18-cte/q088.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q089": {
+    "topic": "CTE",
+    "solution": "solutions/18-cte/q089.sql",
+    "answer": "answers/18-cte/q089.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q090": {
+    "topic": "CTE",
+    "solution": "solutions/18-cte/q090.sql",
+    "answer": "answers/18-cte/q090.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q091": {
+    "topic": "RECURSIVE CTE",
+    "solution": "solutions/19-recursive-cte/q091.sql",
+    "answer": "answers/19-recursive-cte/q091.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q092": {
+    "topic": "RECURSIVE CTE",
+    "solution": "solutions/19-recursive-cte/q092.sql",
+    "answer": "answers/19-recursive-cte/q092.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q093": {
+    "topic": "RECURSIVE CTE",
+    "solution": "solutions/19-recursive-cte/q093.sql",
+    "answer": "answers/19-recursive-cte/q093.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q094": {
+    "topic": "RECURSIVE CTE",
+    "solution": "solutions/19-recursive-cte/q094.sql",
+    "answer": "answers/19-recursive-cte/q094.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q095": {
+    "topic": "RECURSIVE CTE",
+    "solution": "solutions/19-recursive-cte/q095.sql",
+    "answer": "answers/19-recursive-cte/q095.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
   }
 }

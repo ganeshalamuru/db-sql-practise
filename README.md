@@ -31,6 +31,8 @@ psql -U postgres -d sql_practice -f data.sql
 
 Add structured metadata to `exercise_catalog.json`, create the matching instructor solution in `solutions/`, and run `python scripts/build_problems.py`. The renderer creates the Markdown problem statement and the registry automatically. Keep `solutions/` in a private instructor repository or release artifact if students must not see answers; GitHub cannot hide files committed to a public repository.
 
+For curriculum consistency, exercises rated 4/5 or 5/5 should use the current topic together with any concepts covered in earlier modules when that strengthens the exercise. Keep lower-rated exercises focused more tightly on the current topic.
+
 The renderer also creates missing blank files in the matching `answers/<topic>/` folder. Existing answer files are never overwritten.
 
 ## Dataset scales

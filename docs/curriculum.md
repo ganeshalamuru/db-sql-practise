@@ -2,6 +2,10 @@
 
 Each topic contains five focused exercises. Modules are released in order so that later exercises can rely on prior concepts.
 
+## Exercise authoring rule
+
+Exercises rated **4 / 5** or **5 / 5** may—and should where it improves the learning objective—combine every concept introduced by earlier modules with the current module's concept. Lower-rated exercises should remain more narrowly focused on the current topic.
+
 | # | Topic | Status |
 |---:|---|---|
 | 01 | SELECT | Available (Q001–Q005) |
@@ -16,13 +20,13 @@ Each topic contains five focused exercises. Modules are released in order so tha
 | 10 | OUTER JOIN | Available (Q046–Q050) |
 | 11 | SELF JOIN | Available (Q051–Q055) |
 | 12 | CROSS JOIN | Available (Q056–Q060) |
-| 13 | Subqueries | Planned |
-| 14 | EXISTS | Planned |
-| 15 | IN | Planned |
-| 16 | ANY | Planned |
-| 17 | ALL | Planned |
-| 18 | CTE | Planned |
-| 19 | Recursive CTE | Planned |
+| 13 | Subqueries | Available (Q061–Q065) |
+| 14 | EXISTS | Available (Q066–Q070) |
+| 15 | IN | Available (Q071–Q075) |
+| 16 | ANY | Available (Q076–Q080) |
+| 17 | ALL | Available (Q081–Q085) |
+| 18 | CTE | Available (Q086–Q090) |
+| 19 | Recursive CTE | Available (Q091–Q095) |
 | 20 | Window Functions | Planned |
 | 21 | CASE | Planned |
 | 22 | String Functions | Planned |

@@ -46,14 +46,17 @@ def main() -> None:
     print("BEGIN;")
     emit("countries", ("country_code", "name"), [("IN", "India"), ("US", "United States"), ("DE", "Germany")])
     emit("cities", ("country_id", "name"), [(1, "Bengaluru"), (1, "Mumbai"), (2, "Austin"), (3, "Berlin")])
-    emit("categories", ("parent_category_id", "name"), [(None, name) for name in ("Electronics", "Home", "Books", "Fitness")])
+    emit("categories", ("parent_category_id", "name"), [
+        (None, "Electronics"), (None, "Home"), (None, "Books"), (None, "Fitness"),
+        (1, "Phones"), (1, "Laptops"), (2, "Kitchen"), (4, "Strength Training"),
+    ])
     emit("suppliers", ("name", "contact_email", "country_id"), [(f"Supplier {i}", f"supplier{i}@example.test", 1 + i % 3) for i in range(1, 41)])
     emit("warehouses", ("city_id", "code", "name", "capacity_units"), [(1 + index % 4, f"WH-{index:02d}", f"Warehouse {index}", 70000 + index * 1000) for index in range(1, 11)])
     emit("customers", ("email", "first_name", "last_name", "city_id", "created_at", "status"), [(f"customer{i}@example.test", f"First{i}", f"Last{i}", 1 + i % 4, now - timedelta(days=i % 900), "active" if i % 20 else "suspended") for i in range(1, customers + 1)])
-    emit("products", ("supplier_id", "category_id", "sku", "name", "unit_price", "is_active", "created_at"), [(1 + i % 40, 1 + i % 4, f"SKU-{i:06d}", f"Product {i}", Decimal(rng.randint(500, 200000)) / 100, i % 25 != 0, now - timedelta(days=i % 600)) for i in range(1, products + 1)])
+    emit("products", ("supplier_id", "category_id", "sku", "name", "unit_price", "is_active", "created_at"), [(1 + i % 40, 1 + i % 8, f"SKU-{i:06d}", f"Product {i}", Decimal(rng.randint(500, 200000)) / 100, i % 25 != 0, now - timedelta(days=i % 600)) for i in range(1, products + 1)])
     inventory = [(warehouse, product, rng.randint(0, 1000), rng.randint(10, 100)) for warehouse in range(1, 11) for product in range(1, products + 1)]
     emit("inventory", ("warehouse_id", "product_id", "quantity_on_hand", "reorder_point"), inventory)
-    emit("employees", ("warehouse_id", "manager_id", "email", "first_name", "last_name", "hired_at", "role"), [(1 + employee_id % 10, None, f"employee{employee_id}@example.test", f"Employee{employee_id}", "Staff", now.date() - timedelta(days=employee_id * 12), "manager" if employee_id % 20 == 0 else "associate") for employee_id in range(1, employee_count + 1)])
+    emit("employees", ("warehouse_id", "manager_id", "email", "first_name", "last_name", "hired_at", "role"), [(1 + employee_id % 10, None if employee_id <= 5 else employee_id // 5, f"employee{employee_id}@example.test", f"Employee{employee_id}", "Staff", now.date() - timedelta(days=employee_id * 12), "manager" if employee_id <= 5 or employee_id % 20 == 0 else "associate") for employee_id in range(1, employee_count + 1)])
     emit("stores", ("city_id", "code", "name", "opened_at"), [(1 + store_id % 4, f"STORE-{store_id:02d}", f"Store {store_id}", now.date() - timedelta(days=store_id * 300)) for store_id in range(1, 11)])
     order_rows = []
     payment_rows = []
