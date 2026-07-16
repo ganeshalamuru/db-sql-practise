@@ -2,665 +2,665 @@
   "Q001": {
     "topic": "SELECT",
     "solution": "solutions/01-select/q001.sql",
-    "answer": "answers/01-select/q001.sql",
+    "answer": "exercises/01-select/q001.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q002": {
     "topic": "SELECT",
     "solution": "solutions/01-select/q002.sql",
-    "answer": "answers/01-select/q002.sql",
+    "answer": "exercises/01-select/q002.sql",
     "ordering_required": true,
     "duplicates_matter": false
   },
   "Q003": {
     "topic": "SELECT",
     "solution": "solutions/01-select/q003.sql",
-    "answer": "answers/01-select/q003.sql",
+    "answer": "exercises/01-select/q003.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q004": {
     "topic": "SELECT",
     "solution": "solutions/01-select/q004.sql",
-    "answer": "answers/01-select/q004.sql",
+    "answer": "exercises/01-select/q004.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q005": {
     "topic": "SELECT",
     "solution": "solutions/01-select/q005.sql",
-    "answer": "answers/01-select/q005.sql",
+    "answer": "exercises/01-select/q005.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q006": {
     "topic": "WHERE",
     "solution": "solutions/02-where/q006.sql",
-    "answer": "answers/02-where/q006.sql",
+    "answer": "exercises/02-where/q006.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q007": {
     "topic": "WHERE",
     "solution": "solutions/02-where/q007.sql",
-    "answer": "answers/02-where/q007.sql",
+    "answer": "exercises/02-where/q007.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q008": {
     "topic": "WHERE",
     "solution": "solutions/02-where/q008.sql",
-    "answer": "answers/02-where/q008.sql",
+    "answer": "exercises/02-where/q008.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q009": {
     "topic": "WHERE",
     "solution": "solutions/02-where/q009.sql",
-    "answer": "answers/02-where/q009.sql",
+    "answer": "exercises/02-where/q009.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q010": {
     "topic": "WHERE",
     "solution": "solutions/02-where/q010.sql",
-    "answer": "answers/02-where/q010.sql",
+    "answer": "exercises/02-where/q010.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q011": {
     "topic": "ORDER BY",
     "solution": "solutions/03-order-by/q011.sql",
-    "answer": "answers/03-order-by/q011.sql",
+    "answer": "exercises/03-order-by/q011.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q012": {
     "topic": "ORDER BY",
     "solution": "solutions/03-order-by/q012.sql",
-    "answer": "answers/03-order-by/q012.sql",
+    "answer": "exercises/03-order-by/q012.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q013": {
     "topic": "ORDER BY",
     "solution": "solutions/03-order-by/q013.sql",
-    "answer": "answers/03-order-by/q013.sql",
+    "answer": "exercises/03-order-by/q013.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q014": {
     "topic": "ORDER BY",
     "solution": "solutions/03-order-by/q014.sql",
-    "answer": "answers/03-order-by/q014.sql",
+    "answer": "exercises/03-order-by/q014.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q015": {
     "topic": "ORDER BY",
     "solution": "solutions/03-order-by/q015.sql",
-    "answer": "answers/03-order-by/q015.sql",
+    "answer": "exercises/03-order-by/q015.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q016": {
     "topic": "Expressions",
     "solution": "solutions/04-expressions/q016.sql",
-    "answer": "answers/04-expressions/q016.sql",
+    "answer": "exercises/04-expressions/q016.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q017": {
     "topic": "Expressions",
     "solution": "solutions/04-expressions/q017.sql",
-    "answer": "answers/04-expressions/q017.sql",
+    "answer": "exercises/04-expressions/q017.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q018": {
     "topic": "Expressions",
     "solution": "solutions/04-expressions/q018.sql",
-    "answer": "answers/04-expressions/q018.sql",
+    "answer": "exercises/04-expressions/q018.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q019": {
     "topic": "Expressions",
     "solution": "solutions/04-expressions/q019.sql",
-    "answer": "answers/04-expressions/q019.sql",
+    "answer": "exercises/04-expressions/q019.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q020": {
     "topic": "Expressions",
     "solution": "solutions/04-expressions/q020.sql",
-    "answer": "answers/04-expressions/q020.sql",
+    "answer": "exercises/04-expressions/q020.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q021": {
     "topic": "NULL",
     "solution": "solutions/05-null/q021.sql",
-    "answer": "answers/05-null/q021.sql",
+    "answer": "exercises/05-null/q021.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q022": {
     "topic": "NULL",
     "solution": "solutions/05-null/q022.sql",
-    "answer": "answers/05-null/q022.sql",
+    "answer": "exercises/05-null/q022.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q023": {
     "topic": "NULL",
     "solution": "solutions/05-null/q023.sql",
-    "answer": "answers/05-null/q023.sql",
+    "answer": "exercises/05-null/q023.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q024": {
     "topic": "NULL",
     "solution": "solutions/05-null/q024.sql",
-    "answer": "answers/05-null/q024.sql",
+    "answer": "exercises/05-null/q024.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q025": {
     "topic": "NULL",
     "solution": "solutions/05-null/q025.sql",
-    "answer": "answers/05-null/q025.sql",
+    "answer": "exercises/05-null/q025.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q026": {
     "topic": "Aggregate Functions",
     "solution": "solutions/06-aggregate-functions/q026.sql",
-    "answer": "answers/06-aggregate-functions/q026.sql",
+    "answer": "exercises/06-aggregate-functions/q026.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q027": {
     "topic": "Aggregate Functions",
     "solution": "solutions/06-aggregate-functions/q027.sql",
-    "answer": "answers/06-aggregate-functions/q027.sql",
+    "answer": "exercises/06-aggregate-functions/q027.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q028": {
     "topic": "Aggregate Functions",
     "solution": "solutions/06-aggregate-functions/q028.sql",
-    "answer": "answers/06-aggregate-functions/q028.sql",
+    "answer": "exercises/06-aggregate-functions/q028.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q029": {
     "topic": "Aggregate Functions",
     "solution": "solutions/06-aggregate-functions/q029.sql",
-    "answer": "answers/06-aggregate-functions/q029.sql",
+    "answer": "exercises/06-aggregate-functions/q029.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q030": {
     "topic": "Aggregate Functions",
     "solution": "solutions/06-aggregate-functions/q030.sql",
-    "answer": "answers/06-aggregate-functions/q030.sql",
+    "answer": "exercises/06-aggregate-functions/q030.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q031": {
     "topic": "GROUP BY",
     "solution": "solutions/07-group-by/q031.sql",
-    "answer": "answers/07-group-by/q031.sql",
+    "answer": "exercises/07-group-by/q031.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q032": {
     "topic": "GROUP BY",
     "solution": "solutions/07-group-by/q032.sql",
-    "answer": "answers/07-group-by/q032.sql",
+    "answer": "exercises/07-group-by/q032.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q033": {
     "topic": "GROUP BY",
     "solution": "solutions/07-group-by/q033.sql",
-    "answer": "answers/07-group-by/q033.sql",
+    "answer": "exercises/07-group-by/q033.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q034": {
     "topic": "GROUP BY",
     "solution": "solutions/07-group-by/q034.sql",
-    "answer": "answers/07-group-by/q034.sql",
+    "answer": "exercises/07-group-by/q034.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q035": {
     "topic": "GROUP BY",
     "solution": "solutions/07-group-by/q035.sql",
-    "answer": "answers/07-group-by/q035.sql",
+    "answer": "exercises/07-group-by/q035.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q036": {
     "topic": "HAVING",
     "solution": "solutions/08-having/q036.sql",
-    "answer": "answers/08-having/q036.sql",
+    "answer": "exercises/08-having/q036.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q037": {
     "topic": "HAVING",
     "solution": "solutions/08-having/q037.sql",
-    "answer": "answers/08-having/q037.sql",
+    "answer": "exercises/08-having/q037.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q038": {
     "topic": "HAVING",
     "solution": "solutions/08-having/q038.sql",
-    "answer": "answers/08-having/q038.sql",
+    "answer": "exercises/08-having/q038.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q039": {
     "topic": "HAVING",
     "solution": "solutions/08-having/q039.sql",
-    "answer": "answers/08-having/q039.sql",
+    "answer": "exercises/08-having/q039.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q040": {
     "topic": "HAVING",
     "solution": "solutions/08-having/q040.sql",
-    "answer": "answers/08-having/q040.sql",
+    "answer": "exercises/08-having/q040.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q041": {
     "topic": "INNER JOIN",
     "solution": "solutions/09-inner-join/q041.sql",
-    "answer": "answers/09-inner-join/q041.sql",
+    "answer": "exercises/09-inner-join/q041.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q042": {
     "topic": "INNER JOIN",
     "solution": "solutions/09-inner-join/q042.sql",
-    "answer": "answers/09-inner-join/q042.sql",
+    "answer": "exercises/09-inner-join/q042.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q043": {
     "topic": "INNER JOIN",
     "solution": "solutions/09-inner-join/q043.sql",
-    "answer": "answers/09-inner-join/q043.sql",
+    "answer": "exercises/09-inner-join/q043.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q044": {
     "topic": "INNER JOIN",
     "solution": "solutions/09-inner-join/q044.sql",
-    "answer": "answers/09-inner-join/q044.sql",
+    "answer": "exercises/09-inner-join/q044.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q045": {
     "topic": "INNER JOIN",
     "solution": "solutions/09-inner-join/q045.sql",
-    "answer": "answers/09-inner-join/q045.sql",
+    "answer": "exercises/09-inner-join/q045.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q046": {
     "topic": "OUTER JOIN",
     "solution": "solutions/10-outer-join/q046.sql",
-    "answer": "answers/10-outer-join/q046.sql",
+    "answer": "exercises/10-outer-join/q046.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q047": {
     "topic": "OUTER JOIN",
     "solution": "solutions/10-outer-join/q047.sql",
-    "answer": "answers/10-outer-join/q047.sql",
+    "answer": "exercises/10-outer-join/q047.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q048": {
     "topic": "OUTER JOIN",
     "solution": "solutions/10-outer-join/q048.sql",
-    "answer": "answers/10-outer-join/q048.sql",
+    "answer": "exercises/10-outer-join/q048.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q049": {
     "topic": "OUTER JOIN",
     "solution": "solutions/10-outer-join/q049.sql",
-    "answer": "answers/10-outer-join/q049.sql",
+    "answer": "exercises/10-outer-join/q049.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q050": {
     "topic": "OUTER JOIN",
     "solution": "solutions/10-outer-join/q050.sql",
-    "answer": "answers/10-outer-join/q050.sql",
+    "answer": "exercises/10-outer-join/q050.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q051": {
     "topic": "SELF JOIN",
     "solution": "solutions/11-self-join/q051.sql",
-    "answer": "answers/11-self-join/q051.sql",
+    "answer": "exercises/11-self-join/q051.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q052": {
     "topic": "SELF JOIN",
     "solution": "solutions/11-self-join/q052.sql",
-    "answer": "answers/11-self-join/q052.sql",
+    "answer": "exercises/11-self-join/q052.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q053": {
     "topic": "SELF JOIN",
     "solution": "solutions/11-self-join/q053.sql",
-    "answer": "answers/11-self-join/q053.sql",
+    "answer": "exercises/11-self-join/q053.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q054": {
     "topic": "SELF JOIN",
     "solution": "solutions/11-self-join/q054.sql",
-    "answer": "answers/11-self-join/q054.sql",
+    "answer": "exercises/11-self-join/q054.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q055": {
     "topic": "SELF JOIN",
     "solution": "solutions/11-self-join/q055.sql",
-    "answer": "answers/11-self-join/q055.sql",
+    "answer": "exercises/11-self-join/q055.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q056": {
     "topic": "CROSS JOIN",
     "solution": "solutions/12-cross-join/q056.sql",
-    "answer": "answers/12-cross-join/q056.sql",
+    "answer": "exercises/12-cross-join/q056.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q057": {
     "topic": "CROSS JOIN",
     "solution": "solutions/12-cross-join/q057.sql",
-    "answer": "answers/12-cross-join/q057.sql",
+    "answer": "exercises/12-cross-join/q057.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q058": {
     "topic": "CROSS JOIN",
     "solution": "solutions/12-cross-join/q058.sql",
-    "answer": "answers/12-cross-join/q058.sql",
+    "answer": "exercises/12-cross-join/q058.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q059": {
     "topic": "CROSS JOIN",
     "solution": "solutions/12-cross-join/q059.sql",
-    "answer": "answers/12-cross-join/q059.sql",
+    "answer": "exercises/12-cross-join/q059.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q060": {
     "topic": "CROSS JOIN",
     "solution": "solutions/12-cross-join/q060.sql",
-    "answer": "answers/12-cross-join/q060.sql",
+    "answer": "exercises/12-cross-join/q060.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q061": {
     "topic": "SUBQUERIES",
     "solution": "solutions/13-subqueries/q061.sql",
-    "answer": "answers/13-subqueries/q061.sql",
+    "answer": "exercises/13-subqueries/q061.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q062": {
     "topic": "SUBQUERIES",
     "solution": "solutions/13-subqueries/q062.sql",
-    "answer": "answers/13-subqueries/q062.sql",
+    "answer": "exercises/13-subqueries/q062.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q063": {
     "topic": "SUBQUERIES",
     "solution": "solutions/13-subqueries/q063.sql",
-    "answer": "answers/13-subqueries/q063.sql",
+    "answer": "exercises/13-subqueries/q063.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q064": {
     "topic": "SUBQUERIES",
     "solution": "solutions/13-subqueries/q064.sql",
-    "answer": "answers/13-subqueries/q064.sql",
+    "answer": "exercises/13-subqueries/q064.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q065": {
     "topic": "SUBQUERIES",
     "solution": "solutions/13-subqueries/q065.sql",
-    "answer": "answers/13-subqueries/q065.sql",
+    "answer": "exercises/13-subqueries/q065.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q066": {
     "topic": "EXISTS",
     "solution": "solutions/14-exists/q066.sql",
-    "answer": "answers/14-exists/q066.sql",
+    "answer": "exercises/14-exists/q066.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q067": {
     "topic": "EXISTS",
     "solution": "solutions/14-exists/q067.sql",
-    "answer": "answers/14-exists/q067.sql",
+    "answer": "exercises/14-exists/q067.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q068": {
     "topic": "EXISTS",
     "solution": "solutions/14-exists/q068.sql",
-    "answer": "answers/14-exists/q068.sql",
+    "answer": "exercises/14-exists/q068.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q069": {
     "topic": "EXISTS",
     "solution": "solutions/14-exists/q069.sql",
-    "answer": "answers/14-exists/q069.sql",
+    "answer": "exercises/14-exists/q069.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q070": {
     "topic": "EXISTS",
     "solution": "solutions/14-exists/q070.sql",
-    "answer": "answers/14-exists/q070.sql",
+    "answer": "exercises/14-exists/q070.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q071": {
     "topic": "IN",
     "solution": "solutions/15-in/q071.sql",
-    "answer": "answers/15-in/q071.sql",
+    "answer": "exercises/15-in/q071.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q072": {
     "topic": "IN",
     "solution": "solutions/15-in/q072.sql",
-    "answer": "answers/15-in/q072.sql",
+    "answer": "exercises/15-in/q072.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q073": {
     "topic": "IN",
     "solution": "solutions/15-in/q073.sql",
-    "answer": "answers/15-in/q073.sql",
+    "answer": "exercises/15-in/q073.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q074": {
     "topic": "IN",
     "solution": "solutions/15-in/q074.sql",
-    "answer": "answers/15-in/q074.sql",
+    "answer": "exercises/15-in/q074.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q075": {
     "topic": "IN",
     "solution": "solutions/15-in/q075.sql",
-    "answer": "answers/15-in/q075.sql",
+    "answer": "exercises/15-in/q075.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q076": {
     "topic": "ANY",
     "solution": "solutions/16-any/q076.sql",
-    "answer": "answers/16-any/q076.sql",
+    "answer": "exercises/16-any/q076.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q077": {
     "topic": "ANY",
     "solution": "solutions/16-any/q077.sql",
-    "answer": "answers/16-any/q077.sql",
+    "answer": "exercises/16-any/q077.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q078": {
     "topic": "ANY",
     "solution": "solutions/16-any/q078.sql",
-    "answer": "answers/16-any/q078.sql",
+    "answer": "exercises/16-any/q078.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q079": {
     "topic": "ANY",
     "solution": "solutions/16-any/q079.sql",
-    "answer": "answers/16-any/q079.sql",
+    "answer": "exercises/16-any/q079.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q080": {
     "topic": "ANY",
     "solution": "solutions/16-any/q080.sql",
-    "answer": "answers/16-any/q080.sql",
+    "answer": "exercises/16-any/q080.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q081": {
     "topic": "ALL",
     "solution": "solutions/17-all/q081.sql",
-    "answer": "answers/17-all/q081.sql",
+    "answer": "exercises/17-all/q081.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q082": {
     "topic": "ALL",
     "solution": "solutions/17-all/q082.sql",
-    "answer": "answers/17-all/q082.sql",
+    "answer": "exercises/17-all/q082.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q083": {
     "topic": "ALL",
     "solution": "solutions/17-all/q083.sql",
-    "answer": "answers/17-all/q083.sql",
+    "answer": "exercises/17-all/q083.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q084": {
     "topic": "ALL",
     "solution": "solutions/17-all/q084.sql",
-    "answer": "answers/17-all/q084.sql",
+    "answer": "exercises/17-all/q084.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q085": {
     "topic": "ALL",
     "solution": "solutions/17-all/q085.sql",
-    "answer": "answers/17-all/q085.sql",
+    "answer": "exercises/17-all/q085.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q086": {
     "topic": "CTE",
     "solution": "solutions/18-cte/q086.sql",
-    "answer": "answers/18-cte/q086.sql",
+    "answer": "exercises/18-cte/q086.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q087": {
     "topic": "CTE",
     "solution": "solutions/18-cte/q087.sql",
-    "answer": "answers/18-cte/q087.sql",
+    "answer": "exercises/18-cte/q087.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q088": {
     "topic": "CTE",
     "solution": "solutions/18-cte/q088.sql",
-    "answer": "answers/18-cte/q088.sql",
+    "answer": "exercises/18-cte/q088.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q089": {
     "topic": "CTE",
     "solution": "solutions/18-cte/q089.sql",
-    "answer": "answers/18-cte/q089.sql",
+    "answer": "exercises/18-cte/q089.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q090": {
     "topic": "CTE",
     "solution": "solutions/18-cte/q090.sql",
-    "answer": "answers/18-cte/q090.sql",
+    "answer": "exercises/18-cte/q090.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q091": {
     "topic": "RECURSIVE CTE",
     "solution": "solutions/19-recursive-cte/q091.sql",
-    "answer": "answers/19-recursive-cte/q091.sql",
+    "answer": "exercises/19-recursive-cte/q091.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q092": {
     "topic": "RECURSIVE CTE",
     "solution": "solutions/19-recursive-cte/q092.sql",
-    "answer": "answers/19-recursive-cte/q092.sql",
+    "answer": "exercises/19-recursive-cte/q092.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q093": {
     "topic": "RECURSIVE CTE",
     "solution": "solutions/19-recursive-cte/q093.sql",
-    "answer": "answers/19-recursive-cte/q093.sql",
+    "answer": "exercises/19-recursive-cte/q093.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q094": {
     "topic": "RECURSIVE CTE",
     "solution": "solutions/19-recursive-cte/q094.sql",
-    "answer": "answers/19-recursive-cte/q094.sql",
+    "answer": "exercises/19-recursive-cte/q094.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q095": {
     "topic": "RECURSIVE CTE",
     "solution": "solutions/19-recursive-cte/q095.sql",
-    "answer": "answers/19-recursive-cte/q095.sql",
+    "answer": "exercises/19-recursive-cte/q095.sql",
     "ordering_required": true,
     "duplicates_matter": true
   }

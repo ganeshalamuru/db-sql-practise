@@ -4,6 +4,4 @@ __pycache__/
 *.py[cod]
 .env
 data.sql
-answers/**/*.sql
-!answers/.gitkeep
-
+exercises/**/*.sql

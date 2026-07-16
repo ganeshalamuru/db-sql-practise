@@ -17,17 +17,15 @@ def main() -> None:
     catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
     registry: dict[str, dict[str, object]] = {}
     for module in catalog["modules"]:
-        module_dir = ROOT / "problems" / module["slug"]
-        answers_dir = ROOT / "answers" / module["slug"]
-        module_dir.mkdir(parents=True, exist_ok=True)
-        answers_dir.mkdir(parents=True, exist_ok=True)
+        exercise_dir = ROOT / "exercises" / module["slug"]
+        exercise_dir.mkdir(parents=True, exist_ok=True)
         for exercise in module["exercises"]:
             filename = f"{str(exercise['id']).lower()}.md"
-            answer_path = f"answers/{module['slug']}/{str(exercise['id']).lower()}.sql"
+            answer_path = f"exercises/{module['slug']}/{str(exercise['id']).lower()}.sql"
             answer_file = ROOT / answer_path
             if not answer_file.exists():
                 answer_file.touch()
-            (module_dir / filename).write_text(render_problem(exercise, answer_path), encoding="utf-8")
+            (exercise_dir / filename).write_text(render_problem(exercise, answer_path), encoding="utf-8")
             registry[str(exercise["id"])] = {
                 "topic": exercise["topic"],
                 "solution": exercise["official_solution"],
