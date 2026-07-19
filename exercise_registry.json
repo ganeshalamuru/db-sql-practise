@@ -663,5 +663,145 @@
     "answer": "exercises/19-recursive-cte/q095.sql",
     "ordering_required": true,
     "duplicates_matter": true
+  },
+  "Q096": {
+    "topic": "WINDOW FUNCTIONS",
+    "solution": "solutions/20-window-functions/q096.sql",
+    "answer": "exercises/20-window-functions/q096.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q097": {
+    "topic": "WINDOW FUNCTIONS",
+    "solution": "solutions/20-window-functions/q097.sql",
+    "answer": "exercises/20-window-functions/q097.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q098": {
+    "topic": "WINDOW FUNCTIONS",
+    "solution": "solutions/20-window-functions/q098.sql",
+    "answer": "exercises/20-window-functions/q098.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q099": {
+    "topic": "WINDOW FUNCTIONS",
+    "solution": "solutions/20-window-functions/q099.sql",
+    "answer": "exercises/20-window-functions/q099.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q100": {
+    "topic": "WINDOW FUNCTIONS",
+    "solution": "solutions/20-window-functions/q100.sql",
+    "answer": "exercises/20-window-functions/q100.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q101": {
+    "topic": "CASE",
+    "solution": "solutions/21-case/q101.sql",
+    "answer": "exercises/21-case/q101.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q102": {
+    "topic": "CASE",
+    "solution": "solutions/21-case/q102.sql",
+    "answer": "exercises/21-case/q102.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q103": {
+    "topic": "CASE",
+    "solution": "solutions/21-case/q103.sql",
+    "answer": "exercises/21-case/q103.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q104": {
+    "topic": "CASE",
+    "solution": "solutions/21-case/q104.sql",
+    "answer": "exercises/21-case/q104.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q105": {
+    "topic": "CASE",
+    "solution": "solutions/21-case/q105.sql",
+    "answer": "exercises/21-case/q105.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q106": {
+    "topic": "STRING FUNCTIONS",
+    "solution": "solutions/22-string-functions/q106.sql",
+    "answer": "exercises/22-string-functions/q106.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q107": {
+    "topic": "STRING FUNCTIONS",
+    "solution": "solutions/22-string-functions/q107.sql",
+    "answer": "exercises/22-string-functions/q107.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q108": {
+    "topic": "STRING FUNCTIONS",
+    "solution": "solutions/22-string-functions/q108.sql",
+    "answer": "exercises/22-string-functions/q108.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q109": {
+    "topic": "STRING FUNCTIONS",
+    "solution": "solutions/22-string-functions/q109.sql",
+    "answer": "exercises/22-string-functions/q109.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q110": {
+    "topic": "STRING FUNCTIONS",
+    "solution": "solutions/22-string-functions/q110.sql",
+    "answer": "exercises/22-string-functions/q110.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q111": {
+    "topic": "DATE FUNCTIONS",
+    "solution": "solutions/23-date-functions/q111.sql",
+    "answer": "exercises/23-date-functions/q111.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q112": {
+    "topic": "DATE FUNCTIONS",
+    "solution": "solutions/23-date-functions/q112.sql",
+    "answer": "exercises/23-date-functions/q112.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q113": {
+    "topic": "DATE FUNCTIONS",
+    "solution": "solutions/23-date-functions/q113.sql",
+    "answer": "exercises/23-date-functions/q113.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q114": {
+    "topic": "DATE FUNCTIONS",
+    "solution": "solutions/23-date-functions/q114.sql",
+    "answer": "exercises/23-date-functions/q114.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q115": {
+    "topic": "DATE FUNCTIONS",
+    "solution": "solutions/23-date-functions/q115.sql",
+    "answer": "exercises/23-date-functions/q115.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
   }
 }

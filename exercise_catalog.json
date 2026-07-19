@@ -813,6 +813,234 @@
         {"id":"Q094","topic":"RECURSIVE CTE","difficulty":5,"learning_objective":"Combine recursive traversal with joins and filtering on related business data.","statement":"Return employee_id, first_name, last_name, hierarchy_level, warehouse_code, and warehouse_name for every direct or indirect report of employee_id 1 who works in a warehouse located in India. Exclude employee_id 1.","ordering":"Order by hierarchy_level ascending, then employee_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q094.sql"},
         {"id":"Q095","topic":"RECURSIVE CTE","difficulty":5,"learning_objective":"Combine recursive traversal, joins, and aggregation to summarize a hierarchy.","statement":"Return root_category_id, root_category_name, category_id, category_name, hierarchy_level, and active_product_count for every category in each root category's hierarchy. active_product_count is the number of active products assigned directly to that category, including zero counts.","ordering":"Order by root_category_id ascending, hierarchy_level ascending, then category_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q095.sql"}
       ]
+    },
+    {
+      "slug": "20-window-functions",
+      "title": "WINDOW FUNCTIONS",
+      "description": "Calculate rankings, running totals, comparisons with nearby rows, and partition-level metrics without collapsing detail rows.",
+      "exercises": [
+        {
+          "id": "Q096",
+          "topic": "WINDOW FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Combine grouped order totals with a partitioned running total window.",
+          "statement": "Return customer_id, order_id, ordered_at, item_total, and running_delivered_item_total for every delivered order. item_total is the sum of quantity multiplied by unit_price for the order's line items. running_delivered_item_total is the cumulative item_total for that customer through the current delivered order, ordered by ordered_at and then order_id.",
+          "ordering": "Order by customer_id ascending, ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/20-window-functions/q096.sql"
+        },
+        {
+          "id": "Q097",
+          "topic": "WINDOW FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Rank aggregated related-table metrics within a partition while retaining rows with zero activity.",
+          "statement": "Return category_id, category_name, product_id, sku, delivered_quantity, and delivered_quantity_rank for every active product. delivered_quantity is the total quantity of that product in delivered orders, including 0 for products with no delivered sales. delivered_quantity_rank is the dense rank within the product's category, with the highest delivered_quantity ranked 1 and ties sharing a rank.",
+          "ordering": "Order by category_id ascending, delivered_quantity_rank ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/20-window-functions/q097.sql"
+        },
+        {
+          "id": "Q098",
+          "topic": "WINDOW FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Use LAG to compare each row with the preceding chronological row in its partition.",
+          "statement": "Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is ordered_at minus previous_ordered_at.",
+          "ordering": "Order by customer_id ascending, ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/20-window-functions/q098.sql"
+        },
+        {
+          "id": "Q099",
+          "topic": "WINDOW FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Apply multiple window calculations to grouped sales metrics and safely derive a partition share.",
+          "statement": "Return category_id, category_name, product_id, sku, delivered_revenue, category_delivered_revenue, revenue_share_percent, and revenue_rank for every active product. delivered_revenue is the sum of quantity multiplied by unit_price for delivered orders, including 0 for products with no delivered sales. category_delivered_revenue is the delivered_revenue total for the product's category. revenue_share_percent is 100 multiplied by delivered_revenue divided by category_delivered_revenue, or NULL when the category total is 0. revenue_rank is the dense rank within the category by delivered_revenue descending, with ties sharing a rank.",
+          "ordering": "Order by category_id ascending, revenue_rank ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/20-window-functions/q099.sql"
+        },
+        {
+          "id": "Q100",
+          "topic": "WINDOW FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Combine multi-table aggregation with a country-level dense rank and a rank filter.",
+          "statement": "Return country_code, country_name, customer_id, email, delivered_order_count, delivered_item_total, and country_spend_rank for customers whose delivered_item_total ranks among the top two values in their country. Include ties. delivered_order_count is the number of delivered orders, and delivered_item_total is the sum of quantity multiplied by unit_price across their delivered order items.",
+          "ordering": "Order by country_code ascending, country_spend_rank ascending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/20-window-functions/q100.sql"
+        }
+      ]
+    },
+    {
+      "slug": "21-case",
+      "title": "CASE",
+      "description": "Classify business data with conditional expressions while combining prior query techniques.",
+      "exercises": [
+        {
+          "id": "Q101",
+          "topic": "CASE",
+          "difficulty": 5,
+          "learning_objective": "Use CASE with an aggregated CTE to assign each customer a value tier.",
+          "statement": "Return customer_id, email, delivered_order_count, delivered_item_total, and customer_value_tier for every customer. delivered_item_total is the sum of quantity multiplied by unit_price across delivered orders. customer_value_tier is no_delivered_orders when delivered_order_count is 0, high_value when delivered_item_total is at least 50,000.00, and standard_value otherwise.",
+          "ordering": "Order by delivered_item_total descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/21-case/q101.sql"
+        },
+        {
+          "id": "Q102",
+          "topic": "CASE",
+          "difficulty": 5,
+          "learning_objective": "Classify inventory health from multiple aggregate conditions.",
+          "statement": "Return product_id, sku, warehouse_count, low_stock_warehouse_count, and inventory_health for every active product. warehouse_count is the number of warehouses that stock the product. low_stock_warehouse_count is the number of those rows where quantity_on_hand is at or below reorder_point. inventory_health is not_stocked when warehouse_count is 0, reorder_needed when low_stock_warehouse_count is positive, and adequately_stocked otherwise.",
+          "ordering": "Order by inventory_health ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/21-case/q102.sql"
+        },
+        {
+          "id": "Q103",
+          "topic": "CASE",
+          "difficulty": 5,
+          "learning_objective": "Derive a fulfillment state from related order, payment, and shipment lifecycle states.",
+          "statement": "Return order_id, order_status, payment_status, shipment_status, and fulfillment_state for every order. fulfillment_state is closed_or_returned when the order is cancelled or the shipment is returned; payment_issue when the payment failed; complete when the order is delivered and the payment completed; and awaiting_fulfillment otherwise.",
+          "ordering": "Order by order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/21-case/q103.sql"
+        },
+        {
+          "id": "Q104",
+          "topic": "CASE",
+          "difficulty": 5,
+          "learning_objective": "Use conditional logic with independently aggregated related metrics.",
+          "statement": "Return supplier_id, supplier_name, active_product_count, returned_active_product_count, and return_exposure for every supplier. returned_active_product_count is the number of distinct active products from that supplier that appear in returns. return_exposure is no_active_product_returns when the returned count is 0, broad_return_exposure when it is at least the active_product_count, and limited_return_exposure otherwise.",
+          "ordering": "Order by return_exposure ascending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/21-case/q104.sql"
+        },
+        {
+          "id": "Q105",
+          "topic": "CASE",
+          "difficulty": 5,
+          "learning_objective": "Combine conditional labels with aggregate and window-based category benchmarks.",
+          "statement": "Return category_id, category_name, product_id, sku, delivered_revenue, category_average_delivered_revenue, and revenue_performance for every active product. delivered_revenue is the sum of quantity multiplied by unit_price in delivered orders, including 0 for products with no delivered sales. category_average_delivered_revenue is the average delivered_revenue among active products in that category. revenue_performance is no_delivered_revenue when delivered_revenue is 0, above_category_average when it is above the category average, and at_or_below_category_average otherwise.",
+          "ordering": "Order by category_id ascending, delivered_revenue descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/21-case/q105.sql"
+        }
+      ]
+    },
+    {
+      "slug": "22-string-functions",
+      "title": "STRING FUNCTIONS",
+      "description": "Format, extract, concatenate, and aggregate text values in analytical queries.",
+      "exercises": [
+        {
+          "id": "Q106",
+          "topic": "STRING FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Build hierarchical display text while traversing a recursive structure.",
+          "statement": "Return category_id, category_name, parent_category_id, hierarchy_level, and category_path for every category. hierarchy_level is 0 for root categories. category_path contains names from the root to the category separated by ' > '. Use string construction as part of the recursive traversal.",
+          "ordering": "Order by category_path ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/22-string-functions/q106.sql"
+        },
+        {
+          "id": "Q107",
+          "topic": "STRING FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Extract and format customer text attributes after filtering by a derived business metric.",
+          "statement": "Return customer_id, customer_name, email_username, email_domain, and delivered_item_total for customers whose delivered_item_total is above the average among customers with at least one delivered order. customer_name joins the first and last name with one space and uses title case. email_username and email_domain are the portions of email before and after '@'. delivered_item_total is the sum of quantity multiplied by unit_price across delivered orders.",
+          "ordering": "Order by delivered_item_total descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/22-string-functions/q107.sql"
+        },
+        {
+          "id": "Q108",
+          "topic": "STRING FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Use ordered string aggregation after multi-table grouping and filtering.",
+          "statement": "Return supplier_id, supplier_name, category_id, category_name, active_product_count, and active_sku_list for each supplier-and-category combination with at least two active products. active_sku_list contains that combination's active SKUs separated by ', ' and sorted by SKU ascending.",
+          "ordering": "Order by supplier_id ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/22-string-functions/q108.sql"
+        },
+        {
+          "id": "Q109",
+          "topic": "STRING FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Produce deterministic ordered text summaries from related review records.",
+          "statement": "Return product_id, sku, review_count, reviewer_email_list, and review_text_summary for products with at least two reviews. reviewer_email_list contains reviewer emails separated by ', ' and sorted by email ascending. review_text_summary contains each review body, using '(no text)' for NULL bodies, separated by ' | ' and sorted by created_at ascending and then review_id ascending.",
+          "ordering": "Order by review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/22-string-functions/q109.sql"
+        },
+        {
+          "id": "Q110",
+          "topic": "STRING FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Combine text formatting, window ranking, and string aggregation to summarize category leaders.",
+          "statement": "Return category_id, category_name, category_code, top_delivered_revenue, and top_sku_list for every category with active products. category_code is the uppercase first three characters of category_name, followed by '-', followed by category_id padded to two digits. top_delivered_revenue is the highest delivered revenue among active products in the category, where delivered revenue is the sum of quantity multiplied by unit_price in delivered orders and includes 0 for products with no delivered sales. top_sku_list contains every active SKU tied for that revenue, separated by ' | ' and sorted by SKU ascending.",
+          "ordering": "Order by category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/22-string-functions/q110.sql"
+        }
+      ]
+    },
+    {
+      "slug": "23-date-functions",
+      "title": "DATE FUNCTIONS",
+      "description": "Group, compare, and generate calendar-based metrics from timestamp data.",
+      "exercises": [
+        {
+          "id": "Q111",
+          "topic": "DATE FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Group timestamped sales into calendar months and compare the grouped values to an overall benchmark.",
+          "statement": "Return delivery_month, delivered_order_count, delivered_item_total, and average_monthly_delivered_item_total for every month containing delivered orders. delivery_month is the first calendar date of the month. delivered_item_total is the sum of quantity multiplied by unit_price across delivered orders in that month. average_monthly_delivered_item_total is the average delivered_item_total across the returned months.",
+          "ordering": "Order by delivery_month ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/23-date-functions/q111.sql"
+        },
+        {
+          "id": "Q112",
+          "topic": "DATE FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Use date extraction and aggregate boundaries to characterize a customer's delivery history.",
+          "statement": "Return customer_id, email, first_delivered_date, last_delivered_date, days_between_first_and_last_delivery, and delivered_order_count for customers with at least two delivered orders. first_delivered_date and last_delivered_date are calendar dates. days_between_first_and_last_delivery is the number of days from the first delivered order to the last.",
+          "ordering": "Order by days_between_first_and_last_delivery descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/23-date-functions/q112.sql"
+        },
+        {
+          "id": "Q113",
+          "topic": "DATE FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Compare related timestamps and aggregate shipment timing by location and calendar day.",
+          "statement": "Return warehouse_id, warehouse_code, delivery_date, delivered_shipment_count, and average_delivery_days for every warehouse-and-date combination with delivered shipments. delivery_date is the calendar date of delivered_at. average_delivery_days is the average number of days from shipped_at to delivered_at for that group.",
+          "ordering": "Order by warehouse_id ascending, then delivery_date ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/23-date-functions/q113.sql"
+        },
+        {
+          "id": "Q114",
+          "topic": "DATE FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Generate a complete monthly calendar, fill missing sales periods, and compare each period to its predecessor.",
+          "statement": "Return delivery_month, delivered_item_total, previous_month_delivered_item_total, and month_over_month_change for every calendar month from the earliest to the latest delivered order, including months with no delivered orders. delivery_month is the first calendar date of each month. delivered_item_total is 0 for a month with no delivered orders. previous_month_delivered_item_total is NULL for the first returned month, and month_over_month_change is delivered_item_total minus the previous month's total.",
+          "ordering": "Order by delivery_month ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/23-date-functions/q114.sql"
+        },
+        {
+          "id": "Q115",
+          "topic": "DATE FUNCTIONS",
+          "difficulty": 5,
+          "learning_objective": "Use LAG and date arithmetic to find closely spaced customer orders.",
+          "statement": "Return customer_id, order_id, ordered_date, previous_order_id, previous_ordered_date, and days_since_previous_order for orders placed no more than 120 days after the previous order by the same customer. Determine the previous order chronologically by ordered_at and then order_id. ordered_date and previous_ordered_date are calendar dates.",
+          "ordering": "Order by customer_id ascending, ordered_date ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/23-date-functions/q115.sql"
+        }
+      ]
     }
   ]
 }
