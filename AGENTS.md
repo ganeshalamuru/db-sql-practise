@@ -1,6 +1,6 @@
 # SQL answer-file convention
 
-For every SQL answer file created or updated under `solutions/`, begin the file with two SQL comments:
+For every SQL answer file created or updated under `solutions/` or `exercises/`, begin the file with two SQL comments:
 
 ```sql
 -- Task (Q###): <exercise task statement>

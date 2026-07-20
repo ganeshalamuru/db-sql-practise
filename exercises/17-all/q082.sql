@@ -1,0 +1,2 @@
+-- Task (Q082): Return order_id, ordered_at, and status for orders whose every order item has a quantity of at least 2. Exclude orders with no order items.
+-- Requirement: Order by ordered_at descending, then order_id descending.

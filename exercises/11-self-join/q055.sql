@@ -1,3 +1,5 @@
+-- Task (Q055): Return employee_id, employee_first_name, employee_last_name, manager_first_name, manager_last_name, grandmanager_first_name, and grandmanager_last_name for employees whose manager also has a manager.
+-- Requirement: Order by employee_id ascending.
 select
     e.employee_id,
     e.first_name as employee_first_name,

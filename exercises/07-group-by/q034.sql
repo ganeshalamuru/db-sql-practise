@@ -1,3 +1,5 @@
+-- Task (Q034): Return product_id, review_count, and average_rating for each reviewed product. average_rating must be rounded to two decimal places.
+-- Requirement: Order by average_rating descending, then review_count descending, then product_id ascending.
 select 
     product_id,
     count(*) as review_count,

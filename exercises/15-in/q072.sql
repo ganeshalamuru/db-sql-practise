@@ -1,0 +1,2 @@
+-- Task (Q072): Return customer_id, email, first_name, and last_name for customers who have not placed an order with status paid, shipped, or delivered.
+-- Requirement: Order by customer_id ascending.

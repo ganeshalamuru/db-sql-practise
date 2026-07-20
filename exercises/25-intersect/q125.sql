@@ -1,0 +1,2 @@
+-- Task (Q125): Return order_id, customer_id, ordered_at, payment_amount, item_total, and delivered_at for orders whose payment status is completed and whose shipment status is delivered. item_total is the sum of quantity multiplied by unit_price across the order's line items.
+-- Requirement: Order by ordered_at ascending, then order_id ascending.

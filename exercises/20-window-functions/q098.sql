@@ -1,0 +1,2 @@
+-- Task (Q098): Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is ordered_at minus previous_ordered_at.
+-- Requirement: Order by customer_id ascending, ordered_at ascending, then order_id ascending.

@@ -1,3 +1,5 @@
+-- Task (Q047): Return product_id, product_name, and review_count for every active product, including products with no reviews.
+-- Requirement: Order by review_count descending, then product_id ascending.
 select 
     p.product_id,
     p.name as product_name,

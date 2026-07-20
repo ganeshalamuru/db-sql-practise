@@ -1,3 +1,5 @@
+-- Task (Q045): Return shipment_id, shipment_status, warehouse_code, warehouse_name, city_name, and country_name for delivered shipments.
+-- Requirement: Order by country_name ascending, city_name ascending, warehouse_code ascending, then shipment_id ascending.
 select
     shipment_id,
     s.status as shipment_status,

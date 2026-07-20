@@ -1,0 +1,2 @@
+-- Task (Q092): Return employee_id, first_name, last_name, manager_id, and hierarchy_level for employee_id 1 and every employee who reports to them directly or indirectly. hierarchy_level is 0 for employee_id 1.
+-- Requirement: Order by hierarchy_level ascending, then employee_id ascending.

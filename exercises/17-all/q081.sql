@@ -1,0 +1,2 @@
+-- Task (Q081): Return product_id, sku, name, and unit_price for active products priced higher than every active product supplied by supplier_id 1.
+-- Requirement: Order by unit_price ascending, then product_id ascending.

@@ -1,0 +1,2 @@
+-- Task (Q091): Return category_id, category_name, parent_category_id, hierarchy_level, and category_path for every category. hierarchy_level starts at 0 for root categories. category_path contains category names from the root to the category, separated by ' > '.
+-- Requirement: Order by category_path ascending, then category_id ascending.

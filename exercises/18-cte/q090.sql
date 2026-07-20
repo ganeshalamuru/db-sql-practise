@@ -1,0 +1,2 @@
+-- Task (Q090): Return customer_id, email, first_name, last_name, delivered_order_count, and delivered_item_total for customers whose delivered_item_total is above the average delivered_item_total among customers with at least one delivered order. delivered_item_total is the sum of quantity multiplied by unit_price for delivered orders.
+-- Requirement: Order by delivered_item_total descending, then customer_id ascending.

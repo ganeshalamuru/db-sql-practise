@@ -1,3 +1,5 @@
+-- Task (Q044): Return review_id, product_name, customer_id, customer_first_name, customer_last_name, rating, and created_at for reviews with a rating of 4 or 5.
+-- Requirement: Order by created_at descending, then review_id descending.
 select 
     r.review_id,
     p.name as product_name,

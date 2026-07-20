@@ -1,0 +1,2 @@
+-- Task (Q109): Return product_id, sku, review_count, reviewer_email_list, and review_text_summary for products with at least two reviews. reviewer_email_list contains reviewer emails separated by ', ' and sorted by email ascending. review_text_summary contains each review body, using '(no text)' for NULL bodies, separated by ' | ' and sorted by created_at ascending and then review_id ascending.
+-- Requirement: Order by review_count descending, then product_id ascending.

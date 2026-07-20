@@ -1,0 +1,2 @@
+-- Task (Q079): Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose quantity_on_hand is greater than the reorder_point of at least one other inventory row in the same warehouse.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.

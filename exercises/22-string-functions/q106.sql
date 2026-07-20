@@ -1,0 +1,2 @@
+-- Task (Q106): Return category_id, category_name, parent_category_id, hierarchy_level, and category_path for every category. hierarchy_level is 0 for root categories. category_path contains names from the root to the category separated by ' > '. Use string construction as part of the recursive traversal.
+-- Requirement: Order by category_path ascending, then category_id ascending.

@@ -1,0 +1,2 @@
+-- Task (Q069): Return order_id, ordered_at, customer_id, customer_first_name, customer_last_name, and status for orders that contain at least one product with a unit_price of 1,000.00 or more. Include each qualifying order once.
+-- Requirement: Order by ordered_at descending, then order_id descending.

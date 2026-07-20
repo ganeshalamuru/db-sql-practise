@@ -1,0 +1,2 @@
+-- Task (Q100): Return country_code, country_name, customer_id, email, delivered_order_count, delivered_item_total, and country_spend_rank for customers whose delivered_item_total ranks among the top two values in their country. Include ties. delivered_order_count is the number of delivered orders, and delivered_item_total is the sum of quantity multiplied by unit_price across their delivered order items.
+-- Requirement: Order by country_code ascending, country_spend_rank ascending, then customer_id ascending.

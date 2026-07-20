@@ -1,0 +1,2 @@
+-- Task (Q095): Return root_category_id, root_category_name, category_id, category_name, hierarchy_level, and active_product_count for every category in each root category's hierarchy. active_product_count is the number of active products assigned directly to that category, including zero counts.
+-- Requirement: Order by root_category_id ascending, hierarchy_level ascending, then category_id ascending.

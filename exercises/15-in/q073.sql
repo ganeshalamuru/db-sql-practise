@@ -1,0 +1,2 @@
+-- Task (Q073): Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose product_id appears in at least one return with status requested or approved.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.

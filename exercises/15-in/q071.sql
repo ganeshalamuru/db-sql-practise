@@ -1,0 +1,2 @@
+-- Task (Q071): Return product_id, sku, name, and unit_price for products supplied by suppliers located in the same country as the customer whose email is 'customer1@example.test'.
+-- Requirement: Order by product_id ascending.

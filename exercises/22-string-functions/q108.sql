@@ -1,0 +1,2 @@
+-- Task (Q108): Return supplier_id, supplier_name, category_id, category_name, active_product_count, and active_sku_list for each supplier-and-category combination with at least two active products. active_sku_list contains that combination's active SKUs separated by ', ' and sorted by SKU ascending.
+-- Requirement: Order by supplier_id ascending, then category_id ascending.

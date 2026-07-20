@@ -1,0 +1,2 @@
+-- Task (Q097): Return category_id, category_name, product_id, sku, delivered_quantity, and delivered_quantity_rank for every active product. delivered_quantity is the total quantity of that product in delivered orders, including 0 for products with no delivered sales. delivered_quantity_rank is the dense rank within the product's category, with the highest delivered_quantity ranked 1 and ties sharing a rank.
+-- Requirement: Order by category_id ascending, delivered_quantity_rank ascending, then product_id ascending.

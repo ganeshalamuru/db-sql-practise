@@ -1,0 +1,2 @@
+-- Task (Q103): Return order_id, order_status, payment_status, shipment_status, and fulfillment_state for every order. fulfillment_state is closed_or_returned when the order is cancelled or the shipment is returned; payment_issue when the payment failed; complete when the order is delivered and the payment completed; and awaiting_fulfillment otherwise.
+-- Requirement: Order by order_id ascending.

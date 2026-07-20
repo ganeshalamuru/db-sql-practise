@@ -1,0 +1,2 @@
+-- Task (Q127): Return customer_id, email, order_count, and last_ordered_at for customers who have placed at least one order but have never submitted a review.
+-- Requirement: Order by last_ordered_at descending, then customer_id ascending.

@@ -1,3 +1,5 @@
+-- Task (Q064): Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows whose quantity_on_hand is the highest in their warehouse. Include every tied highest row.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.
 select 
     i.warehouse_id,
     w.code as warehouse_code,

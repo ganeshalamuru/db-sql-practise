@@ -1,0 +1,2 @@
+-- Task (Q066): Return customer_id, email, first_name, and last_name for customers who have placed at least one order.
+-- Requirement: Order by customer_id ascending.

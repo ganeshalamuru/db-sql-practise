@@ -1,0 +1,2 @@
+-- Task (Q104): Return supplier_id, supplier_name, active_product_count, returned_active_product_count, and return_exposure for every supplier. returned_active_product_count is the number of distinct active products from that supplier that appear in returns. return_exposure is no_active_product_returns when the returned count is 0, broad_return_exposure when it is at least the active_product_count, and limited_return_exposure otherwise.
+-- Requirement: Order by return_exposure ascending, then supplier_id ascending.

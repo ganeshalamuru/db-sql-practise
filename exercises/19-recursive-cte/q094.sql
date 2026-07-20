@@ -1,0 +1,2 @@
+-- Task (Q094): Return employee_id, first_name, last_name, hierarchy_level, warehouse_code, and warehouse_name for every direct or indirect report of employee_id 1 who works in a warehouse located in India. Exclude employee_id 1.
+-- Requirement: Order by hierarchy_level ascending, then employee_id ascending.

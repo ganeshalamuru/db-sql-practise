@@ -1,0 +1,2 @@
+-- Task (Q074): Return category_id, category_name, and active_product_count for categories that contain at least one active product reviewed by a customer from India. Include only categories with at least two active products.
+-- Requirement: Order by active_product_count descending, then category_id ascending.

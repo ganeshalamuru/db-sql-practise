@@ -1,0 +1,2 @@
+-- Task (Q129): Return supplier_id, supplier_name, active_product_count, and average_active_unit_price for suppliers that have at least one active product but no active product appearing in returns.
+-- Requirement: Order by average_active_unit_price descending, then supplier_id ascending.

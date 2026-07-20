@@ -1,3 +1,5 @@
+-- Task (Q062): Return product_id, product_name, category_id, and unit_price for active products priced above the average unit_price of active products in the same category.
+-- Requirement: Order by category_id ascending, unit_price descending, then product_id ascending.
 select 
     p.product_id,
     p.name as product_name,

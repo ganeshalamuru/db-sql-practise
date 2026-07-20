@@ -1,3 +1,5 @@
+-- Task (Q050): Return product_id, product_name, and open_return_count for every active product. Count only returns whose status is requested or approved, and include products with no such returns.
+-- Requirement: Order by open_return_count descending, then product_id ascending.
 select 
     p.product_id,
     p.name as product_name,

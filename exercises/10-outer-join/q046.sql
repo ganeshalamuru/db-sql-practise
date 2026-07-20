@@ -1,3 +1,5 @@
+-- Task (Q046): Return customer_id, email, first_name, and last_name for customers who have never placed an order.
+-- Requirement: Order by customer_id ascending.
 select 
     c.customer_id as customer_id,
     c.email as email,

@@ -1,0 +1,2 @@
+-- Task (Q101): Return customer_id, email, delivered_order_count, delivered_item_total, and customer_value_tier for every customer. delivered_item_total is the sum of quantity multiplied by unit_price across delivered orders. customer_value_tier is no_delivered_orders when delivered_order_count is 0, high_value when delivered_item_total is at least 50,000.00, and standard_value otherwise.
+-- Requirement: Order by delivered_item_total descending, then customer_id ascending.

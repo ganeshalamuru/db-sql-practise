@@ -1,3 +1,5 @@
+-- Task (Q059): Return warehouse_id, warehouse_code, product_id, sku, and unit_price for every warehouse-and-product combination where the product is active and priced at least 1,000.00.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.
 select 
     w.warehouse_id,
     w.code as warehouse_code,

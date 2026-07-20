@@ -1,3 +1,5 @@
+-- Task (Q035): For active products only, return supplier_id, active_product_count, and average_active_product_price. Round average_active_product_price to two decimal places.
+-- Requirement: Order by average_active_product_price descending, then active_product_count descending, then supplier_id ascending.
 select 
     supplier_id,
     count(*) as active_product_count,

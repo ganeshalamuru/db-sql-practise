@@ -1,0 +1,2 @@
+-- Task (Q123): Return product_id, sku, warehouse_count, and store_count for active products with positive quantity_on_hand in at least one warehouse and at least one store. warehouse_count and store_count are the numbers of locations with positive quantity for the product in each channel.
+-- Requirement: Order by product_id ascending.

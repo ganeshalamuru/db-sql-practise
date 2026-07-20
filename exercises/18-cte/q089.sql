@@ -1,0 +1,2 @@
+-- Task (Q089): Return category_id, category_name, active_product_count, and average_rating for categories with at least two active products and at least one review. average_rating is the average rating across reviews of active products in the category.
+-- Requirement: Order by average_rating descending, then category_id ascending.

@@ -1,0 +1,2 @@
+-- Task (Q067): Return product_id, sku, and name for active products that have never received a review.
+-- Requirement: Order by product_id ascending.

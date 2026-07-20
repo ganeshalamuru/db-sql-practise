@@ -1,0 +1,2 @@
+-- Task (Q122): Return customer_id, email, order_count, review_count, last_ordered_at, and last_reviewed_at for customers who have both placed at least one order and submitted at least one review.
+-- Requirement: Order by customer_id ascending.

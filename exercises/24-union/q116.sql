@@ -1,0 +1,2 @@
+-- Task (Q116): Return email, contact_name, contact_type, and country_code for every customer and supplier. contact_name is the customer's first and last name joined with one space, or the supplier name. contact_type is customer or supplier. A customer country is determined through the customer's city; a supplier country is determined directly. Include all rows from both entity types.
+-- Requirement: Order by contact_type ascending, then email ascending.

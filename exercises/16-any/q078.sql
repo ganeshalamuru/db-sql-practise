@@ -1,0 +1,2 @@
+-- Task (Q078): Return product_id, product_name, category_id, and unit_price for active products that cost more than at least one other active product in the same category.
+-- Requirement: Order by category_id ascending, unit_price descending, then product_id ascending.

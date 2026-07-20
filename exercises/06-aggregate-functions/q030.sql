@@ -1,3 +1,5 @@
+-- Task (Q030): For orders placed during 2024, return first_ordered_at, last_ordered_at, order_count, and average_shipping_fee. Round the average shipping fee to two decimal places.
+-- Requirement: The result has one row; no ordering is needed.
 select 
     min(ordered_at) as first_ordered_at,
     max(ordered_at) as last_ordered_at,
