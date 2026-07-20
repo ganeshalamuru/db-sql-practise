@@ -1,3 +1,5 @@
+-- Task (Q128): Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products with positive quantity_on_hand in at least one warehouse and no positive quantity_on_hand in any store. warehouse_count and warehouse_quantity_on_hand consider only warehouse rows with positive quantity.
+-- Requirement: Order by product_id ascending.
 WITH warehouse_stock AS (
     SELECT product_id,
            COUNT(warehouse_id) AS warehouse_count,

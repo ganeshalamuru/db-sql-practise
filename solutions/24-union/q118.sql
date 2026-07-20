@@ -1,3 +1,5 @@
+-- Task (Q118): Return order_id, product_id, sku, event_type, event_date, and quantity for two event types: delivered_sale for every order item in a delivered order, using the order date; and processed_return for every return with status approved or received, using the requested date. Include every event occurrence, even when values repeat.
+-- Requirement: Order by event_date ascending, event_type ascending, order_id ascending, then product_id ascending.
 SELECT o.order_id,
        p.product_id,
        p.sku,

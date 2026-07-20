@@ -1,3 +1,5 @@
+-- Task (Q114): Return delivery_month, delivered_item_total, previous_month_delivered_item_total, and month_over_month_change for every calendar month from the earliest to the latest delivered order, including months with no delivered orders. delivery_month is the first calendar date of each month. delivered_item_total is 0 for a month with no delivered orders. previous_month_delivered_item_total is NULL for the first returned month, and month_over_month_change is delivered_item_total minus the previous month's total.
+-- Requirement: Order by delivery_month ascending.
 WITH monthly_delivered_sales AS (
     SELECT DATE_TRUNC('month', o.ordered_at)::DATE AS delivery_month,
            SUM(oi.quantity * oi.unit_price) AS delivered_item_total

@@ -1,3 +1,5 @@
+-- Task (Q121): Return product_id, sku, delivered_order_count, and review_count for active products that both appear in at least one delivered order and have at least one review. delivered_order_count is the number of distinct delivered orders containing the product.
+-- Requirement: Order by delivered_order_count descending, review_count descending, then product_id ascending.
 WITH delivered_product_sales AS (
     SELECT oi.product_id,
            COUNT(DISTINCT o.order_id) AS delivered_order_count

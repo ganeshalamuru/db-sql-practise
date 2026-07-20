@@ -1,3 +1,5 @@
+-- Task (Q130): Return order_id, customer_id, ordered_at, order_status, payment_status, and item_total for orders whose payment status is not completed. item_total is the sum of quantity multiplied by unit_price across each order's line items.
+-- Requirement: Order by ordered_at ascending, then order_id ascending.
 WITH unsettled_order_ids AS (
     SELECT order_id FROM orders
     EXCEPT

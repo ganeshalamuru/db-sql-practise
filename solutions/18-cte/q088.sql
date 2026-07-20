@@ -1,3 +1,5 @@
+-- Task (Q088): Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows at or below their reorder point, but only for active products.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.
 WITH low_stock AS (
     SELECT i.warehouse_id, i.product_id, i.quantity_on_hand, i.reorder_point
     FROM inventory AS i

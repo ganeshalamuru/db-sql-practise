@@ -1,3 +1,5 @@
+-- Task (Q063): Return customer_id, email, first_name, and last_name for customers who have placed more orders than the average number of orders per customer. Treat the average as the total number of orders divided by the number of distinct customers who placed an order.
+-- Requirement: Order by customer_id ascending.
 SELECT c.customer_id,
        c.email,
        c.first_name,

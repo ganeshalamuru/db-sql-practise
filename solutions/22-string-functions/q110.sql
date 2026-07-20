@@ -1,3 +1,5 @@
+-- Task (Q110): Return category_id, category_name, category_code, top_delivered_revenue, and top_sku_list for every category with active products. category_code is the uppercase first three characters of category_name, followed by '-', followed by category_id padded to two digits. top_delivered_revenue is the highest delivered revenue among active products in the category, where delivered revenue is the sum of quantity multiplied by unit_price in delivered orders and includes 0 for products with no delivered sales. top_sku_list contains every active SKU tied for that revenue, separated by ' | ' and sorted by SKU ascending.
+-- Requirement: Order by category_id ascending.
 WITH product_delivered_revenue AS (
     SELECT oi.product_id,
            SUM(oi.quantity * oi.unit_price) AS delivered_revenue

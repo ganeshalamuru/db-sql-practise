@@ -1,3 +1,5 @@
+-- Task (Q065): Return supplier_id, supplier_name, product_id, product_name, and unit_price for active products whose unit_price is greater than the average unit_price of that supplier's active products. Include only suppliers that have at least two active products.
+-- Requirement: Order by supplier_id ascending, unit_price descending, then product_id ascending.
 SELECT s.supplier_id,
        s.name AS supplier_name,
        p.product_id,

@@ -1,3 +1,5 @@
+-- Task (Q120): Return customer_id, email, order_count, review_count, and last_activity_at for every customer with at least one order or review. order_count counts orders, review_count counts reviews, and last_activity_at is the latest ordered_at or review created_at timestamp for that customer.
+-- Requirement: Order by last_activity_at descending, then customer_id ascending.
 WITH customer_events AS (
     SELECT o.customer_id,
            'order'::TEXT AS event_type,

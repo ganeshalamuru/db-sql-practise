@@ -1,3 +1,5 @@
+-- Task (Q071): Return product_id, sku, name, and unit_price for products supplied by suppliers located in the same country as the customer whose email is 'customer1@example.test'.
+-- Requirement: Order by product_id ascending.
 SELECT p.product_id, p.sku, p.name, p.unit_price
 FROM products AS p
 WHERE p.supplier_id IN (

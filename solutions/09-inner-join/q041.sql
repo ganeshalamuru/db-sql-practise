@@ -1,3 +1,5 @@
+-- Task (Q041): Return product_id, product_name, supplier_name, and unit_price for active products.
+-- Requirement: Order by supplier_name ascending, then product_name ascending, then product_id ascending.
 SELECT p.product_id,
        p.name AS product_name,
        s.name AS supplier_name,

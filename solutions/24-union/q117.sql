@@ -1,3 +1,5 @@
+-- Task (Q117): Return country_code, city_name, location_type, location_code, location_name, capacity_units, and employee_count for every warehouse and store. For warehouses, include capacity_units and the number of employees assigned to the warehouse. For stores, capacity_units and employee_count must be NULL. location_type is warehouse or store.
+-- Requirement: Order by country_code ascending, location_type ascending, then location_code ascending.
 WITH warehouse_employee_counts AS (
     SELECT w.warehouse_id,
            COUNT(e.employee_id) AS employee_count

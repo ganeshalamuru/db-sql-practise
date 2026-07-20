@@ -1,3 +1,5 @@
+-- Task (Q093): Return employee_id, first_name, last_name, manager_id, hierarchy_level, and reporting_path for every employee. reporting_path contains employee IDs from the hierarchy root to the employee, separated by ' > '.
+-- Requirement: Order by reporting_path ascending, then employee_id ascending.
 WITH RECURSIVE employee_hierarchy AS (
     SELECT e.employee_id, e.first_name, e.last_name, e.manager_id,
            0 AS hierarchy_level, e.employee_id::TEXT AS reporting_path

@@ -1,3 +1,5 @@
+-- Task (Q086): Return product_id, sku, name, and unit_price for active products priced above the average unit_price of all active products.
+-- Requirement: Order by unit_price descending, then product_id ascending.
 WITH active_price_average AS (
     SELECT AVG(unit_price) AS unit_price_average
     FROM products

@@ -1,3 +1,5 @@
+-- Task (Q107): Return customer_id, customer_name, email_username, email_domain, and delivered_item_total for customers whose delivered_item_total is above the average among customers with at least one delivered order. customer_name joins the first and last name with one space and uses title case. email_username and email_domain are the portions of email before and after '@'. delivered_item_total is the sum of quantity multiplied by unit_price across delivered orders.
+-- Requirement: Order by delivered_item_total descending, then customer_id ascending.
 WITH delivered_customer_totals AS (
     SELECT o.customer_id,
            SUM(oi.quantity * oi.unit_price) AS delivered_item_total

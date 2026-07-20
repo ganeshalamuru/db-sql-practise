@@ -1,3 +1,5 @@
+-- Task (Q126): Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products that have never appeared in a delivered order. warehouse_count is the number of warehouses that stock the product, and warehouse_quantity_on_hand is the sum of quantity_on_hand across those warehouses.
+-- Requirement: Order by product_id ascending.
 WITH active_product_ids AS (
     SELECT product_id
     FROM products

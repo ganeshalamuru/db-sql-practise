@@ -1,3 +1,5 @@
+-- Task (Q105): Return category_id, category_name, product_id, sku, delivered_revenue, category_average_delivered_revenue, and revenue_performance for every active product. delivered_revenue is the sum of quantity multiplied by unit_price in delivered orders, including 0 for products with no delivered sales. category_average_delivered_revenue is the average delivered_revenue among active products in that category. revenue_performance is no_delivered_revenue when delivered_revenue is 0, above_category_average when it is above the category average, and at_or_below_category_average otherwise.
+-- Requirement: Order by category_id ascending, delivered_revenue descending, then product_id ascending.
 WITH product_delivered_revenue AS (
     SELECT oi.product_id,
            SUM(oi.quantity * oi.unit_price) AS delivered_revenue

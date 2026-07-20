@@ -1,3 +1,5 @@
+-- Task (Q087): Return order_id, ordered_at, status, and item_total for orders with an item_total of at least 1,000.00. item_total is the sum of quantity multiplied by unit_price across each order's line items.
+-- Requirement: Order by item_total descending, then order_id ascending.
 WITH order_item_totals AS (
     SELECT oi.order_id, SUM(oi.quantity * oi.unit_price) AS item_total
     FROM order_items AS oi

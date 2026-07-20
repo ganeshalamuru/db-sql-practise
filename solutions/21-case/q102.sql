@@ -1,3 +1,5 @@
+-- Task (Q102): Return product_id, sku, warehouse_count, low_stock_warehouse_count, and inventory_health for every active product. warehouse_count is the number of warehouses that stock the product. low_stock_warehouse_count is the number of those rows where quantity_on_hand is at or below reorder_point. inventory_health is not_stocked when warehouse_count is 0, reorder_needed when low_stock_warehouse_count is positive, and adequately_stocked otherwise.
+-- Requirement: Order by inventory_health ascending, then product_id ascending.
 WITH product_stock AS (
     SELECT p.product_id,
            p.sku,

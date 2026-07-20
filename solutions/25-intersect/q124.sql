@@ -1,3 +1,5 @@
+-- Task (Q124): Return country_id, country_code, country_name, warehouse_count, store_count, and warehouse_capacity_units for countries that host at least one warehouse and at least one store. warehouse_capacity_units is the sum of capacity_units across the country's warehouses.
+-- Requirement: Order by country_code ascending.
 WITH warehouse_countries AS (
     SELECT ci.country_id
     FROM warehouses AS w

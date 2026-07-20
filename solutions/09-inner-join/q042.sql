@@ -1,3 +1,5 @@
+-- Task (Q042): Return order_id, ordered_at, status, customer_id, customer_first_name, and customer_last_name for delivered orders.
+-- Requirement: Order by ordered_at descending, then order_id descending.
 SELECT o.order_id,
        o.ordered_at,
        o.status,

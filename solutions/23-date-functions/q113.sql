@@ -1,3 +1,5 @@
+-- Task (Q113): Return warehouse_id, warehouse_code, delivery_date, delivered_shipment_count, and average_delivery_days for every warehouse-and-date combination with delivered shipments. delivery_date is the calendar date of delivered_at. average_delivery_days is the average number of days from shipped_at to delivered_at for that group.
+-- Requirement: Order by warehouse_id ascending, then delivery_date ascending.
 SELECT w.warehouse_id,
        w.code AS warehouse_code,
        s.delivered_at::DATE AS delivery_date,
