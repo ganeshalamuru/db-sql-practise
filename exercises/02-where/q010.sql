@@ -1,0 +1,4 @@
+select warehouse_id,product_id,quantity_on_hand,reorder_point
+from inventory
+where quantity_on_hand<=reorder_point
+order by warehouse_id,product_id

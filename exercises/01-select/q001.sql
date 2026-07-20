@@ -1,0 +1,1 @@
+select product_id, sku, name, unit_price from products where is_active=true

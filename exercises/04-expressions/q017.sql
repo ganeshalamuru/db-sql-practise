@@ -1,0 +1,3 @@
+select warehouse_id,product_id,quantity_on_hand,reorder_point,(quantity_on_hand-reorder_point) as units_above_reorder
+from inventory
+order by warehouse_id,product_id

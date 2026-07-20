@@ -1,0 +1,1 @@
+select distinct(payment_method) from payments where status = 'completed' order by payment_method

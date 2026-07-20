@@ -1,0 +1,1 @@
+select customer_id,email,first_name,last_name from customers where status='active'
