@@ -31,9 +31,9 @@ Exercises rated **4 / 5** or **5 / 5** may - and should where it improves the le
 | 21 | CASE | Available (Q101-Q105) |
 | 22 | String Functions | Available (Q106-Q110) |
 | 23 | Date Functions | Available (Q111-Q115) |
-| 24 | UNION | Planned |
-| 25 | INTERSECT | Planned |
-| 26 | EXCEPT | Planned |
+| 24 | UNION | Available (Q116-Q120) |
+| 25 | INTERSECT | Available (Q121-Q125) |
+| 26 | EXCEPT | Available (Q126-Q130) |
 | 27 | Views | Planned |
 | 28 | INSERT | Planned |
 | 29 | UPDATE | Planned |

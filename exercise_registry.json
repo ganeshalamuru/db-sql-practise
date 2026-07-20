@@ -803,5 +803,110 @@
     "answer": "exercises/23-date-functions/q115.sql",
     "ordering_required": true,
     "duplicates_matter": true
+  },
+  "Q116": {
+    "topic": "UNION",
+    "solution": "solutions/24-union/q116.sql",
+    "answer": "exercises/24-union/q116.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q117": {
+    "topic": "UNION",
+    "solution": "solutions/24-union/q117.sql",
+    "answer": "exercises/24-union/q117.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q118": {
+    "topic": "UNION",
+    "solution": "solutions/24-union/q118.sql",
+    "answer": "exercises/24-union/q118.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q119": {
+    "topic": "UNION",
+    "solution": "solutions/24-union/q119.sql",
+    "answer": "exercises/24-union/q119.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q120": {
+    "topic": "UNION",
+    "solution": "solutions/24-union/q120.sql",
+    "answer": "exercises/24-union/q120.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q121": {
+    "topic": "INTERSECT",
+    "solution": "solutions/25-intersect/q121.sql",
+    "answer": "exercises/25-intersect/q121.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q122": {
+    "topic": "INTERSECT",
+    "solution": "solutions/25-intersect/q122.sql",
+    "answer": "exercises/25-intersect/q122.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q123": {
+    "topic": "INTERSECT",
+    "solution": "solutions/25-intersect/q123.sql",
+    "answer": "exercises/25-intersect/q123.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q124": {
+    "topic": "INTERSECT",
+    "solution": "solutions/25-intersect/q124.sql",
+    "answer": "exercises/25-intersect/q124.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q125": {
+    "topic": "INTERSECT",
+    "solution": "solutions/25-intersect/q125.sql",
+    "answer": "exercises/25-intersect/q125.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q126": {
+    "topic": "EXCEPT",
+    "solution": "solutions/26-except/q126.sql",
+    "answer": "exercises/26-except/q126.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q127": {
+    "topic": "EXCEPT",
+    "solution": "solutions/26-except/q127.sql",
+    "answer": "exercises/26-except/q127.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q128": {
+    "topic": "EXCEPT",
+    "solution": "solutions/26-except/q128.sql",
+    "answer": "exercises/26-except/q128.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q129": {
+    "topic": "EXCEPT",
+    "solution": "solutions/26-except/q129.sql",
+    "answer": "exercises/26-except/q129.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q130": {
+    "topic": "EXCEPT",
+    "solution": "solutions/26-except/q130.sql",
+    "answer": "exercises/26-except/q130.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
   }
 }
