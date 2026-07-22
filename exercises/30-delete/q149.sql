@@ -1,0 +1,2 @@
+-- Task (Q149): Delete returns whose order has a payment with status failed. Return return_id, order_id, product_id, and status for each deleted return.
+-- Requirement: No ordering is required.

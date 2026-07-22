@@ -1,0 +1,2 @@
+-- Task (Q133): Create or replace a view named vw_product_review_summary that returns product_id, sku, review_count, and average_rating for products with at least one review. average_rating is the average review rating. Then return every row from vw_product_review_summary.
+-- Requirement: Order by review_count descending, then product_id ascending.

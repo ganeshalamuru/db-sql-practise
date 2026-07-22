@@ -1,6 +1,6 @@
 # Curriculum Roadmap
 
-Each topic contains five focused exercises. Modules are released in order so that later exercises can rely on prior concepts.
+Each topic contains five focused exercises. Modules are numbered in curriculum order so that later exercises can rely on prior concepts; a later module may be released independently.
 
 ## Exercise authoring rule
 
@@ -34,10 +34,10 @@ Exercises rated **4 / 5** or **5 / 5** may - and should where it improves the le
 | 24 | UNION | Available (Q116-Q120) |
 | 25 | INTERSECT | Available (Q121-Q125) |
 | 26 | EXCEPT | Available (Q126-Q130) |
-| 27 | Views | Planned |
+| 27 | Views | Available (Q131-Q135) |
 | 28 | INSERT | Planned |
 | 29 | UPDATE | Planned |
-| 30 | DELETE | Planned |
+| 30 | DELETE | Available (Q146-Q150) |
 | 31 | Constraints | Planned |
 | 32 | Transactions | Planned |
 | 33 | PostgreSQL Features | Planned |

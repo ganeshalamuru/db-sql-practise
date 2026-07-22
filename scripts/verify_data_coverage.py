@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 import os
 from pathlib import Path
 
@@ -58,7 +59,14 @@ def main() -> int:
     args = parser.parse_args()
     if psycopg is None:
         parser.error("psycopg is required; install dependencies with 'python -m pip install -r requirements.txt'.")
-    solutions = sorted((ROOT / "solutions").glob("**/*.sql"))
+    catalog = json.loads((ROOT / "exercise_catalog.json").read_text(encoding="utf-8"))
+    select_solution_paths = {
+        exercise["official_solution"]
+        for module in catalog["modules"]
+        for exercise in module["exercises"]
+        if exercise.get("statement_type", "SELECT") == "SELECT"
+    }
+    solutions = sorted(ROOT / path for path in select_solution_paths)
     failures: list[str] = []
 
     with psycopg.connect(args.dsn, password=args.password) as connection:

@@ -908,5 +908,85 @@
     "answer": "exercises/26-except/q130.sql",
     "ordering_required": true,
     "duplicates_matter": true
+  },
+  "Q131": {
+    "topic": "VIEWS",
+    "solution": "solutions/27-views/q131.sql",
+    "answer": "exercises/27-views/q131.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "VIEW"
+  },
+  "Q132": {
+    "topic": "VIEWS",
+    "solution": "solutions/27-views/q132.sql",
+    "answer": "exercises/27-views/q132.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "VIEW"
+  },
+  "Q133": {
+    "topic": "VIEWS",
+    "solution": "solutions/27-views/q133.sql",
+    "answer": "exercises/27-views/q133.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "VIEW"
+  },
+  "Q134": {
+    "topic": "VIEWS",
+    "solution": "solutions/27-views/q134.sql",
+    "answer": "exercises/27-views/q134.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "VIEW"
+  },
+  "Q135": {
+    "topic": "VIEWS",
+    "solution": "solutions/27-views/q135.sql",
+    "answer": "exercises/27-views/q135.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "VIEW"
+  },
+  "Q146": {
+    "topic": "DELETE",
+    "solution": "solutions/30-delete/q146.sql",
+    "answer": "exercises/30-delete/q146.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "DELETE"
+  },
+  "Q147": {
+    "topic": "DELETE",
+    "solution": "solutions/30-delete/q147.sql",
+    "answer": "exercises/30-delete/q147.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "DELETE"
+  },
+  "Q148": {
+    "topic": "DELETE",
+    "solution": "solutions/30-delete/q148.sql",
+    "answer": "exercises/30-delete/q148.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "DELETE"
+  },
+  "Q149": {
+    "topic": "DELETE",
+    "solution": "solutions/30-delete/q149.sql",
+    "answer": "exercises/30-delete/q149.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "DELETE"
+  },
+  "Q150": {
+    "topic": "DELETE",
+    "solution": "solutions/30-delete/q150.sql",
+    "answer": "exercises/30-delete/q150.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "DELETE"
   }
 }

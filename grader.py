@@ -73,10 +73,13 @@ def results_equal(expected: QueryResult, actual: QueryResult, spec: dict[str, An
     return unordered_equal(expected_rows, actual_rows)
 
 
-def execute(connection: psycopg.Connection[Any], sql: str) -> QueryResult:
+def execute(connection: psycopg.Connection[Any], sql: str, *, read_only: bool) -> QueryResult:
     with connection.cursor() as cursor:
-        cursor.execute("SET TRANSACTION READ ONLY")
+        if read_only:
+            cursor.execute("SET TRANSACTION READ ONLY")
         cursor.execute(sql)
+        while cursor.description is None and cursor.nextset():
+            pass
         if cursor.description is None:
             raise ValueError("Answers must return a result set.")
         return QueryResult(tuple(column.name for column in cursor.description), list(cursor.fetchall()))
@@ -88,10 +91,21 @@ def grade_one(connection: psycopg.Connection[Any], exercise_id: str, spec: dict[
         print(f"{exercise_id}: FAIL — missing {answer_path.relative_to(ROOT)}")
         return False
     try:
-        with connection.transaction():
-            expected = execute(connection, solution_path.read_text(encoding="utf-8"))
-        with connection.transaction():
-            actual = execute(connection, answer_path.read_text(encoding="utf-8"))
+        statement_type = spec.get("statement_type", "SELECT")
+        if statement_type not in {"SELECT", "DELETE", "VIEW"}:
+            raise ValueError(f"Unsupported statement type: {statement_type}")
+        with connection.transaction(force_rollback=True):
+            expected = execute(
+                connection,
+                solution_path.read_text(encoding="utf-8"),
+                read_only=statement_type == "SELECT",
+            )
+        with connection.transaction(force_rollback=True):
+            actual = execute(
+                connection,
+                answer_path.read_text(encoding="utf-8"),
+                read_only=statement_type == "SELECT",
+            )
     except (psycopg.Error, OSError, ValueError) as error:
         print(f"{exercise_id}: FAIL — {error}")
         return False

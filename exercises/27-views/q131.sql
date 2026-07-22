@@ -1,0 +1,2 @@
+-- Task (Q131): Create or replace a view named vw_active_products that returns product_id, sku, name, and unit_price for active products. Then return every row from vw_active_products.
+-- Requirement: Order by product_id ascending.

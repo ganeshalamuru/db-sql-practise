@@ -1,0 +1,2 @@
+-- Task (Q150): Delete warehouse inventory records for inactive products whose quantity_on_hand is at or above reorder_point in every warehouse where they are stocked. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each deleted inventory record.
+-- Requirement: No ordering is required.

@@ -1,0 +1,2 @@
+-- Task (Q134): Create or replace a view named vw_low_stock_inventory that returns warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory records whose quantity_on_hand is at or below reorder_point. Then return every row from vw_low_stock_inventory.
+-- Requirement: Order by warehouse_id ascending, then product_id ascending.

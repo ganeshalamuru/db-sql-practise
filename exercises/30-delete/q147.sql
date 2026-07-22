@@ -1,0 +1,2 @@
+-- Task (Q147): Delete store inventory records for inactive products. Return store_id, product_id, and quantity_on_hand for each deleted inventory record.
+-- Requirement: No ordering is required.

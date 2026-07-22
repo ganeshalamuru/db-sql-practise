@@ -1,0 +1,2 @@
+-- Task (Q135): Create or replace a view named vw_customer_activity that returns customer_id, email, order_count, delivered_item_total, review_count, and last_activity_at for every customer with at least one order or review. delivered_item_total is the sum of quantity multiplied by unit_price in delivered orders and is 0 for a customer with no delivered items. last_activity_at is the latest ordered_at or review created_at timestamp. Then return every row from vw_customer_activity.
+-- Requirement: Order by last_activity_at descending, then customer_id ascending.

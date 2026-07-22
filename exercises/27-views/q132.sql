@@ -1,0 +1,2 @@
+-- Task (Q132): Create or replace a view named vw_delivered_order_totals that returns order_id, customer_id, ordered_at, and item_total for delivered orders. item_total is the sum of quantity multiplied by unit_price across each order's items. Then return every row from vw_delivered_order_totals.
+-- Requirement: Order by ordered_at ascending, then order_id ascending.

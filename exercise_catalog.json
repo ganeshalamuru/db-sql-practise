@@ -1077,6 +1077,135 @@
         {"id":"Q129","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract suppliers associated with returned active products from the active supplier population.","statement":"Return supplier_id, supplier_name, active_product_count, and average_active_unit_price for suppliers that have at least one active product but no active product appearing in returns.","ordering":"Order by average_active_unit_price descending, then supplier_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q129.sql"},
         {"id":"Q130","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract completed-payment orders from the full order set before calculating transaction totals.","statement":"Return order_id, customer_id, ordered_at, order_status, payment_status, and item_total for orders whose payment status is not completed. item_total is the sum of quantity multiplied by unit_price across each order's line items.","ordering":"Order by ordered_at ascending, then order_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q130.sql"}
       ]
+    },
+    {
+      "slug": "27-views",
+      "title": "VIEWS",
+      "description": "Encapsulate reusable query logic as database views and query their result contracts.",
+      "exercises": [
+        {
+          "id": "Q131",
+          "topic": "VIEWS",
+          "difficulty": 1,
+          "learning_objective": "Create a simple filtered and projected view, then query it.",
+          "statement": "Create or replace a view named vw_active_products that returns product_id, sku, name, and unit_price for active products. Then return every row from vw_active_products.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "VIEW",
+          "official_solution": "solutions/27-views/q131.sql"
+        },
+        {
+          "id": "Q132",
+          "topic": "VIEWS",
+          "difficulty": 2,
+          "learning_objective": "Encapsulate an aggregate over related rows in a reusable view.",
+          "statement": "Create or replace a view named vw_delivered_order_totals that returns order_id, customer_id, ordered_at, and item_total for delivered orders. item_total is the sum of quantity multiplied by unit_price across each order's items. Then return every row from vw_delivered_order_totals.",
+          "ordering": "Order by ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "VIEW",
+          "official_solution": "solutions/27-views/q132.sql"
+        },
+        {
+          "id": "Q133",
+          "topic": "VIEWS",
+          "difficulty": 3,
+          "learning_objective": "Create a grouped analytical view and expose its aggregate result columns.",
+          "statement": "Create or replace a view named vw_product_review_summary that returns product_id, sku, review_count, and average_rating for products with at least one review. average_rating is the average review rating. Then return every row from vw_product_review_summary.",
+          "ordering": "Order by review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "VIEW",
+          "official_solution": "solutions/27-views/q133.sql"
+        },
+        {
+          "id": "Q134",
+          "topic": "VIEWS",
+          "difficulty": 4,
+          "learning_objective": "Build a multi-table operational view with derived location context.",
+          "statement": "Create or replace a view named vw_low_stock_inventory that returns warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory records whose quantity_on_hand is at or below reorder_point. Then return every row from vw_low_stock_inventory.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "VIEW",
+          "official_solution": "solutions/27-views/q134.sql"
+        },
+        {
+          "id": "Q135",
+          "topic": "VIEWS",
+          "difficulty": 5,
+          "learning_objective": "Use CTEs, outer joins, and conditional aggregation to define a customer activity view.",
+          "statement": "Create or replace a view named vw_customer_activity that returns customer_id, email, order_count, delivered_item_total, review_count, and last_activity_at for every customer with at least one order or review. delivered_item_total is the sum of quantity multiplied by unit_price in delivered orders and is 0 for a customer with no delivered items. last_activity_at is the latest ordered_at or review created_at timestamp. Then return every row from vw_customer_activity.",
+          "ordering": "Order by last_activity_at descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "VIEW",
+          "official_solution": "solutions/27-views/q135.sql"
+        }
+      ]
+    },
+    {
+      "slug": "30-delete",
+      "title": "DELETE",
+      "description": "Remove precisely targeted rows while safely inspecting the affected records with RETURNING.",
+      "exercises": [
+        {
+          "id": "Q146",
+          "topic": "DELETE",
+          "difficulty": 1,
+          "learning_objective": "Delete rows with a direct predicate and inspect the affected keys.",
+          "statement": "Delete every review whose body is NULL. Return review_id, product_id, and customer_id for each deleted review.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "DELETE",
+          "official_solution": "solutions/30-delete/q146.sql"
+        },
+        {
+          "id": "Q147",
+          "topic": "DELETE",
+          "difficulty": 2,
+          "learning_objective": "Use DELETE ... USING to target rows through a related table.",
+          "statement": "Delete store inventory records for inactive products. Return store_id, product_id, and quantity_on_hand for each deleted inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "DELETE",
+          "official_solution": "solutions/30-delete/q147.sql"
+        },
+        {
+          "id": "Q148",
+          "topic": "DELETE",
+          "difficulty": 3,
+          "learning_objective": "Use a subquery to delete rows selected by a relationship condition.",
+          "statement": "Delete reviews written by customers whose status is closed. Return review_id, product_id, and customer_id for each deleted review.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "DELETE",
+          "official_solution": "solutions/30-delete/q148.sql"
+        },
+        {
+          "id": "Q149",
+          "topic": "DELETE",
+          "difficulty": 4,
+          "learning_objective": "Use a correlated EXISTS predicate to remove records with a qualifying related row.",
+          "statement": "Delete returns whose order has a payment with status failed. Return return_id, order_id, product_id, and status for each deleted return.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "DELETE",
+          "official_solution": "solutions/30-delete/q149.sql"
+        },
+        {
+          "id": "Q150",
+          "topic": "DELETE",
+          "difficulty": 5,
+          "learning_objective": "Use a CTE to derive multi-table deletion criteria before deleting and returning the affected records.",
+          "statement": "Delete warehouse inventory records for inactive products whose quantity_on_hand is at or above reorder_point in every warehouse where they are stocked. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each deleted inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "DELETE",
+          "official_solution": "solutions/30-delete/q150.sql"
+        }
+      ]
     }
   ]
 }

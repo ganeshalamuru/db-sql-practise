@@ -93,9 +93,10 @@ includes indexes for common order, product, review, and low-stock lookups.
 
 ## Grade answers
 
-The grader executes your answer and the official solution in separate
-read-only transactions, then compares columns, rows, duplicates, ordering,
-`NULL`s, and numeric values.
+The grader executes each answer and official solution in separate transactions,
+then compares columns, rows, duplicates, ordering, `NULL`s, and numeric
+values. `SELECT` exercises run read-only; view-definition and
+data-modification exercises are always rolled back after grading.
 
 Grade one exercise:
 
@@ -129,9 +130,9 @@ Existing answer files are never overwritten.
 
 ## Verify data coverage
 
-The seed data is designed so every released official solution returns rows, and
-edge-case exercises have meaningful contrasts (for example, both zero and
-positive counts in outer-join exercises). After creating or recreating the
+The seed data is designed so every released query exercise's official solution
+returns rows, and edge-case exercises have meaningful contrasts (for example,
+both zero and positive counts in outer-join exercises). After creating or recreating the
 database, run:
 
 ```powershell
