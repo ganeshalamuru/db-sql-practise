@@ -1,0 +1,2 @@
+-- Task (Q145): For every inventory record belonging to a product that has at least one warehouse where quantity_on_hand is at or below reorder_point, increase reorder_point by 5. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each updated inventory record.
+-- Requirement: No ordering is required.

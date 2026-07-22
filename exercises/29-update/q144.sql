@@ -1,0 +1,2 @@
+-- Task (Q144): Update reviews with a NULL body for active products, setting body to 'Review body pending moderation'. Return review_id, product_id, customer_id, and body for each updated review.
+-- Requirement: No ordering is required.

@@ -35,8 +35,8 @@ Exercises rated **4 / 5** or **5 / 5** may - and should where it improves the le
 | 25 | INTERSECT | Available (Q121-Q125) |
 | 26 | EXCEPT | Available (Q126-Q130) |
 | 27 | Views | Available (Q131-Q135) |
-| 28 | INSERT | Planned |
-| 29 | UPDATE | Planned |
+| 28 | INSERT | Available (Q136-Q140) |
+| 29 | UPDATE | Available (Q141-Q145) |
 | 30 | DELETE | Available (Q146-Q150) |
 | 31 | Constraints | Planned |
 | 32 | Transactions | Planned |

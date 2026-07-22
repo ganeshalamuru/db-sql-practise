@@ -949,6 +949,86 @@
     "duplicates_matter": true,
     "statement_type": "VIEW"
   },
+  "Q136": {
+    "topic": "INSERT",
+    "solution": "solutions/28-insert/q136.sql",
+    "answer": "exercises/28-insert/q136.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "INSERT"
+  },
+  "Q137": {
+    "topic": "INSERT",
+    "solution": "solutions/28-insert/q137.sql",
+    "answer": "exercises/28-insert/q137.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "INSERT"
+  },
+  "Q138": {
+    "topic": "INSERT",
+    "solution": "solutions/28-insert/q138.sql",
+    "answer": "exercises/28-insert/q138.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "INSERT"
+  },
+  "Q139": {
+    "topic": "INSERT",
+    "solution": "solutions/28-insert/q139.sql",
+    "answer": "exercises/28-insert/q139.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "INSERT"
+  },
+  "Q140": {
+    "topic": "INSERT",
+    "solution": "solutions/28-insert/q140.sql",
+    "answer": "exercises/28-insert/q140.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "INSERT"
+  },
+  "Q141": {
+    "topic": "UPDATE",
+    "solution": "solutions/29-update/q141.sql",
+    "answer": "exercises/29-update/q141.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "UPDATE"
+  },
+  "Q142": {
+    "topic": "UPDATE",
+    "solution": "solutions/29-update/q142.sql",
+    "answer": "exercises/29-update/q142.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "UPDATE"
+  },
+  "Q143": {
+    "topic": "UPDATE",
+    "solution": "solutions/29-update/q143.sql",
+    "answer": "exercises/29-update/q143.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "UPDATE"
+  },
+  "Q144": {
+    "topic": "UPDATE",
+    "solution": "solutions/29-update/q144.sql",
+    "answer": "exercises/29-update/q144.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "UPDATE"
+  },
+  "Q145": {
+    "topic": "UPDATE",
+    "solution": "solutions/29-update/q145.sql",
+    "answer": "exercises/29-update/q145.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "UPDATE"
+  },
   "Q146": {
     "topic": "DELETE",
     "solution": "solutions/30-delete/q146.sql",

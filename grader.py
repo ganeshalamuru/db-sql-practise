@@ -92,7 +92,7 @@ def grade_one(connection: psycopg.Connection[Any], exercise_id: str, spec: dict[
         return False
     try:
         statement_type = spec.get("statement_type", "SELECT")
-        if statement_type not in {"SELECT", "DELETE", "VIEW"}:
+        if statement_type not in {"SELECT", "INSERT", "UPDATE", "DELETE", "VIEW"}:
             raise ValueError(f"Unsupported statement type: {statement_type}")
         with connection.transaction(force_rollback=True):
             expected = execute(

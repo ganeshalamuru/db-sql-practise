@@ -1,0 +1,2 @@
+-- Task (Q140): Insert store inventory records for product_id 11 at every store that does not already stock that product. Each inserted record must have quantity_on_hand 25. Return store_id, product_id, and quantity_on_hand for each inserted store inventory record.
+-- Requirement: No ordering is required.

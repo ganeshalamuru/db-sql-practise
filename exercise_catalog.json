@@ -1141,6 +1141,140 @@
       ]
     },
     {
+      "slug": "28-insert",
+      "title": "INSERT",
+      "description": "Add new records with VALUES and query-driven inserts while returning the affected rows.",
+      "exercises": [
+        {
+          "id": "Q136",
+          "topic": "INSERT",
+          "difficulty": 1,
+          "learning_objective": "Insert a single row with explicit column values and inspect the inserted data.",
+          "statement": "Insert a supplier with name 'Practice Insert Supplier', contact_email 'practice-insert-supplier@example.test', and country_id 1. Return name, contact_email, and country_id for the inserted supplier.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "INSERT",
+          "official_solution": "solutions/28-insert/q136.sql"
+        },
+        {
+          "id": "Q137",
+          "topic": "INSERT",
+          "difficulty": 2,
+          "learning_objective": "Insert a row that satisfies foreign-key and typed-column requirements.",
+          "statement": "Insert an active product with supplier_id 1, category_id 1, sku 'SKU-PRACTICE-INSERT-137', name 'Practice Insert Product', unit_price 49.99, and created_at '2024-01-15 09:00:00+00'. Return sku, name, unit_price, is_active, and created_at for the inserted product.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "INSERT",
+          "official_solution": "solutions/28-insert/q137.sql"
+        },
+        {
+          "id": "Q138",
+          "topic": "INSERT",
+          "difficulty": 3,
+          "learning_objective": "Insert a related record while respecting a composite uniqueness rule.",
+          "statement": "Insert a review for product_id 100 and customer_id 1 with rating 5, body 'Excellent practice product', and created_at '2024-02-01 12:30:00+00'. Return product_id, customer_id, rating, body, and created_at for the inserted review.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "INSERT",
+          "official_solution": "solutions/28-insert/q138.sql"
+        },
+        {
+          "id": "Q139",
+          "topic": "INSERT",
+          "difficulty": 4,
+          "learning_objective": "Populate multiple rows with INSERT ... SELECT from a derived source set.",
+          "statement": "Insert inventory records for warehouse_id 10 and product IDs 1 through 5. Each inserted row must have quantity_on_hand 0 and reorder_point 25. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each inserted inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "INSERT",
+          "official_solution": "solutions/28-insert/q139.sql"
+        },
+        {
+          "id": "Q140",
+          "topic": "INSERT",
+          "difficulty": 5,
+          "learning_objective": "Insert a derived set only where a related row does not already exist.",
+          "statement": "Insert store inventory records for product_id 11 at every store that does not already stock that product. Each inserted record must have quantity_on_hand 25. Return store_id, product_id, and quantity_on_hand for each inserted store inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "INSERT",
+          "official_solution": "solutions/28-insert/q140.sql"
+        }
+      ]
+    },
+    {
+      "slug": "29-update",
+      "title": "UPDATE",
+      "description": "Modify targeted records with direct predicates, joins, correlated subqueries, and CTEs.",
+      "exercises": [
+        {
+          "id": "Q141",
+          "topic": "UPDATE",
+          "difficulty": 1,
+          "learning_objective": "Update one row with a direct predicate and inspect the new values.",
+          "statement": "Update customer_id 1 so its status is 'suspended'. Return customer_id, email, and status for the updated customer.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "UPDATE",
+          "official_solution": "solutions/29-update/q141.sql"
+        },
+        {
+          "id": "Q142",
+          "topic": "UPDATE",
+          "difficulty": 2,
+          "learning_objective": "Update a filtered group of rows with an arithmetic expression.",
+          "statement": "Reduce unit_price by 10 percent for products supplied by supplier_id 40. Return product_id, sku, and unit_price for each updated product.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "UPDATE",
+          "official_solution": "solutions/29-update/q142.sql"
+        },
+        {
+          "id": "Q143",
+          "topic": "UPDATE",
+          "difficulty": 3,
+          "learning_objective": "Use UPDATE ... FROM to update rows selected through a related relation.",
+          "statement": "For inventory records of inactive products, set reorder_point to quantity_on_hand plus 10. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each updated inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "UPDATE",
+          "official_solution": "solutions/29-update/q143.sql"
+        },
+        {
+          "id": "Q144",
+          "topic": "UPDATE",
+          "difficulty": 4,
+          "learning_objective": "Use a correlated EXISTS predicate to update records with qualifying related rows.",
+          "statement": "Update reviews with a NULL body for active products, setting body to 'Review body pending moderation'. Return review_id, product_id, customer_id, and body for each updated review.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "UPDATE",
+          "official_solution": "solutions/29-update/q144.sql"
+        },
+        {
+          "id": "Q145",
+          "topic": "UPDATE",
+          "difficulty": 5,
+          "learning_objective": "Use a CTE to identify a multi-row update population from an aggregate condition.",
+          "statement": "For every inventory record belonging to a product that has at least one warehouse where quantity_on_hand is at or below reorder_point, increase reorder_point by 5. Return warehouse_id, product_id, quantity_on_hand, and reorder_point for each updated inventory record.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "UPDATE",
+          "official_solution": "solutions/29-update/q145.sql"
+        }
+      ]
+    },
+    {
       "slug": "30-delete",
       "title": "DELETE",
       "description": "Remove precisely targeted rows while safely inspecting the affected records with RETURNING.",

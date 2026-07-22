@@ -1,0 +1,2 @@
+-- Task (Q136): Insert a supplier with name 'Practice Insert Supplier', contact_email 'practice-insert-supplier@example.test', and country_id 1. Return name, contact_email, and country_id for the inserted supplier.
+-- Requirement: No ordering is required.
