@@ -18,6 +18,16 @@ def render_problem(exercise: dict[str, object], answer_path: str) -> str:
             f"Write a PostgreSQL `CREATE OR REPLACE VIEW ... AS` statement followed by one `SELECT` statement in `{answer_path}`. "
             "The final SELECT must return the requested view result. The grader runs both statements in a transaction and rolls it back."
         )
+    elif statement_type == "CONSTRAINT":
+        instruction = (
+            f"Write the requested PostgreSQL `ALTER TABLE` constraint statement or statements followed by one `SELECT` statement in `{answer_path}`. "
+            "The final SELECT must return the requested constraint metadata. The grader runs all statements in a transaction and rolls it back."
+        )
+    elif statement_type == "TRANSACTION":
+        instruction = (
+            f"Write a PostgreSQL transaction in `{answer_path}`. Start with `BEGIN`, make the requested changes, return the requested rows with a final `SELECT`, "
+            "and finish with `ROLLBACK` so the practice database remains unchanged. The grader also rolls back the exercise transaction."
+        )
     else:
         instruction = (
             f"Write one PostgreSQL `{statement_type}` statement in `{answer_path}`. "

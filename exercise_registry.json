@@ -1068,5 +1068,85 @@
     "ordering_required": false,
     "duplicates_matter": true,
     "statement_type": "DELETE"
+  },
+  "Q151": {
+    "topic": "CONSTRAINTS",
+    "solution": "solutions/31-constraints/q151.sql",
+    "answer": "exercises/31-constraints/q151.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "CONSTRAINT"
+  },
+  "Q152": {
+    "topic": "CONSTRAINTS",
+    "solution": "solutions/31-constraints/q152.sql",
+    "answer": "exercises/31-constraints/q152.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "CONSTRAINT"
+  },
+  "Q153": {
+    "topic": "CONSTRAINTS",
+    "solution": "solutions/31-constraints/q153.sql",
+    "answer": "exercises/31-constraints/q153.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "CONSTRAINT"
+  },
+  "Q154": {
+    "topic": "CONSTRAINTS",
+    "solution": "solutions/31-constraints/q154.sql",
+    "answer": "exercises/31-constraints/q154.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "CONSTRAINT"
+  },
+  "Q155": {
+    "topic": "CONSTRAINTS",
+    "solution": "solutions/31-constraints/q155.sql",
+    "answer": "exercises/31-constraints/q155.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "CONSTRAINT"
+  },
+  "Q156": {
+    "topic": "TRANSACTIONS",
+    "solution": "solutions/32-transactions/q156.sql",
+    "answer": "exercises/32-transactions/q156.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "TRANSACTION"
+  },
+  "Q157": {
+    "topic": "TRANSACTIONS",
+    "solution": "solutions/32-transactions/q157.sql",
+    "answer": "exercises/32-transactions/q157.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "TRANSACTION"
+  },
+  "Q158": {
+    "topic": "TRANSACTIONS",
+    "solution": "solutions/32-transactions/q158.sql",
+    "answer": "exercises/32-transactions/q158.sql",
+    "ordering_required": false,
+    "duplicates_matter": true,
+    "statement_type": "TRANSACTION"
+  },
+  "Q159": {
+    "topic": "TRANSACTIONS",
+    "solution": "solutions/32-transactions/q159.sql",
+    "answer": "exercises/32-transactions/q159.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "TRANSACTION"
+  },
+  "Q160": {
+    "topic": "TRANSACTIONS",
+    "solution": "solutions/32-transactions/q160.sql",
+    "answer": "exercises/32-transactions/q160.sql",
+    "ordering_required": true,
+    "duplicates_matter": true,
+    "statement_type": "TRANSACTION"
   }
 }

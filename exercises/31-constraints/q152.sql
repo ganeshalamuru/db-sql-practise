@@ -1,0 +1,2 @@
+-- Task (Q152): Add a constraint named promotions_code_starts_at_unique to promotions that requires each combination of code and starts_at to be unique. Return constraint_name, constraint_type, and constraint_definition for promotions_code_starts_at_unique.
+-- Requirement: No ordering is required.

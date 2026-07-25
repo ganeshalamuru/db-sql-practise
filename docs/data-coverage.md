@@ -16,6 +16,9 @@ The generator deliberately includes the following contrasts:
   Q050's conditional count has positive counts as well as zeroes.
 - Low-stock products that are unavailable at all stores, alongside products
   that have store stock, for `NOT EXISTS` exercises.
+- An active product that never appears in an order, a customer who places
+  orders but never writes a review, and a supplier with active products but no
+  returned active products, for the `EXCEPT` exercises Q126-Q129.
 - All customer, order, payment, and shipment statuses; promotions; failed
   payments; nullable review text; and both delivered and undelivered shipments.
 - Products, suppliers, order quantities, prices, and ratings that intentionally

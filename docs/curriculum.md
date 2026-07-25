@@ -38,8 +38,8 @@ Exercises rated **4 / 5** or **5 / 5** may - and should where it improves the le
 | 28 | INSERT | Available (Q136-Q140) |
 | 29 | UPDATE | Available (Q141-Q145) |
 | 30 | DELETE | Available (Q146-Q150) |
-| 31 | Constraints | Planned |
-| 32 | Transactions | Planned |
+| 31 | Constraints | Available (Q151-Q155) |
+| 32 | Transactions | Available (Q156-Q160) |
 | 33 | PostgreSQL Features | Planned |
 | 34 | Query Rewriting | Planned |
 | 35 | Advanced SQL Challenges | Planned |

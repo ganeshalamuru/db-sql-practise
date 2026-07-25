@@ -1,0 +1,2 @@
+-- Task (Q153): Add a NOT VALID foreign-key constraint named orders_promotion_fk_not_valid from orders.promotion_id to promotions.promotion_id, then validate it. Return constraint_name, constraint_type, and is_validated for orders_promotion_fk_not_valid.
+-- Requirement: No ordering is required.

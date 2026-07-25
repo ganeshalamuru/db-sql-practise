@@ -1,3 +1,4 @@
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -36,9 +37,18 @@ def test_dev_seed_emits_all_tables_and_teaching_contrasts(tmp_path: Path) -> Non
     returns = insert_block(sql, "returns")
     for status in ("requested", "approved", "received", "rejected"):
         assert f"'{status}'" in returns
+    returned_product_ids = [int(product_id) for product_id in re.findall(r"\(\d+, (\d+),", returns)]
+    assert all(
+        product_id % 25 == 0 or (product_id % 8 != 0 and product_id % 39 != 0)
+        for product_id in returned_product_ids
+    )  # Q129 has an active supplier with no returned active product.
 
     store_inventory = insert_block(sql, "store_inventory")
     assert ", 11," not in store_inventory  # Product 11 is low stock but unavailable in stores for Q070.
 
+    order_items = insert_block(sql, "order_items")
+    assert ", 99," not in order_items  # Q126 has an active product absent from delivered orders.
+
     reviews = insert_block(sql, "reviews")
     assert "(17, 1, 5," in reviews  # Q040 has a guaranteed high-rated product.
+    assert ", 90," not in reviews  # Q127 has a purchasing customer without reviews.

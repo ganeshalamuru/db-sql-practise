@@ -1,0 +1,2 @@
+-- Task (Q157): Start a transaction, insert a supplier with name 'Transaction Practice Supplier', contact_email 'transaction-practice-supplier@example.test', and country_id 1. Return name, contact_email, and country_id for the inserted supplier before rolling back the transaction.
+-- Requirement: No ordering is required.

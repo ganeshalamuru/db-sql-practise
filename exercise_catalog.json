@@ -1340,6 +1340,138 @@
           "official_solution": "solutions/30-delete/q150.sql"
         }
       ]
+    },
+    {
+      "slug": "31-constraints",
+      "title": "CONSTRAINTS",
+      "description": "Strengthen data integrity with named CHECK, UNIQUE, and FOREIGN KEY constraints and inspect their catalog metadata.",
+      "exercises": [
+        {
+          "id": "Q151",
+          "topic": "CONSTRAINTS",
+          "difficulty": 1,
+          "learning_objective": "Add a named CHECK constraint and inspect its PostgreSQL definition.",
+          "statement": "Add a constraint named products_unit_price_ceiling to products that requires unit_price to be at most 1000000. Return constraint_name, constraint_type, and constraint_definition for products_unit_price_ceiling.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "CONSTRAINT",
+          "official_solution": "solutions/31-constraints/q151.sql"
+        },
+        {
+          "id": "Q152",
+          "topic": "CONSTRAINTS",
+          "difficulty": 2,
+          "learning_objective": "Add a named multi-column UNIQUE constraint and inspect its definition.",
+          "statement": "Add a constraint named promotions_code_starts_at_unique to promotions that requires each combination of code and starts_at to be unique. Return constraint_name, constraint_type, and constraint_definition for promotions_code_starts_at_unique.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "CONSTRAINT",
+          "official_solution": "solutions/31-constraints/q152.sql"
+        },
+        {
+          "id": "Q153",
+          "topic": "CONSTRAINTS",
+          "difficulty": 3,
+          "learning_objective": "Add and validate a named foreign-key constraint after it is created.",
+          "statement": "Add a NOT VALID foreign-key constraint named orders_promotion_fk_not_valid from orders.promotion_id to promotions.promotion_id, then validate it. Return constraint_name, constraint_type, and is_validated for orders_promotion_fk_not_valid.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "CONSTRAINT",
+          "official_solution": "solutions/31-constraints/q153.sql"
+        },
+        {
+          "id": "Q154",
+          "topic": "CONSTRAINTS",
+          "difficulty": 4,
+          "learning_objective": "Define a multi-column CHECK constraint that protects a related pair of values.",
+          "statement": "Add a constraint named shipments_delivered_at_required that requires delivered_at to be non-NULL whenever a shipment status is delivered. Return constraint_name, constraint_type, and constraint_definition for shipments_delivered_at_required.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "CONSTRAINT",
+          "official_solution": "solutions/31-constraints/q154.sql"
+        },
+        {
+          "id": "Q155",
+          "topic": "CONSTRAINTS",
+          "difficulty": 5,
+          "learning_objective": "Define a named cross-column CHECK constraint for a time-window business rule.",
+          "statement": "Add a constraint named promotions_discount_window_limit to promotions that requires a promotion to last no more than 730 days. Return constraint_name, constraint_type, and constraint_definition for promotions_discount_window_limit.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "CONSTRAINT",
+          "official_solution": "solutions/31-constraints/q155.sql"
+        }
+      ]
+    },
+    {
+      "slug": "32-transactions",
+      "title": "TRANSACTIONS",
+      "description": "Group related changes safely with BEGIN, SAVEPOINT, locking, and ROLLBACK.",
+      "exercises": [
+        {
+          "id": "Q156",
+          "topic": "TRANSACTIONS",
+          "difficulty": 1,
+          "learning_objective": "Make and inspect a single change inside an explicit transaction.",
+          "statement": "Start a transaction, set customer_id 1 to status 'suspended', and return customer_id, email, and status for that customer before rolling back the transaction.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "TRANSACTION",
+          "official_solution": "solutions/32-transactions/q156.sql"
+        },
+        {
+          "id": "Q157",
+          "topic": "TRANSACTIONS",
+          "difficulty": 2,
+          "learning_objective": "Insert a row inside a transaction and inspect it before rollback.",
+          "statement": "Start a transaction, insert a supplier with name 'Transaction Practice Supplier', contact_email 'transaction-practice-supplier@example.test', and country_id 1. Return name, contact_email, and country_id for the inserted supplier before rolling back the transaction.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "TRANSACTION",
+          "official_solution": "solutions/32-transactions/q157.sql"
+        },
+        {
+          "id": "Q158",
+          "topic": "TRANSACTIONS",
+          "difficulty": 3,
+          "learning_objective": "Use a savepoint to undo part of a transaction before inspecting the restored state.",
+          "statement": "Start a transaction and create a savepoint named product_price_before_change. Increase product_id 1's unit_price by 10, then roll back to the savepoint. Return product_id, sku, and unit_price for product_id 1 before rolling back the transaction.",
+          "ordering": "No ordering is required.",
+          "ordering_required": false,
+          "duplicates_matter": true,
+          "statement_type": "TRANSACTION",
+          "official_solution": "solutions/32-transactions/q158.sql"
+        },
+        {
+          "id": "Q159",
+          "topic": "TRANSACTIONS",
+          "difficulty": 4,
+          "learning_objective": "Apply related inventory changes atomically within one transaction.",
+          "statement": "Start a transaction and transfer 25 units of product_id 1 from warehouse_id 1 to warehouse_id 2. Return warehouse_id, product_id, and quantity_on_hand for those two inventory rows before rolling back the transaction.",
+          "ordering": "Order by warehouse_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "TRANSACTION",
+          "official_solution": "solutions/32-transactions/q159.sql"
+        },
+        {
+          "id": "Q160",
+          "topic": "TRANSACTIONS",
+          "difficulty": 5,
+          "learning_objective": "Combine row locking and a CTE with an atomic multi-row inventory transfer.",
+          "statement": "Start a transaction and use a CTE that locks the product_id 1 inventory rows for warehouse_id 1 and warehouse_id 2. Transfer 5 units from warehouse_id 1 to warehouse_id 2, then return warehouse_id, product_id, quantity_on_hand, and reorder_point for those two rows before rolling back the transaction.",
+          "ordering": "Order by warehouse_id ascending.",
+          "duplicates_matter": true,
+          "statement_type": "TRANSACTION",
+          "official_solution": "solutions/32-transactions/q160.sql"
+        }
+      ]
     }
   ]
 }

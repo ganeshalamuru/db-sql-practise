@@ -60,10 +60,12 @@ def main() -> None:
 
     product_rows = []
     product_prices: dict[int, Decimal] = {}
+    product_supplier_ids: dict[int, int] = {}
     for product_id in range(1, products + 1):
         # Supplier 1 has enough active products for the HAVING exercises;
         # supplier 40 has only inactive products, providing an outer-join zero.
         supplier_id = 40 if product_id % 25 == 0 else 1 if product_id % 8 == 0 else 1 + product_id % 39
+        product_supplier_ids[product_id] = supplier_id
         unit_price = Decimal(rng.randint(500, 200000)) / 100
         product_prices[product_id] = unit_price
         product_rows.append((supplier_id, 1 + product_id % 8, f"SKU-{product_id:06d}", f"Product {product_id}", unit_price, product_id % 25 != 0, now - timedelta(days=product_id % 600)))
@@ -87,6 +89,8 @@ def main() -> None:
     payment_rows = []
     shipment_rows = []
     ordered_customer_count = customers - max(5, customers // 10)
+    never_delivered_product_id = products - 1
+    non_reviewing_purchasing_customer_id = ordered_customer_count
     for order_id in range(1, orders + 1):
         status = ("pending", "paid", "shipped", "delivered", "cancelled")[order_id % 5]
         ordered = now - timedelta(days=order_id % 730, minutes=order_id % 1440)
@@ -100,7 +104,9 @@ def main() -> None:
     items_by_order: dict[int, list[tuple[int, int]]] = {}
     for order_id in range(1, orders + 1):
         for offset in range(1, 1 + (target_items // orders)):
-            product_id = ((order_id * 7 + offset) % products) + 1
+            product_id = ((order_id * 7 + offset) % (products - 1)) + 1
+            if product_id >= never_delivered_product_id:
+                product_id += 1
             # Some orders contain only quantities of at least two; others do
             # not, so ALL can distinguish both cases.
             quantity = 2 + offset % 2 if order_id % 6 == 0 else 1 + offset % 3
@@ -110,8 +116,13 @@ def main() -> None:
     emit("payments", ("order_id", "payment_method", "amount", "paid_at", "status"), payment_rows)
     emit("shipments", ("order_id", "warehouse_id", "tracking_number", "shipped_at", "delivered_at", "status"), shipment_rows)
     returns = []
+    non_returning_active_supplier_id = 1
     for return_number, order_id in enumerate(range(8, orders + 1, 8)):
-        product_id, quantity = items_by_order[order_id][0]
+        product_id, quantity = next(
+            (item_product_id, item_quantity)
+            for item_product_id, item_quantity in items_by_order[order_id]
+            if product_supplier_ids[item_product_id] != non_returning_active_supplier_id
+        )
         returns.append((order_id, product_id, quantity, "Generated return", now - timedelta(days=order_id % 365), ("requested", "approved", "received", "rejected")[return_number % 4]))
     emit("returns", ("order_id", "product_id", "quantity", "reason", "requested_at", "status"), returns)
 
@@ -122,11 +133,13 @@ def main() -> None:
                 store_inventory.append((store_id, product_id, 0 if product_id % 13 == 0 else rng.randint(10, 500)))
     emit("store_inventory", ("store_id", "product_id", "quantity_on_hand"), store_inventory)
 
-    # Reserve a handful of active products without reviews and guarantee a
-    # high-rated, sufficiently reviewed product for GROUP BY/HAVING practice.
+    # Reserve active products, a purchaser, and a supplier for EXCEPT exercises,
+    # and guarantee a high-rated, sufficiently reviewed product for GROUP BY/HAVING practice.
     review_pairs: set[tuple[int, int]] = {(7, 1)} | {(17, customer_id) for customer_id in range(1, 7)}
     while len(review_pairs) < review_count:
-        review_pairs.add((rng.randint(1, products - 5), rng.randint(1, customers)))
+        customer_id = rng.randint(1, customers)
+        if customer_id != non_reviewing_purchasing_customer_id:
+            review_pairs.add((rng.randint(1, products - 5), customer_id))
     emit("reviews", ("product_id", "customer_id", "rating", "body", "created_at"), [(product_id, customer_id, 5 if product_id == 17 else rng.randint(1, 5), None if product_id % 7 == 0 else "Generated review", now - timedelta(days=rng.randint(1, 365))) for product_id, customer_id in sorted(review_pairs)])
     print("COMMIT;")
     output_file.close()

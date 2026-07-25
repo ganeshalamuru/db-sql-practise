@@ -1,0 +1,2 @@
+-- Task (Q155): Add a constraint named promotions_discount_window_limit to promotions that requires a promotion to last no more than 730 days. Return constraint_name, constraint_type, and constraint_definition for promotions_discount_window_limit.
+-- Requirement: No ordering is required.

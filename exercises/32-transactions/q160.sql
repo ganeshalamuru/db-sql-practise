@@ -1,0 +1,2 @@
+-- Task (Q160): Start a transaction and use a CTE that locks the product_id 1 inventory rows for warehouse_id 1 and warehouse_id 2. Transfer 5 units from warehouse_id 1 to warehouse_id 2, then return warehouse_id, product_id, quantity_on_hand, and reorder_point for those two rows before rolling back the transaction.
+-- Requirement: Order by warehouse_id ascending.

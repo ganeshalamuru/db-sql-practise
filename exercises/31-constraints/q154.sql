@@ -1,0 +1,2 @@
+-- Task (Q154): Add a constraint named shipments_delivered_at_required that requires delivered_at to be non-NULL whenever a shipment status is delivered. Return constraint_name, constraint_type, and constraint_definition for shipments_delivered_at_required.
+-- Requirement: No ordering is required.
