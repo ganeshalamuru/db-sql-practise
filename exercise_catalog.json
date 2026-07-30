@@ -1472,6 +1472,177 @@
           "official_solution": "solutions/32-transactions/q160.sql"
         }
       ]
+    },
+    {
+      "slug": "33-postgresql-features",
+      "title": "PostgreSQL Features",
+      "description": "Use PostgreSQL-specific operators and query constructs for case-insensitive matching, representative rows, conditional aggregates, per-row lookups, and JSONB results.",
+      "exercises": [
+        {
+          "id": "Q161",
+          "topic": "POSTGRESQL FEATURES",
+          "difficulty": 1,
+          "learning_objective": "Use ILIKE for case-insensitive pattern matching.",
+          "statement": "Return product_id, sku, and name for every product whose name contains 'wireless', regardless of letter case.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/33-postgresql-features/q161.sql"
+        },
+        {
+          "id": "Q162",
+          "topic": "POSTGRESQL FEATURES",
+          "difficulty": 2,
+          "learning_objective": "Use DISTINCT ON to select one deterministic representative row from each group.",
+          "statement": "Using DISTINCT ON, return the most recent order for each customer who has placed an order. Return customer_id, order_id, ordered_at, and status.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/33-postgresql-features/q162.sql"
+        },
+        {
+          "id": "Q163",
+          "topic": "POSTGRESQL FEATURES",
+          "difficulty": 3,
+          "learning_objective": "Use FILTER with aggregate functions to compute conditional metrics in one grouped query.",
+          "statement": "For every supplier, return supplier_id, name, active_product_count, and inactive_product_count. Count active and inactive products with aggregate FILTER clauses, and include suppliers with no products.",
+          "ordering": "Order by supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/33-postgresql-features/q163.sql"
+        },
+        {
+          "id": "Q164",
+          "topic": "POSTGRESQL FEATURES",
+          "difficulty": 4,
+          "learning_objective": "Use a LEFT JOIN LATERAL subquery to attach each row's best related match.",
+          "statement": "For every active product, return product_id, sku, review_id, rating, and created_at for its most recent review. Include active products with no reviews, using NULL for the review columns.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/33-postgresql-features/q164.sql"
+        },
+        {
+          "id": "Q165",
+          "topic": "POSTGRESQL FEATURES",
+          "difficulty": 5,
+          "learning_objective": "Build ordered nested JSONB results with jsonb_build_object and jsonb_agg.",
+          "statement": "For every delivered order, return order_id, customer_id, and items, where items is a JSONB array ordered by product_id. Each array element must be a JSONB object with keys product_id, sku, quantity, and unit_price for one order item.",
+          "ordering": "Order by order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/33-postgresql-features/q165.sql"
+        }
+      ]
+    },
+    {
+      "slug": "34-query-rewriting",
+      "title": "Query Rewriting",
+      "description": "Express the same result efficiently with semi-joins, grouped joins, staged aggregation, and windowed comparisons.",
+      "exercises": [
+        {
+          "id": "Q166",
+          "topic": "QUERY REWRITING",
+          "difficulty": 1,
+          "learning_objective": "Use a semi-join with EXISTS instead of joining only to test for related rows.",
+          "statement": "Using EXISTS, return product_id, sku, and name for active products that have at least one five-star review.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/34-query-rewriting/q166.sql"
+        },
+        {
+          "id": "Q167",
+          "topic": "QUERY REWRITING",
+          "difficulty": 2,
+          "learning_objective": "Rewrite a correlated count test as a grouped join with HAVING.",
+          "statement": "Using a join, GROUP BY, and HAVING rather than a correlated subquery, return customer_id, email, and order_count for customers who have placed at least three orders.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/34-query-rewriting/q167.sql"
+        },
+        {
+          "id": "Q168",
+          "topic": "QUERY REWRITING",
+          "difficulty": 3,
+          "learning_objective": "Pre-aggregate independent one-to-many relationships before joining their results.",
+          "statement": "Return category_id, category_name, active_product_count, and active_inventory_units for every category. Count active products and sum the quantity_on_hand of those active products across warehouses without multiplying either metric through a direct products-to-inventory join. Use 0 when a category has no matching rows.",
+          "ordering": "Order by category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/34-query-rewriting/q168.sql"
+        },
+        {
+          "id": "Q169",
+          "topic": "QUERY REWRITING",
+          "difficulty": 4,
+          "learning_objective": "Combine separately aggregated metrics without a join fan-out.",
+          "statement": "For every active customer, return customer_id, email, order_count, review_count, and delivered_item_total. order_count is the number of all orders, review_count is the number of reviews, and delivered_item_total is the sum of quantity multiplied by unit_price for delivered orders, using 0 for missing metrics. Build independent aggregate result sets before joining them to customers.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/34-query-rewriting/q169.sql"
+        },
+        {
+          "id": "Q170",
+          "topic": "QUERY REWRITING",
+          "difficulty": 5,
+          "learning_objective": "Stage a reusable aggregate in CTEs and compare it to a windowed peer benchmark.",
+          "statement": "For each customer with at least one delivered order, calculate lifetime_delivered_spend as the sum of quantity multiplied by unit_price in delivered orders. Return customer_id, city_id, lifetime_delivered_spend, and city_average_delivered_spend for customers whose lifetime_delivered_spend is greater than the average among qualifying customers in the same city. Exclude customers with no city.",
+          "ordering": "Order by city_id ascending, then lifetime_delivered_spend descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/34-query-rewriting/q170.sql"
+        }
+      ]
+    },
+    {
+      "slug": "35-advanced-sql-challenges",
+      "title": "Advanced SQL Challenges",
+      "description": "Synthesize prior concepts into realistic analytical challenges involving ranks, streaks, universal conditions, rolling metrics, and customer segmentation.",
+      "exercises": [
+        {
+          "id": "Q171",
+          "topic": "ADVANCED SQL CHALLENGES",
+          "difficulty": 1,
+          "learning_objective": "Rank aggregated product performance within a category while retaining ties.",
+          "statement": "For every active product that appears in a delivered order, return category_id, product_id, sku, delivered_revenue, and revenue_rank. delivered_revenue is the sum of quantity multiplied by unit_price from delivered orders. Rank products within each category by delivered_revenue descending, retaining ties with RANK.",
+          "ordering": "Order by category_id ascending, then revenue_rank ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/35-advanced-sql-challenges/q171.sql"
+        },
+        {
+          "id": "Q172",
+          "topic": "ADVANCED SQL CHALLENGES",
+          "difficulty": 2,
+          "learning_objective": "Find consecutive daily activity streaks with window functions and grouped islands.",
+          "statement": "For every customer who has placed at least one order, return customer_id, streak_start_date, streak_end_date, and consecutive_order_days for that customer's longest streak of consecutive calendar days with at least one order. If a customer has equally long streaks, return the earliest one.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/35-advanced-sql-challenges/q172.sql"
+        },
+        {
+          "id": "Q173",
+          "topic": "ADVANCED SQL CHALLENGES",
+          "difficulty": 3,
+          "learning_objective": "Use a universal aggregate condition to identify products that are low in every stocked warehouse.",
+          "statement": "Return category_id, product_id, sku, stocked_warehouse_count, and total_quantity_on_hand for every active product stocked in at least one warehouse that is at or below its reorder_point in every warehouse where it is stocked.",
+          "ordering": "Order by category_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/35-advanced-sql-challenges/q173.sql"
+        },
+        {
+          "id": "Q174",
+          "topic": "ADVANCED SQL CHALLENGES",
+          "difficulty": 4,
+          "learning_objective": "Combine date bucketing, aggregation, and window frames for period-over-period metrics.",
+          "statement": "For each calendar month containing delivered orders, return month_start, delivered_revenue, previous_reported_month_revenue, and trailing_three_reported_month_revenue. delivered_revenue is the sum of quantity multiplied by unit_price in delivered orders. The trailing value includes the current month and the two preceding reported months.",
+          "ordering": "Order by month_start ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/35-advanced-sql-challenges/q174.sql"
+        },
+        {
+          "id": "Q175",
+          "topic": "ADVANCED SQL CHALLENGES",
+          "difficulty": 5,
+          "learning_objective": "Build a customer segmentation query from independent aggregates, timestamps, and a partitioned rank.",
+          "statement": "For each city, return the top three active customers by delivered_item_total, retaining ties. Return city_id, city_name, customer_id, email, delivered_order_count, delivered_item_total, review_count, last_activity_at, and city_value_rank. Consider only active customers with at least one delivered order. delivered_item_total is the sum of quantity multiplied by unit_price in delivered orders; last_activity_at is the latest delivered ordered_at or review created_at timestamp; city_value_rank ranks customers by delivered_item_total descending within their city.",
+          "ordering": "Order by city_id ascending, then city_value_rank ascending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/35-advanced-sql-challenges/q175.sql"
+        }
+      ]
     }
   ]
 }

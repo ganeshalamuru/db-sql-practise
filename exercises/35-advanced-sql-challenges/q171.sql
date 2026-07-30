@@ -1,0 +1,2 @@
+-- Task (Q171): For every active product that appears in a delivered order, return category_id, product_id, sku, delivered_revenue, and revenue_rank. delivered_revenue is the sum of quantity multiplied by unit_price from delivered orders. Rank products within each category by delivered_revenue descending, retaining ties with RANK.
+-- Requirement: Order by category_id ascending, then revenue_rank ascending, then product_id ascending.

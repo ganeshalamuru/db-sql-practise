@@ -1,0 +1,2 @@
+-- Task (Q169): For every active customer, return customer_id, email, order_count, review_count, and delivered_item_total. order_count is the number of all orders, review_count is the number of reviews, and delivered_item_total is the sum of quantity multiplied by unit_price for delivered orders, using 0 for missing metrics. Build independent aggregate result sets before joining them to customers.
+-- Requirement: Order by customer_id ascending.

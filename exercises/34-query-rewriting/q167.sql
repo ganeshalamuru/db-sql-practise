@@ -1,0 +1,2 @@
+-- Task (Q167): Using a join, GROUP BY, and HAVING rather than a correlated subquery, return customer_id, email, and order_count for customers who have placed at least three orders.
+-- Requirement: Order by customer_id ascending.

@@ -1,0 +1,2 @@
+-- Task (Q173): Return category_id, product_id, sku, stocked_warehouse_count, and total_quantity_on_hand for every active product stocked in at least one warehouse that is at or below its reorder_point in every warehouse where it is stocked.
+-- Requirement: Order by category_id ascending, then product_id ascending.

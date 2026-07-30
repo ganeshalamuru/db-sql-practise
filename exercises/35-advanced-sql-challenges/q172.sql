@@ -1,0 +1,2 @@
+-- Task (Q172): For every customer who has placed at least one order, return customer_id, streak_start_date, streak_end_date, and consecutive_order_days for that customer's longest streak of consecutive calendar days with at least one order. If a customer has equally long streaks, return the earliest one.
+-- Requirement: Order by customer_id ascending.

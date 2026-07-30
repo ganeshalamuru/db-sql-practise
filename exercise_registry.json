@@ -1148,5 +1148,110 @@
     "ordering_required": true,
     "duplicates_matter": true,
     "statement_type": "TRANSACTION"
+  },
+  "Q161": {
+    "topic": "POSTGRESQL FEATURES",
+    "solution": "solutions/33-postgresql-features/q161.sql",
+    "answer": "exercises/33-postgresql-features/q161.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q162": {
+    "topic": "POSTGRESQL FEATURES",
+    "solution": "solutions/33-postgresql-features/q162.sql",
+    "answer": "exercises/33-postgresql-features/q162.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q163": {
+    "topic": "POSTGRESQL FEATURES",
+    "solution": "solutions/33-postgresql-features/q163.sql",
+    "answer": "exercises/33-postgresql-features/q163.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q164": {
+    "topic": "POSTGRESQL FEATURES",
+    "solution": "solutions/33-postgresql-features/q164.sql",
+    "answer": "exercises/33-postgresql-features/q164.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q165": {
+    "topic": "POSTGRESQL FEATURES",
+    "solution": "solutions/33-postgresql-features/q165.sql",
+    "answer": "exercises/33-postgresql-features/q165.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q166": {
+    "topic": "QUERY REWRITING",
+    "solution": "solutions/34-query-rewriting/q166.sql",
+    "answer": "exercises/34-query-rewriting/q166.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q167": {
+    "topic": "QUERY REWRITING",
+    "solution": "solutions/34-query-rewriting/q167.sql",
+    "answer": "exercises/34-query-rewriting/q167.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q168": {
+    "topic": "QUERY REWRITING",
+    "solution": "solutions/34-query-rewriting/q168.sql",
+    "answer": "exercises/34-query-rewriting/q168.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q169": {
+    "topic": "QUERY REWRITING",
+    "solution": "solutions/34-query-rewriting/q169.sql",
+    "answer": "exercises/34-query-rewriting/q169.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q170": {
+    "topic": "QUERY REWRITING",
+    "solution": "solutions/34-query-rewriting/q170.sql",
+    "answer": "exercises/34-query-rewriting/q170.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q171": {
+    "topic": "ADVANCED SQL CHALLENGES",
+    "solution": "solutions/35-advanced-sql-challenges/q171.sql",
+    "answer": "exercises/35-advanced-sql-challenges/q171.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q172": {
+    "topic": "ADVANCED SQL CHALLENGES",
+    "solution": "solutions/35-advanced-sql-challenges/q172.sql",
+    "answer": "exercises/35-advanced-sql-challenges/q172.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q173": {
+    "topic": "ADVANCED SQL CHALLENGES",
+    "solution": "solutions/35-advanced-sql-challenges/q173.sql",
+    "answer": "exercises/35-advanced-sql-challenges/q173.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q174": {
+    "topic": "ADVANCED SQL CHALLENGES",
+    "solution": "solutions/35-advanced-sql-challenges/q174.sql",
+    "answer": "exercises/35-advanced-sql-challenges/q174.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
+  },
+  "Q175": {
+    "topic": "ADVANCED SQL CHALLENGES",
+    "solution": "solutions/35-advanced-sql-challenges/q175.sql",
+    "answer": "exercises/35-advanced-sql-challenges/q175.sql",
+    "ordering_required": true,
+    "duplicates_matter": true
   }
 }

@@ -1,0 +1,2 @@
+-- Task (Q174): For each calendar month containing delivered orders, return month_start, delivered_revenue, previous_reported_month_revenue, and trailing_three_reported_month_revenue. delivered_revenue is the sum of quantity multiplied by unit_price in delivered orders. The trailing value includes the current month and the two preceding reported months.
+-- Requirement: Order by month_start ascending.

@@ -1,0 +1,2 @@
+-- Task (Q170): For each customer with at least one delivered order, calculate lifetime_delivered_spend as the sum of quantity multiplied by unit_price in delivered orders. Return customer_id, city_id, lifetime_delivered_spend, and city_average_delivered_spend for customers whose lifetime_delivered_spend is greater than the average among qualifying customers in the same city. Exclude customers with no city.
+-- Requirement: Order by city_id ascending, then lifetime_delivered_spend descending, then customer_id ascending.

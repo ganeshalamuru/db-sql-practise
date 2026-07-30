@@ -1,0 +1,2 @@
+-- Task (Q165): For every delivered order, return order_id, customer_id, and items, where items is a JSONB array ordered by product_id. Each array element must be a JSONB object with keys product_id, sku, quantity, and unit_price for one order item.
+-- Requirement: Order by order_id ascending.

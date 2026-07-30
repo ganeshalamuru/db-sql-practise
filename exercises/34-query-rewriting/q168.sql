@@ -1,0 +1,2 @@
+-- Task (Q168): Return category_id, category_name, active_product_count, and active_inventory_units for every category. Count active products and sum the quantity_on_hand of those active products across warehouses without multiplying either metric through a direct products-to-inventory join. Use 0 when a category has no matching rows.
+-- Requirement: Order by category_id ascending.
