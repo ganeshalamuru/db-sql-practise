@@ -10,7 +10,7 @@ WHERE (
     FROM orders AS o
     WHERE o.customer_id = c.customer_id
 ) > (
-    SELECT COUNT(*)::NUMERIC / COUNT(DISTINCT customer_id)
+    SELECT CAST(COUNT(*) AS NUMERIC(10,4)) / COUNT(DISTINCT customer_id)
     FROM orders
 )
 ORDER BY c.customer_id;

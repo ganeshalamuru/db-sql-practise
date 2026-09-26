@@ -25,5 +25,5 @@ FROM stocked_in_both_product_ids AS b
 JOIN products AS p ON p.product_id = b.product_id
 JOIN warehouse_stock AS w ON w.product_id = b.product_id
 JOIN store_stock AS s ON s.product_id = b.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY p.product_id;

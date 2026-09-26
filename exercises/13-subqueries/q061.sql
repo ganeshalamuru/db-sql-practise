@@ -7,5 +7,5 @@ select
     p.unit_price
 
 from products as p
-where p.is_active and p.unit_price > (select avg(unit_price) from products where products.is_active)
+where p.is_active = 1 and p.unit_price > (select avg(unit_price) from products where products.is_active = 1)
 order by unit_price desc,product_id

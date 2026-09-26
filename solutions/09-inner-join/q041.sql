@@ -6,5 +6,5 @@ SELECT p.product_id,
        p.unit_price
 FROM products AS p
 JOIN suppliers AS s ON s.supplier_id = p.supplier_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY supplier_name, product_name, p.product_id;

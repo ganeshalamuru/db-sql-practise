@@ -4,12 +4,10 @@ WITH product_stock AS (
     SELECT p.product_id,
            p.sku,
            COUNT(i.warehouse_id) AS warehouse_count,
-           COUNT(*) FILTER (
-               WHERE i.quantity_on_hand <= i.reorder_point
-           ) AS low_stock_warehouse_count
+           COUNT(CASE WHEN i.quantity_on_hand <= i.reorder_point THEN 1 END) AS low_stock_warehouse_count
     FROM products AS p
     LEFT JOIN inventory AS i ON i.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
     GROUP BY p.product_id, p.sku
 )
 SELECT product_id,

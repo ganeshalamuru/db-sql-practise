@@ -16,5 +16,5 @@ SELECT p.product_id,
        p.name
 FROM products AS p
 JOIN available_product_ids AS a ON a.product_id = p.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY p.product_id;

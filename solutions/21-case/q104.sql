@@ -6,14 +6,14 @@ WITH active_product_counts AS (
     FROM suppliers AS s
     LEFT JOIN products AS p
         ON p.supplier_id = s.supplier_id
-       AND p.is_active
+       AND p.is_active = 1
     GROUP BY s.supplier_id
 ), returned_active_product_counts AS (
     SELECT p.supplier_id,
            COUNT(DISTINCT r.product_id) AS returned_active_product_count
     FROM products AS p
     JOIN returns AS r ON r.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
     GROUP BY p.supplier_id
 )
 SELECT s.supplier_id,

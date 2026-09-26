@@ -2,5 +2,5 @@
 -- Requirement: No ordering is required.
 UPDATE products
 SET unit_price = unit_price * 0.90
-WHERE supplier_id = 40
-RETURNING product_id, sku, unit_price;
+OUTPUT inserted.product_id, inserted.sku, inserted.unit_price
+WHERE supplier_id = 40;

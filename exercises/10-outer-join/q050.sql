@@ -7,6 +7,6 @@ select
 from products as p 
 left join returns as r on p.product_id = r.product_id 
         and r.status in ('requested','approved')
-where p.is_active
+where p.is_active = 1
 group by p.product_id,p.name
 order by open_return_count desc, product_id

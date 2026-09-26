@@ -12,26 +12,26 @@ def render_problem(exercise: dict[str, object], answer_path: str) -> str:
     duplicate_rule = "Duplicates are significant." if exercise["duplicates_matter"] else "Duplicate rows are not significant."
     statement_type = str(exercise.get("statement_type", "SELECT"))
     if statement_type == "SELECT":
-        instruction = f"Write one PostgreSQL `SELECT` statement in `{answer_path}`. Do not modify the schema or data."
+        instruction = f"Write one SQL Server `SELECT` statement in `{answer_path}`. Do not modify the schema or data."
     elif statement_type == "VIEW":
         instruction = (
-            f"Write a PostgreSQL `CREATE OR REPLACE VIEW ... AS` statement followed by one `SELECT` statement in `{answer_path}`. "
+            f"Write a SQL Server `CREATE OR ALTER VIEW ... AS` statement followed by one `SELECT` statement in `{answer_path}`. "
             "The final SELECT must return the requested view result. The grader runs both statements in a transaction and rolls it back."
         )
     elif statement_type == "CONSTRAINT":
         instruction = (
-            f"Write the requested PostgreSQL `ALTER TABLE` constraint statement or statements followed by one `SELECT` statement in `{answer_path}`. "
+            f"Write the requested SQL Server `ALTER TABLE` constraint statement or statements followed by one `SELECT` statement in `{answer_path}`. "
             "The final SELECT must return the requested constraint metadata. The grader runs all statements in a transaction and rolls it back."
         )
     elif statement_type == "TRANSACTION":
         instruction = (
-            f"Write a PostgreSQL transaction in `{answer_path}`. Start with `BEGIN`, make the requested changes, return the requested rows with a final `SELECT`, "
-            "and finish with `ROLLBACK` so the practice database remains unchanged. The grader also rolls back the exercise transaction."
+            f"Write a SQL Server transaction in `{answer_path}`. Start with `BEGIN TRANSACTION`, make the requested changes, return the requested rows with a final `SELECT`, "
+            "and finish with `ROLLBACK TRANSACTION` so the practice database remains unchanged. The grader also rolls back the exercise transaction."
         )
     else:
         instruction = (
-            f"Write one PostgreSQL `{statement_type}` statement in `{answer_path}`. "
-            "Include a `RETURNING` clause with the requested columns. The grader runs the statement in a transaction and rolls it back."
+            f"Write one SQL Server `{statement_type}` statement in `{answer_path}`. "
+            "Include an `OUTPUT` clause with the requested columns. The grader runs the statement in a transaction and rolls it back."
         )
     return f"""# {exercise['id']} - {exercise['topic']}\n\n- **Difficulty:** {exercise['difficulty']} / 5\n- **Learning objective:** {exercise['learning_objective']}\n\n## Task\n\n{exercise['statement']}\n\n## Result requirements\n\n- **Ordering:** {exercise['ordering']}\n- **Duplicates:** {duplicate_rule}\n\n{instruction}\n"""
 

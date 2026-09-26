@@ -1,0 +1,2 @@
+-- Task (Q162): Using CROSS APPLY, return the most recent order for each customer who has placed an order. Return customer_id, order_id, ordered_at, and status.
+-- Requirement: Order by customer_id ascending.

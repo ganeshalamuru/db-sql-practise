@@ -4,7 +4,7 @@ SELECT p.product_id,
        p.sku,
        p.name
 FROM products AS p
-WHERE p.is_active
+WHERE p.is_active = 1
   AND EXISTS (
       SELECT 1
       FROM reviews AS r

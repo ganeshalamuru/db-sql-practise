@@ -1,12 +1,12 @@
 -- Task (Q174): For each calendar month containing delivered orders, return month_start, delivered_revenue, previous_reported_month_revenue, and trailing_three_reported_month_revenue. delivered_revenue is the sum of quantity multiplied by unit_price in delivered orders. The trailing value includes the current month and the two preceding reported months.
 -- Requirement: Order by month_start ascending.
 WITH monthly_revenue AS (
-    SELECT date_trunc('month', o.ordered_at)::date AS month_start,
+    SELECT CAST(DATETRUNC(month, o.ordered_at) AS DATE) AS month_start,
            SUM(oi.quantity * oi.unit_price) AS delivered_revenue
     FROM orders AS o
     JOIN order_items AS oi ON oi.order_id = o.order_id
     WHERE o.status = 'delivered'
-    GROUP BY date_trunc('month', o.ordered_at)::date
+    GROUP BY CAST(DATETRUNC(month, o.ordered_at) AS DATE)
 )
 SELECT month_start,
        delivered_revenue,

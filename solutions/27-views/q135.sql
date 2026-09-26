@@ -1,6 +1,6 @@
 -- Task (Q135): Create or replace a view named vw_customer_activity that returns customer_id, email, order_count, delivered_item_total, review_count, and last_activity_at for every customer with at least one order or review. delivered_item_total is the sum of quantity multiplied by unit_price in delivered orders and is 0 for a customer with no delivered items. last_activity_at is the latest ordered_at or review created_at timestamp. Then return every row from vw_customer_activity.
 -- Requirement: Order by last_activity_at descending, then customer_id ascending.
-CREATE OR REPLACE VIEW vw_customer_activity AS
+CREATE OR ALTER VIEW vw_customer_activity AS
 WITH order_totals AS (
     SELECT o.order_id,
            o.customer_id,
@@ -13,7 +13,7 @@ WITH order_totals AS (
 ), order_metrics AS (
     SELECT customer_id,
            COUNT(*) AS order_count,
-           COALESCE(SUM(item_total) FILTER (WHERE status = 'delivered'), 0) AS delivered_item_total,
+           COALESCE(SUM(CASE WHEN status = 'delivered' THEN item_total END), 0) AS delivered_item_total,
            MAX(ordered_at) AS last_ordered_at
     FROM order_totals
     GROUP BY customer_id

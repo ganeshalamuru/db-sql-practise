@@ -4,13 +4,13 @@ SELECT s.supplier_id, s.name AS supplier_name, p.product_id,
        p.name AS product_name, p.unit_price
 FROM suppliers AS s
 JOIN products AS p ON p.supplier_id = s.supplier_id
-WHERE p.is_active
+WHERE p.is_active = 1
   AND p.unit_price >= ALL (
       SELECT peer.unit_price FROM products AS peer
-      WHERE peer.supplier_id = s.supplier_id AND peer.is_active
+      WHERE peer.supplier_id = s.supplier_id AND peer.is_active = 1
   )
   AND 2 <= (
       SELECT COUNT(*) FROM products AS peer
-      WHERE peer.supplier_id = s.supplier_id AND peer.is_active
+      WHERE peer.supplier_id = s.supplier_id AND peer.is_active = 1
   )
 ORDER BY s.supplier_id, p.product_id;

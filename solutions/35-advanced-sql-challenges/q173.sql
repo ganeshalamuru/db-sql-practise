@@ -7,7 +7,7 @@ SELECT p.category_id,
        SUM(i.quantity_on_hand) AS total_quantity_on_hand
 FROM products AS p
 JOIN inventory AS i ON i.product_id = p.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 GROUP BY p.category_id, p.product_id, p.sku
-HAVING BOOL_AND(i.quantity_on_hand <= i.reorder_point)
+HAVING MIN(CASE WHEN i.quantity_on_hand <= i.reorder_point THEN 1 ELSE 0 END) = 1
 ORDER BY p.category_id, p.product_id;

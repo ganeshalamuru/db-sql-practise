@@ -6,6 +6,6 @@ select
     p.product_id,
     p.name as product_name,
     p.unit_price
-from products as p join suppliers as s on p.supplier_id = s.supplier_id and p.is_active
+from products as p join suppliers as s on p.supplier_id = s.supplier_id and p.is_active = 1
 where exists (select product_id from products as pp where pp.supplier_id=p.supplier_id and pp.product_id!=p.product_id and pp.unit_price>1000.00)
 order by p.supplier_id,p.product_id

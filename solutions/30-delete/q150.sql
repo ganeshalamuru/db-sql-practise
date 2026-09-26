@@ -4,11 +4,11 @@ WITH inactive_replenished_products AS (
     SELECT i.product_id
     FROM inventory AS i
     JOIN products AS p ON p.product_id = i.product_id
-    WHERE NOT p.is_active
+    WHERE p.is_active = 0
     GROUP BY i.product_id
-    HAVING BOOL_AND(i.quantity_on_hand >= i.reorder_point)
+    HAVING MIN(CASE WHEN i.quantity_on_hand >= i.reorder_point THEN 1 ELSE 0 END) = 1
 )
-DELETE FROM inventory AS i
-USING inactive_replenished_products AS irp
-WHERE i.product_id = irp.product_id
-RETURNING i.warehouse_id, i.product_id, i.quantity_on_hand, i.reorder_point;
+DELETE i
+OUTPUT deleted.warehouse_id, deleted.product_id, deleted.quantity_on_hand, deleted.reorder_point
+FROM inventory AS i
+JOIN inactive_replenished_products AS irp ON irp.product_id = i.product_id;

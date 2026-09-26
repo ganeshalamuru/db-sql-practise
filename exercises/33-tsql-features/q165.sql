@@ -1,0 +1,2 @@
+-- Task (Q165): Using STRING_SPLIT, parse the comma-separated tag list 'electronics,kitchen,laptops,books' into individual rows. Return the distinct trimmed tags as tag.
+-- Requirement: Order by tag ascending.

@@ -7,6 +7,6 @@ SELECT w.warehouse_id,
        p.unit_price
 FROM warehouses AS w
 CROSS JOIN products AS p
-WHERE p.is_active
+WHERE p.is_active = 1
   AND p.unit_price >= 1000.00
 ORDER BY w.warehouse_id, p.product_id;

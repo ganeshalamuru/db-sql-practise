@@ -4,9 +4,8 @@ ALTER TABLE products
 ADD CONSTRAINT products_unit_price_ceiling
 CHECK (unit_price <= 1000000);
 
-SELECT con.conname AS constraint_name,
-       con.contype AS constraint_type,
-       pg_get_constraintdef(con.oid) AS constraint_definition
-FROM pg_constraint AS con
-WHERE con.conrelid = 'products'::regclass
-  AND con.conname = 'products_unit_price_ceiling';
+SELECT name AS constraint_name,
+       type_desc AS constraint_type,
+       definition AS constraint_definition
+FROM sys.check_constraints
+WHERE name = 'products_unit_price_ceiling';

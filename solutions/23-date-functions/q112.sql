@@ -2,9 +2,9 @@
 -- Requirement: Order by days_between_first_and_last_delivery descending, then customer_id ascending.
 SELECT c.customer_id,
        c.email,
-       MIN(o.ordered_at)::DATE AS first_delivered_date,
-       MAX(o.ordered_at)::DATE AS last_delivered_date,
-       MAX(o.ordered_at)::DATE - MIN(o.ordered_at)::DATE
+       CAST(MIN(o.ordered_at) AS DATE) AS first_delivered_date,
+       CAST(MAX(o.ordered_at) AS DATE) AS last_delivered_date,
+       DATEDIFF(day, MIN(o.ordered_at), MAX(o.ordered_at))
            AS days_between_first_and_last_delivery,
        COUNT(DISTINCT o.order_id) AS delivered_order_count
 FROM customers AS c

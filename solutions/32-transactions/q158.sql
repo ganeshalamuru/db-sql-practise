@@ -1,17 +1,17 @@
 -- Task (Q158): Start a transaction and create a savepoint named product_price_before_change. Increase product_id 1's unit_price by 10, then roll back to the savepoint. Return product_id, sku, and unit_price for product_id 1 before rolling back the transaction.
 -- Requirement: No ordering is required.
-BEGIN;
+BEGIN TRANSACTION;
 
-SAVEPOINT product_price_before_change;
+SAVE TRANSACTION product_price_before_change;
 
 UPDATE products
 SET unit_price = unit_price + 10
 WHERE product_id = 1;
 
-ROLLBACK TO SAVEPOINT product_price_before_change;
+ROLLBACK TRANSACTION product_price_before_change;
 
 SELECT product_id, sku, unit_price
 FROM products
 WHERE product_id = 1;
 
-ROLLBACK;
+ROLLBACK TRANSACTION;

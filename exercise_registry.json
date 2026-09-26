@@ -1150,37 +1150,37 @@
     "statement_type": "TRANSACTION"
   },
   "Q161": {
-    "topic": "POSTGRESQL FEATURES",
-    "solution": "solutions/33-postgresql-features/q161.sql",
-    "answer": "exercises/33-postgresql-features/q161.sql",
+    "topic": "T-SQL FEATURES",
+    "solution": "solutions/33-tsql-features/q161.sql",
+    "answer": "exercises/33-tsql-features/q161.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q162": {
-    "topic": "POSTGRESQL FEATURES",
-    "solution": "solutions/33-postgresql-features/q162.sql",
-    "answer": "exercises/33-postgresql-features/q162.sql",
+    "topic": "T-SQL FEATURES",
+    "solution": "solutions/33-tsql-features/q162.sql",
+    "answer": "exercises/33-tsql-features/q162.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q163": {
-    "topic": "POSTGRESQL FEATURES",
-    "solution": "solutions/33-postgresql-features/q163.sql",
-    "answer": "exercises/33-postgresql-features/q163.sql",
+    "topic": "T-SQL FEATURES",
+    "solution": "solutions/33-tsql-features/q163.sql",
+    "answer": "exercises/33-tsql-features/q163.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q164": {
-    "topic": "POSTGRESQL FEATURES",
-    "solution": "solutions/33-postgresql-features/q164.sql",
-    "answer": "exercises/33-postgresql-features/q164.sql",
+    "topic": "T-SQL FEATURES",
+    "solution": "solutions/33-tsql-features/q164.sql",
+    "answer": "exercises/33-tsql-features/q164.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },
   "Q165": {
-    "topic": "POSTGRESQL FEATURES",
-    "solution": "solutions/33-postgresql-features/q165.sql",
-    "answer": "exercises/33-postgresql-features/q165.sql",
+    "topic": "T-SQL FEATURES",
+    "solution": "solutions/33-tsql-features/q165.sql",
+    "answer": "exercises/33-tsql-features/q165.sql",
     "ordering_required": true,
     "duplicates_matter": true
   },

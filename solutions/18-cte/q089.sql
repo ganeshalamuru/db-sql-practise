@@ -1,7 +1,7 @@
 -- Task (Q089): Return category_id, category_name, active_product_count, and average_rating for categories with at least two active products and at least one review. average_rating is the average rating across reviews of active products in the category.
 -- Requirement: Order by average_rating descending, then category_id ascending.
 WITH active_products AS (
-    SELECT product_id, category_id FROM products WHERE is_active
+    SELECT product_id, category_id FROM products WHERE is_active = 1
 ), category_product_counts AS (
     SELECT category_id, COUNT(*) AS active_product_count
     FROM active_products

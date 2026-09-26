@@ -5,6 +5,6 @@ FROM products AS p
 LEFT JOIN returns AS r
     ON r.product_id = p.product_id
    AND r.status IN ('requested', 'approved')
-WHERE p.is_active
+WHERE p.is_active = 1
 GROUP BY p.product_id, p.name
 ORDER BY open_return_count DESC, p.product_id;

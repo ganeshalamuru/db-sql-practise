@@ -6,4 +6,4 @@ SELECT c.category_id,
        p.name AS parent_category_name
 FROM categories AS c
 LEFT JOIN categories AS p ON p.category_id = c.parent_category_id
-ORDER BY parent_category_name NULLS FIRST, category_name, c.category_id;
+ORDER BY CASE WHEN p.name IS NULL THEN 0 ELSE 1 END, p.name ASC, category_name, c.category_id;

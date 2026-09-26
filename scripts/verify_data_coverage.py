@@ -4,16 +4,16 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import sys
 from pathlib import Path
 
-try:
-    import psycopg
-except ModuleNotFoundError:
-    psycopg = None
-
-
 ROOT = Path(__file__).resolve().parents[1]
-DEFAULT_DSN = "postgresql://postgres@localhost:5432/sql_practice"
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from config import DatabaseConfig
+from db import DatabaseAdapter, QueryResult, get_adapter
+
 OUTER_JOIN_CONTRASTS = {
     "Q047": "review_count",
     "Q048": "active_product_count",
@@ -22,43 +22,27 @@ OUTER_JOIN_CONTRASTS = {
 }
 
 
-def sql_without_terminator(path: Path) -> str:
-    return path.read_text(encoding="utf-8").strip().rstrip(";")
-
-
-def row_count(connection: psycopg.Connection[object], query: str) -> int:
-    with connection.cursor() as cursor:
-        cursor.execute(f"SELECT COUNT(*) FROM ({query}) AS coverage_result")
-        return cursor.fetchone()[0]
-
-
-def contrast_counts(connection: psycopg.Connection[object], query: str, column: str) -> tuple[int, int]:
-    with connection.cursor() as cursor:
-        cursor.execute(
-            f"""
-            SELECT COUNT(*) FILTER (WHERE coverage_result.{column} = 0),
-                   COUNT(*) FILTER (WHERE coverage_result.{column} > 0)
-            FROM ({query}) AS coverage_result
-            """
-        )
-        return cursor.fetchone()
-
-
 def main() -> int:
+    config = DatabaseConfig.from_environment()
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--dialect",
+        choices=("sqlserver", "postgres"),
+        default=config.dialect,
+        help="Database engine dialect (defaults to SQL_PRACTICE_DIALECT or sqlserver).",
+    )
+    parser.add_argument(
         "--dsn",
-        default=os.getenv("SQL_PRACTICE_DSN", DEFAULT_DSN),
-        help="PostgreSQL connection string (defaults to SQL_PRACTICE_DSN or the local lab database).",
+        default=None,
+        help="Database connection string (defaults to SQL_PRACTICE_DSN).",
     )
     parser.add_argument(
         "--password",
-        default=os.getenv("PGPASSWORD"),
-        help="PostgreSQL password (defaults to PGPASSWORD).",
+        default=config.password,
+        help="Database password (defaults to PGPASSWORD / SQL_PASSWORD).",
     )
     args = parser.parse_args()
-    if psycopg is None:
-        parser.error("psycopg is required; install dependencies with 'python -m pip install -r requirements.txt'.")
+    adapter = get_adapter(args.dialect, args.dsn, args.password)
     catalog = json.loads((ROOT / "exercise_catalog.json").read_text(encoding="utf-8"))
     select_solution_paths = {
         exercise["official_solution"]
@@ -69,30 +53,39 @@ def main() -> int:
     solutions = sorted(ROOT / path for path in select_solution_paths)
     failures: list[str] = []
 
-    with psycopg.connect(args.dsn, password=args.password) as connection:
-        with connection.transaction():
-            connection.execute("SET TRANSACTION READ ONLY")
-            for path in solutions:
-                exercise_id = path.stem.upper()
-                query = sql_without_terminator(path)
-                try:
-                    with connection.transaction():
-                        count = row_count(connection, query)
-                        if count == 0:
+    with adapter.connect("sql_practice") as connection:
+        for path in solutions:
+            exercise_id = path.stem.upper()
+            if not path.exists():
+                failures.append(exercise_id)
+                print(f"{exercise_id}: FAIL (file not found)")
+                continue
+            query = path.read_text(encoding="utf-8")
+            try:
+                with adapter.grading_transaction(connection):
+                    res = adapter.execute_query(connection, query, read_only=True)
+                    count = len(res.rows)
+                    if count == 0:
+                        failures.append(exercise_id)
+                        print(f"{exercise_id}: FAIL (no rows)")
+                        continue
+                    print(f"{exercise_id}: PASS ({count} rows)")
+                    if column := OUTER_JOIN_CONTRASTS.get(exercise_id):
+                        if column not in res.columns:
                             failures.append(exercise_id)
-                            print(f"{exercise_id}: FAIL (no rows)")
+                            print(f"  FAIL: column '{column}' not found in result columns {res.columns}")
                             continue
-                        print(f"{exercise_id}: PASS ({count} rows)")
-                        if column := OUTER_JOIN_CONTRASTS.get(exercise_id):
-                            zero_count, positive_count = contrast_counts(connection, query, column)
-                            if zero_count == 0 or positive_count == 0:
-                                failures.append(exercise_id)
-                                print(f"  FAIL: expected both zero and positive {column} values; found {zero_count} zero and {positive_count} positive")
-                            else:
-                                print(f"  Contrast: {zero_count} zero and {positive_count} positive {column} values")
-                except psycopg.Error as error:
-                    failures.append(exercise_id)
-                    print(f"{exercise_id}: FAIL ({error})")
+                        col_idx = res.columns.index(column)
+                        zero_count = sum(1 for row in res.rows if row[col_idx] == 0)
+                        positive_count = sum(1 for row in res.rows if row[col_idx] is not None and row[col_idx] > 0)
+                        if zero_count == 0 or positive_count == 0:
+                            failures.append(exercise_id)
+                            print(f"  FAIL: expected both zero and positive {column} values; found {zero_count} zero and {positive_count} positive")
+                        else:
+                            print(f"  Contrast: {zero_count} zero and {positive_count} positive {column} values")
+            except Exception as error:
+                failures.append(exercise_id)
+                print(f"{exercise_id}: FAIL ({error})")
 
     print(f"Summary: {len(solutions) - len(failures)}/{len(solutions)} solutions have meaningful results.")
     return 1 if failures else 0

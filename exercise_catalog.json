@@ -747,11 +747,56 @@
       "title": "EXISTS",
       "description": "Use existence tests to filter rows based on related data.",
       "exercises": [
-        {"id":"Q066","topic":"EXISTS","difficulty":3,"learning_objective":"Filter parent rows by the existence of a related row.","statement":"Return customer_id, email, first_name, and last_name for customers who have placed at least one order.","ordering":"Order by customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/14-exists/q066.sql"},
-        {"id":"Q067","topic":"EXISTS","difficulty":3,"learning_objective":"Use NOT EXISTS to find rows without a related match.","statement":"Return product_id, sku, and name for active products that have never received a review.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/14-exists/q067.sql"},
-        {"id":"Q068","topic":"EXISTS","difficulty":4,"learning_objective":"Test for a related row that satisfies an additional condition.","statement":"Return supplier_id, supplier_name, product_id, product_name, and unit_price for active products from suppliers that also supply at least one other active product priced above 1,000.00.","ordering":"Order by supplier_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/14-exists/q068.sql"},
-        {"id":"Q069","topic":"EXISTS","difficulty":5,"learning_objective":"Combine joins and an existence test to filter a transaction result.","statement":"Return order_id, ordered_at, customer_id, customer_first_name, customer_last_name, and status for orders that contain at least one product with a unit_price of 1,000.00 or more. Include each qualifying order once.","ordering":"Order by ordered_at descending, then order_id descending.","duplicates_matter":true,"official_solution":"solutions/14-exists/q069.sql"},
-        {"id":"Q070","topic":"EXISTS","difficulty":5,"learning_objective":"Use a correlated NOT EXISTS test with multiple prior concepts.","statement":"Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows that are at or below their reorder point and have no matching store_inventory row with a positive quantity_on_hand for the same product.","ordering":"Order by warehouse_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/14-exists/q070.sql"}
+        {
+          "id": "Q066",
+          "topic": "EXISTS",
+          "difficulty": 3,
+          "learning_objective": "Filter parent rows by the existence of a related row.",
+          "statement": "Return customer_id, email, first_name, and last_name for customers who have placed at least one order.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/14-exists/q066.sql"
+        },
+        {
+          "id": "Q067",
+          "topic": "EXISTS",
+          "difficulty": 3,
+          "learning_objective": "Use NOT EXISTS to find rows without a related match.",
+          "statement": "Return product_id, sku, and name for active products that have never received a review.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/14-exists/q067.sql"
+        },
+        {
+          "id": "Q068",
+          "topic": "EXISTS",
+          "difficulty": 4,
+          "learning_objective": "Test for a related row that satisfies an additional condition.",
+          "statement": "Return supplier_id, supplier_name, product_id, product_name, and unit_price for active products from suppliers that also supply at least one other active product priced above 1,000.00.",
+          "ordering": "Order by supplier_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/14-exists/q068.sql"
+        },
+        {
+          "id": "Q069",
+          "topic": "EXISTS",
+          "difficulty": 5,
+          "learning_objective": "Combine joins and an existence test to filter a transaction result.",
+          "statement": "Return order_id, ordered_at, customer_id, customer_first_name, customer_last_name, and status for orders that contain at least one product with a unit_price of 1,000.00 or more. Include each qualifying order once.",
+          "ordering": "Order by ordered_at descending, then order_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/14-exists/q069.sql"
+        },
+        {
+          "id": "Q070",
+          "topic": "EXISTS",
+          "difficulty": 5,
+          "learning_objective": "Use a correlated NOT EXISTS test with multiple prior concepts.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows that are at or below their reorder point and have no matching store_inventory row with a positive quantity_on_hand for the same product.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/14-exists/q070.sql"
+        }
       ]
     },
     {
@@ -759,11 +804,56 @@
       "title": "IN",
       "description": "Match a value against a subquery result set.",
       "exercises": [
-        {"id":"Q071","topic":"IN","difficulty":3,"learning_objective":"Filter rows using a single-column subquery result.","statement":"Return product_id, sku, name, and unit_price for products supplied by suppliers located in the same country as the customer whose email is 'customer1@example.test'.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/15-in/q071.sql"},
-        {"id":"Q072","topic":"IN","difficulty":3,"learning_objective":"Use NOT IN with a non-NULL subquery result to exclude matched rows.","statement":"Return customer_id, email, first_name, and last_name for customers who have not placed an order with status paid, shipped, or delivered.","ordering":"Order by customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/15-in/q072.sql"},
-        {"id":"Q073","topic":"IN","difficulty":4,"learning_objective":"Use an aggregate subquery as the IN result set.","statement":"Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose product_id appears in at least one return with status requested or approved.","ordering":"Order by warehouse_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/15-in/q073.sql"},
-        {"id":"Q074","topic":"IN","difficulty":5,"learning_objective":"Combine IN, joins, grouping, and HAVING to filter aggregated results.","statement":"Return category_id, category_name, and active_product_count for categories that contain at least one active product reviewed by a customer from India. Include only categories with at least two active products.","ordering":"Order by active_product_count descending, then category_id ascending.","duplicates_matter":true,"official_solution":"solutions/15-in/q074.sql"},
-        {"id":"Q075","topic":"IN","difficulty":5,"learning_objective":"Use a nested subquery to filter a multi-table transaction result.","statement":"Return order_id, ordered_at, customer_id, customer_first_name, customer_last_name, and order_item_count for orders placed by customers who have also submitted at least one review with a rating of 5. Include only orders containing at least two line items.","ordering":"Order by ordered_at descending, then order_id descending.","duplicates_matter":true,"official_solution":"solutions/15-in/q075.sql"}
+        {
+          "id": "Q071",
+          "topic": "IN",
+          "difficulty": 3,
+          "learning_objective": "Filter rows using a single-column subquery result.",
+          "statement": "Return product_id, sku, name, and unit_price for products supplied by suppliers located in the same country as the customer whose email is 'customer1@example.test'.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/15-in/q071.sql"
+        },
+        {
+          "id": "Q072",
+          "topic": "IN",
+          "difficulty": 3,
+          "learning_objective": "Use NOT IN with a non-NULL subquery result to exclude matched rows.",
+          "statement": "Return customer_id, email, first_name, and last_name for customers who have not placed an order with status paid, shipped, or delivered.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/15-in/q072.sql"
+        },
+        {
+          "id": "Q073",
+          "topic": "IN",
+          "difficulty": 4,
+          "learning_objective": "Use an aggregate subquery as the IN result set.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose product_id appears in at least one return with status requested or approved.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/15-in/q073.sql"
+        },
+        {
+          "id": "Q074",
+          "topic": "IN",
+          "difficulty": 5,
+          "learning_objective": "Combine IN, joins, grouping, and HAVING to filter aggregated results.",
+          "statement": "Return category_id, category_name, and active_product_count for categories that contain at least one active product reviewed by a customer from India. Include only categories with at least two active products.",
+          "ordering": "Order by active_product_count descending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/15-in/q074.sql"
+        },
+        {
+          "id": "Q075",
+          "topic": "IN",
+          "difficulty": 5,
+          "learning_objective": "Use a nested subquery to filter a multi-table transaction result.",
+          "statement": "Return order_id, ordered_at, customer_id, customer_first_name, customer_last_name, and order_item_count for orders placed by customers who have also submitted at least one review with a rating of 5. Include only orders containing at least two line items.",
+          "ordering": "Order by ordered_at descending, then order_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/15-in/q075.sql"
+        }
       ]
     },
     {
@@ -771,11 +861,56 @@
       "title": "ANY",
       "description": "Compare a value against one or more values returned by a subquery.",
       "exercises": [
-        {"id":"Q076","topic":"ANY","difficulty":3,"learning_objective":"Compare a value to any row returned by a subquery.","statement":"Return product_id, sku, name, and unit_price for active products priced higher than at least one active product supplied by supplier_id 1.","ordering":"Order by unit_price ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/16-any/q076.sql"},
-        {"id":"Q077","topic":"ANY","difficulty":3,"learning_objective":"Use = ANY as an alternative membership comparison.","statement":"Return payment_id, order_id, payment_method, amount, and status for payments whose payment_method is used by at least one failed payment.","ordering":"Order by payment_id ascending.","duplicates_matter":true,"official_solution":"solutions/16-any/q077.sql"},
-        {"id":"Q078","topic":"ANY","difficulty":4,"learning_objective":"Use a correlated ANY subquery to compare values within a group.","statement":"Return product_id, product_name, category_id, and unit_price for active products that cost more than at least one other active product in the same category.","ordering":"Order by category_id ascending, unit_price descending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/16-any/q078.sql"},
-        {"id":"Q079","topic":"ANY","difficulty":5,"learning_objective":"Combine ANY with joins and correlated aggregate logic.","statement":"Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose quantity_on_hand is greater than the reorder_point of at least one other inventory row in the same warehouse.","ordering":"Order by warehouse_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/16-any/q079.sql"},
-        {"id":"Q080","topic":"ANY","difficulty":5,"learning_objective":"Use ANY in a grouped query with a related-table filter.","statement":"Return supplier_id, supplier_name, and active_product_count for suppliers with at least two active products, where at least one active product costs more than any active product in category_id 1.","ordering":"Order by active_product_count descending, then supplier_id ascending.","duplicates_matter":true,"official_solution":"solutions/16-any/q080.sql"}
+        {
+          "id": "Q076",
+          "topic": "ANY",
+          "difficulty": 3,
+          "learning_objective": "Compare a value to any row returned by a subquery.",
+          "statement": "Return product_id, sku, name, and unit_price for active products priced higher than at least one active product supplied by supplier_id 1.",
+          "ordering": "Order by unit_price ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/16-any/q076.sql"
+        },
+        {
+          "id": "Q077",
+          "topic": "ANY",
+          "difficulty": 3,
+          "learning_objective": "Use = ANY as an alternative membership comparison.",
+          "statement": "Return payment_id, order_id, payment_method, amount, and status for payments whose payment_method is used by at least one failed payment.",
+          "ordering": "Order by payment_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/16-any/q077.sql"
+        },
+        {
+          "id": "Q078",
+          "topic": "ANY",
+          "difficulty": 4,
+          "learning_objective": "Use a correlated ANY subquery to compare values within a group.",
+          "statement": "Return product_id, product_name, category_id, and unit_price for active products that cost more than at least one other active product in the same category.",
+          "ordering": "Order by category_id ascending, unit_price descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/16-any/q078.sql"
+        },
+        {
+          "id": "Q079",
+          "topic": "ANY",
+          "difficulty": 5,
+          "learning_objective": "Combine ANY with joins and correlated aggregate logic.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, and quantity_on_hand for inventory rows whose quantity_on_hand is greater than the reorder_point of at least one other inventory row in the same warehouse.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/16-any/q079.sql"
+        },
+        {
+          "id": "Q080",
+          "topic": "ANY",
+          "difficulty": 5,
+          "learning_objective": "Use ANY in a grouped query with a related-table filter.",
+          "statement": "Return supplier_id, supplier_name, and active_product_count for suppliers with at least two active products, where at least one active product costs more than any active product in category_id 1.",
+          "ordering": "Order by active_product_count descending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/16-any/q080.sql"
+        }
       ]
     },
     {
@@ -783,11 +918,56 @@
       "title": "ALL",
       "description": "Compare a value against every value returned by a subquery.",
       "exercises": [
-        {"id":"Q081","topic":"ALL","difficulty":3,"learning_objective":"Compare a value to every row returned by a subquery.","statement":"Return product_id, sku, name, and unit_price for active products priced higher than every active product supplied by supplier_id 1.","ordering":"Order by unit_price ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/17-all/q081.sql"},
-        {"id":"Q082","topic":"ALL","difficulty":3,"learning_objective":"Use = ALL to select rows whose related values all meet a condition.","statement":"Return order_id, ordered_at, and status for orders whose every order item has a quantity of at least 2. Exclude orders with no order items.","ordering":"Order by ordered_at descending, then order_id descending.","duplicates_matter":true,"official_solution":"solutions/17-all/q082.sql"},
-        {"id":"Q083","topic":"ALL","difficulty":4,"learning_objective":"Use a correlated ALL subquery to find a group maximum.","statement":"Return product_id, product_name, category_id, and unit_price for active products whose unit_price is at least as high as every other active product in the same category. Include ties.","ordering":"Order by category_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/17-all/q083.sql"},
-        {"id":"Q084","topic":"ALL","difficulty":5,"learning_objective":"Combine ALL with joins and a correlated comparison across related rows.","statement":"Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows whose quantity_on_hand is at least as high as every inventory quantity for the same product in other warehouses. Include ties.","ordering":"Order by product_id ascending, then warehouse_id ascending.","duplicates_matter":true,"official_solution":"solutions/17-all/q084.sql"},
-        {"id":"Q085","topic":"ALL","difficulty":5,"learning_objective":"Use ALL with grouping and a correlated aggregate subquery.","statement":"Return supplier_id, supplier_name, product_id, product_name, and unit_price for active products whose unit_price is at least as high as every other active product from the same supplier. Include only suppliers with at least two active products, and include ties.","ordering":"Order by supplier_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/17-all/q085.sql"}
+        {
+          "id": "Q081",
+          "topic": "ALL",
+          "difficulty": 3,
+          "learning_objective": "Compare a value to every row returned by a subquery.",
+          "statement": "Return product_id, sku, name, and unit_price for active products priced higher than every active product supplied by supplier_id 1.",
+          "ordering": "Order by unit_price ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/17-all/q081.sql"
+        },
+        {
+          "id": "Q082",
+          "topic": "ALL",
+          "difficulty": 3,
+          "learning_objective": "Use = ALL to select rows whose related values all meet a condition.",
+          "statement": "Return order_id, ordered_at, and status for orders whose every order item has a quantity of at least 2. Exclude orders with no order items.",
+          "ordering": "Order by ordered_at descending, then order_id descending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/17-all/q082.sql"
+        },
+        {
+          "id": "Q083",
+          "topic": "ALL",
+          "difficulty": 4,
+          "learning_objective": "Use a correlated ALL subquery to find a group maximum.",
+          "statement": "Return product_id, product_name, category_id, and unit_price for active products whose unit_price is at least as high as every other active product in the same category. Include ties.",
+          "ordering": "Order by category_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/17-all/q083.sql"
+        },
+        {
+          "id": "Q084",
+          "topic": "ALL",
+          "difficulty": 5,
+          "learning_objective": "Combine ALL with joins and a correlated comparison across related rows.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows whose quantity_on_hand is at least as high as every inventory quantity for the same product in other warehouses. Include ties.",
+          "ordering": "Order by product_id ascending, then warehouse_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/17-all/q084.sql"
+        },
+        {
+          "id": "Q085",
+          "topic": "ALL",
+          "difficulty": 5,
+          "learning_objective": "Use ALL with grouping and a correlated aggregate subquery.",
+          "statement": "Return supplier_id, supplier_name, product_id, product_name, and unit_price for active products whose unit_price is at least as high as every other active product from the same supplier. Include only suppliers with at least two active products, and include ties.",
+          "ordering": "Order by supplier_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/17-all/q085.sql"
+        }
       ]
     },
     {
@@ -795,11 +975,56 @@
       "title": "CTE",
       "description": "Structure complex queries with named intermediate result sets.",
       "exercises": [
-        {"id":"Q086","topic":"CTE","difficulty":3,"learning_objective":"Use a CTE to name an aggregate value for a comparison.","statement":"Return product_id, sku, name, and unit_price for active products priced above the average unit_price of all active products.","ordering":"Order by unit_price descending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/18-cte/q086.sql"},
-        {"id":"Q087","topic":"CTE","difficulty":3,"learning_objective":"Use a CTE to calculate reusable line-item totals.","statement":"Return order_id, ordered_at, status, and item_total for orders with an item_total of at least 1,000.00. item_total is the sum of quantity multiplied by unit_price across each order's line items.","ordering":"Order by item_total descending, then order_id ascending.","duplicates_matter":true,"official_solution":"solutions/18-cte/q087.sql"},
-        {"id":"Q088","topic":"CTE","difficulty":4,"learning_objective":"Use a CTE to isolate a filtered data set before joining it to reference tables.","statement":"Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows at or below their reorder point, but only for active products.","ordering":"Order by warehouse_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/18-cte/q088.sql"},
-        {"id":"Q089","topic":"CTE","difficulty":4,"learning_objective":"Combine multiple CTEs with joins and aggregates.","statement":"Return category_id, category_name, active_product_count, and average_rating for categories with at least two active products and at least one review. average_rating is the average rating across reviews of active products in the category.","ordering":"Order by average_rating descending, then category_id ascending.","duplicates_matter":true,"official_solution":"solutions/18-cte/q089.sql"},
-        {"id":"Q090","topic":"CTE","difficulty":5,"learning_objective":"Use multiple CTEs to compare grouped business metrics to an overall benchmark.","statement":"Return customer_id, email, first_name, last_name, delivered_order_count, and delivered_item_total for customers whose delivered_item_total is above the average delivered_item_total among customers with at least one delivered order. delivered_item_total is the sum of quantity multiplied by unit_price for delivered orders.","ordering":"Order by delivered_item_total descending, then customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/18-cte/q090.sql"}
+        {
+          "id": "Q086",
+          "topic": "CTE",
+          "difficulty": 3,
+          "learning_objective": "Use a CTE to name an aggregate value for a comparison.",
+          "statement": "Return product_id, sku, name, and unit_price for active products priced above the average unit_price of all active products.",
+          "ordering": "Order by unit_price descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/18-cte/q086.sql"
+        },
+        {
+          "id": "Q087",
+          "topic": "CTE",
+          "difficulty": 3,
+          "learning_objective": "Use a CTE to calculate reusable line-item totals.",
+          "statement": "Return order_id, ordered_at, status, and item_total for orders with an item_total of at least 1,000.00. item_total is the sum of quantity multiplied by unit_price across each order's line items.",
+          "ordering": "Order by item_total descending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/18-cte/q087.sql"
+        },
+        {
+          "id": "Q088",
+          "topic": "CTE",
+          "difficulty": 4,
+          "learning_objective": "Use a CTE to isolate a filtered data set before joining it to reference tables.",
+          "statement": "Return warehouse_id, warehouse_code, product_id, sku, quantity_on_hand, and reorder_point for inventory rows at or below their reorder point, but only for active products.",
+          "ordering": "Order by warehouse_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/18-cte/q088.sql"
+        },
+        {
+          "id": "Q089",
+          "topic": "CTE",
+          "difficulty": 4,
+          "learning_objective": "Combine multiple CTEs with joins and aggregates.",
+          "statement": "Return category_id, category_name, active_product_count, and average_rating for categories with at least two active products and at least one review. average_rating is the average rating across reviews of active products in the category.",
+          "ordering": "Order by average_rating descending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/18-cte/q089.sql"
+        },
+        {
+          "id": "Q090",
+          "topic": "CTE",
+          "difficulty": 5,
+          "learning_objective": "Use multiple CTEs to compare grouped business metrics to an overall benchmark.",
+          "statement": "Return customer_id, email, first_name, last_name, delivered_order_count, and delivered_item_total for customers whose delivered_item_total is above the average delivered_item_total among customers with at least one delivered order. delivered_item_total is the sum of quantity multiplied by unit_price for delivered orders.",
+          "ordering": "Order by delivered_item_total descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/18-cte/q090.sql"
+        }
       ]
     },
     {
@@ -807,11 +1032,56 @@
       "title": "RECURSIVE CTE",
       "description": "Traverse hierarchical data through recursive common table expressions.",
       "exercises": [
-        {"id":"Q091","topic":"RECURSIVE CTE","difficulty":3,"learning_objective":"Traverse a category hierarchy from each root to its descendants.","statement":"Return category_id, category_name, parent_category_id, hierarchy_level, and category_path for every category. hierarchy_level starts at 0 for root categories. category_path contains category names from the root to the category, separated by ' > '.","ordering":"Order by category_path ascending, then category_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q091.sql"},
-        {"id":"Q092","topic":"RECURSIVE CTE","difficulty":3,"learning_objective":"Use a recursive CTE to list all direct and indirect reports of one employee.","statement":"Return employee_id, first_name, last_name, manager_id, and hierarchy_level for employee_id 1 and every employee who reports to them directly or indirectly. hierarchy_level is 0 for employee_id 1.","ordering":"Order by hierarchy_level ascending, then employee_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q092.sql"},
-        {"id":"Q093","topic":"RECURSIVE CTE","difficulty":4,"learning_objective":"Build an employee hierarchy path while traversing a self-referencing table.","statement":"Return employee_id, first_name, last_name, manager_id, hierarchy_level, and reporting_path for every employee. reporting_path contains employee IDs from the hierarchy root to the employee, separated by ' > '.","ordering":"Order by reporting_path ascending, then employee_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q093.sql"},
-        {"id":"Q094","topic":"RECURSIVE CTE","difficulty":5,"learning_objective":"Combine recursive traversal with joins and filtering on related business data.","statement":"Return employee_id, first_name, last_name, hierarchy_level, warehouse_code, and warehouse_name for every direct or indirect report of employee_id 1 who works in a warehouse located in India. Exclude employee_id 1.","ordering":"Order by hierarchy_level ascending, then employee_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q094.sql"},
-        {"id":"Q095","topic":"RECURSIVE CTE","difficulty":5,"learning_objective":"Combine recursive traversal, joins, and aggregation to summarize a hierarchy.","statement":"Return root_category_id, root_category_name, category_id, category_name, hierarchy_level, and active_product_count for every category in each root category's hierarchy. active_product_count is the number of active products assigned directly to that category, including zero counts.","ordering":"Order by root_category_id ascending, hierarchy_level ascending, then category_id ascending.","duplicates_matter":true,"official_solution":"solutions/19-recursive-cte/q095.sql"}
+        {
+          "id": "Q091",
+          "topic": "RECURSIVE CTE",
+          "difficulty": 3,
+          "learning_objective": "Traverse a category hierarchy from each root to its descendants.",
+          "statement": "Return category_id, category_name, parent_category_id, hierarchy_level, and category_path for every category. hierarchy_level starts at 0 for root categories. category_path contains category names from the root to the category, separated by ' > '.",
+          "ordering": "Order by category_path ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/19-recursive-cte/q091.sql"
+        },
+        {
+          "id": "Q092",
+          "topic": "RECURSIVE CTE",
+          "difficulty": 3,
+          "learning_objective": "Use a recursive CTE to list all direct and indirect reports of one employee.",
+          "statement": "Return employee_id, first_name, last_name, manager_id, and hierarchy_level for employee_id 1 and every employee who reports to them directly or indirectly. hierarchy_level is 0 for employee_id 1.",
+          "ordering": "Order by hierarchy_level ascending, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/19-recursive-cte/q092.sql"
+        },
+        {
+          "id": "Q093",
+          "topic": "RECURSIVE CTE",
+          "difficulty": 4,
+          "learning_objective": "Build an employee hierarchy path while traversing a self-referencing table.",
+          "statement": "Return employee_id, first_name, last_name, manager_id, hierarchy_level, and reporting_path for every employee. reporting_path contains employee IDs from the hierarchy root to the employee, separated by ' > '.",
+          "ordering": "Order by reporting_path ascending, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/19-recursive-cte/q093.sql"
+        },
+        {
+          "id": "Q094",
+          "topic": "RECURSIVE CTE",
+          "difficulty": 5,
+          "learning_objective": "Combine recursive traversal with joins and filtering on related business data.",
+          "statement": "Return employee_id, first_name, last_name, hierarchy_level, warehouse_code, and warehouse_name for every direct or indirect report of employee_id 1 who works in a warehouse located in India. Exclude employee_id 1.",
+          "ordering": "Order by hierarchy_level ascending, then employee_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/19-recursive-cte/q094.sql"
+        },
+        {
+          "id": "Q095",
+          "topic": "RECURSIVE CTE",
+          "difficulty": 5,
+          "learning_objective": "Combine recursive traversal, joins, and aggregation to summarize a hierarchy.",
+          "statement": "Return root_category_id, root_category_name, category_id, category_name, hierarchy_level, and active_product_count for every category in each root category's hierarchy. active_product_count is the number of active products assigned directly to that category, including zero counts.",
+          "ordering": "Order by root_category_id ascending, hierarchy_level ascending, then category_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/19-recursive-cte/q095.sql"
+        }
       ]
     },
     {
@@ -844,7 +1114,7 @@
           "topic": "WINDOW FUNCTIONS",
           "difficulty": 5,
           "learning_objective": "Use LAG to compare each row with the preceding chronological row in its partition.",
-          "statement": "Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is ordered_at minus previous_ordered_at.",
+          "statement": "Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is the difference between ordered_at and previous_ordered_at in seconds using DATEDIFF_BIG.",
           "ordering": "Order by customer_id ascending, ordered_at ascending, then order_id ascending.",
           "duplicates_matter": true,
           "official_solution": "solutions/20-window-functions/q098.sql"
@@ -1047,11 +1317,56 @@
       "title": "UNION",
       "description": "Combine compatible result sets into unified analytical data sets.",
       "exercises": [
-        {"id":"Q116","topic":"UNION","difficulty":5,"learning_objective":"Unify entities with different relationship paths into a normalized contact directory.","statement":"Return email, contact_name, contact_type, and country_code for every customer and supplier. contact_name is the customer's first and last name joined with one space, or the supplier name. contact_type is customer or supplier. A customer country is determined through the customer's city; a supplier country is determined directly. Include all rows from both entity types.","ordering":"Order by contact_type ascending, then email ascending.","duplicates_matter":true,"official_solution":"solutions/24-union/q116.sql"},
-        {"id":"Q117","topic":"UNION","difficulty":5,"learning_objective":"Combine heterogeneous business locations while preserving type-specific attributes.","statement":"Return country_code, city_name, location_type, location_code, location_name, capacity_units, and employee_count for every warehouse and store. For warehouses, include capacity_units and the number of employees assigned to the warehouse. For stores, capacity_units and employee_count must be NULL. location_type is warehouse or store.","ordering":"Order by country_code ascending, location_type ascending, then location_code ascending.","duplicates_matter":true,"official_solution":"solutions/24-union/q117.sql"},
-        {"id":"Q118","topic":"UNION","difficulty":5,"learning_objective":"Create a combined product-event ledger from sales and return transactions.","statement":"Return order_id, product_id, sku, event_type, event_date, and quantity for two event types: delivered_sale for every order item in a delivered order, using the order date; and processed_return for every return with status approved or received, using the requested date. Include every event occurrence, even when values repeat.","ordering":"Order by event_date ascending, event_type ascending, order_id ascending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/24-union/q118.sql"},
-        {"id":"Q119","topic":"UNION","difficulty":5,"learning_objective":"Use a set union to deduplicate products that meet either of two availability rules.","statement":"Return product_id, sku, and name for active products that are available in at least one warehouse with positive quantity_on_hand or in at least one store with positive quantity_on_hand. Include each qualifying product once.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/24-union/q119.sql"},
-        {"id":"Q120","topic":"UNION","difficulty":5,"learning_objective":"Aggregate a UNION ALL event stream into customer-level activity metrics.","statement":"Return customer_id, email, order_count, review_count, and last_activity_at for every customer with at least one order or review. order_count counts orders, review_count counts reviews, and last_activity_at is the latest ordered_at or review created_at timestamp for that customer.","ordering":"Order by last_activity_at descending, then customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/24-union/q120.sql"}
+        {
+          "id": "Q116",
+          "topic": "UNION",
+          "difficulty": 5,
+          "learning_objective": "Unify entities with different relationship paths into a normalized contact directory.",
+          "statement": "Return email, contact_name, contact_type, and country_code for every customer and supplier. contact_name is the customer's first and last name joined with one space, or the supplier name. contact_type is customer or supplier. A customer country is determined through the customer's city; a supplier country is determined directly. Include all rows from both entity types.",
+          "ordering": "Order by contact_type ascending, then email ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/24-union/q116.sql"
+        },
+        {
+          "id": "Q117",
+          "topic": "UNION",
+          "difficulty": 5,
+          "learning_objective": "Combine heterogeneous business locations while preserving type-specific attributes.",
+          "statement": "Return country_code, city_name, location_type, location_code, location_name, capacity_units, and employee_count for every warehouse and store. For warehouses, include capacity_units and the number of employees assigned to the warehouse. For stores, capacity_units and employee_count must be NULL. location_type is warehouse or store.",
+          "ordering": "Order by country_code ascending, location_type ascending, then location_code ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/24-union/q117.sql"
+        },
+        {
+          "id": "Q118",
+          "topic": "UNION",
+          "difficulty": 5,
+          "learning_objective": "Create a combined product-event ledger from sales and return transactions.",
+          "statement": "Return order_id, product_id, sku, event_type, event_date, and quantity for two event types: delivered_sale for every order item in a delivered order, using the order date; and processed_return for every return with status approved or received, using the requested date. Include every event occurrence, even when values repeat.",
+          "ordering": "Order by event_date ascending, event_type ascending, order_id ascending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/24-union/q118.sql"
+        },
+        {
+          "id": "Q119",
+          "topic": "UNION",
+          "difficulty": 5,
+          "learning_objective": "Use a set union to deduplicate products that meet either of two availability rules.",
+          "statement": "Return product_id, sku, and name for active products that are available in at least one warehouse with positive quantity_on_hand or in at least one store with positive quantity_on_hand. Include each qualifying product once.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/24-union/q119.sql"
+        },
+        {
+          "id": "Q120",
+          "topic": "UNION",
+          "difficulty": 5,
+          "learning_objective": "Aggregate a UNION ALL event stream into customer-level activity metrics.",
+          "statement": "Return customer_id, email, order_count, review_count, and last_activity_at for every customer with at least one order or review. order_count counts orders, review_count counts reviews, and last_activity_at is the latest ordered_at or review created_at timestamp for that customer.",
+          "ordering": "Order by last_activity_at descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/24-union/q120.sql"
+        }
       ]
     },
     {
@@ -1059,11 +1374,56 @@
       "title": "INTERSECT",
       "description": "Find values shared by two independently derived result sets.",
       "exercises": [
-        {"id":"Q121","topic":"INTERSECT","difficulty":5,"learning_objective":"Intersect sales and review populations, then join independent aggregate metrics.","statement":"Return product_id, sku, delivered_order_count, and review_count for active products that both appear in at least one delivered order and have at least one review. delivered_order_count is the number of distinct delivered orders containing the product.","ordering":"Order by delivered_order_count descending, review_count descending, then product_id ascending.","duplicates_matter":true,"official_solution":"solutions/25-intersect/q121.sql"},
-        {"id":"Q122","topic":"INTERSECT","difficulty":5,"learning_objective":"Find customers shared by transaction and feedback populations before calculating their metrics.","statement":"Return customer_id, email, order_count, review_count, last_ordered_at, and last_reviewed_at for customers who have both placed at least one order and submitted at least one review.","ordering":"Order by customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/25-intersect/q122.sql"},
-        {"id":"Q123","topic":"INTERSECT","difficulty":5,"learning_objective":"Intersect product availability sets from two inventory channels and retain channel-specific counts.","statement":"Return product_id, sku, warehouse_count, and store_count for active products with positive quantity_on_hand in at least one warehouse and at least one store. warehouse_count and store_count are the numbers of locations with positive quantity for the product in each channel.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/25-intersect/q123.sql"},
-        {"id":"Q124","topic":"INTERSECT","difficulty":5,"learning_objective":"Intersect location populations and combine multiple aggregate measures for the shared countries.","statement":"Return country_id, country_code, country_name, warehouse_count, store_count, and warehouse_capacity_units for countries that host at least one warehouse and at least one store. warehouse_capacity_units is the sum of capacity_units across the country's warehouses.","ordering":"Order by country_code ascending.","duplicates_matter":true,"official_solution":"solutions/25-intersect/q124.sql"},
-        {"id":"Q125","topic":"INTERSECT","difficulty":5,"learning_objective":"Use an order-ID intersection to combine successful payment and delivery states with order totals.","statement":"Return order_id, customer_id, ordered_at, payment_amount, item_total, and delivered_at for orders whose payment status is completed and whose shipment status is delivered. item_total is the sum of quantity multiplied by unit_price across the order's line items.","ordering":"Order by ordered_at ascending, then order_id ascending.","duplicates_matter":true,"official_solution":"solutions/25-intersect/q125.sql"}
+        {
+          "id": "Q121",
+          "topic": "INTERSECT",
+          "difficulty": 5,
+          "learning_objective": "Intersect sales and review populations, then join independent aggregate metrics.",
+          "statement": "Return product_id, sku, delivered_order_count, and review_count for active products that both appear in at least one delivered order and have at least one review. delivered_order_count is the number of distinct delivered orders containing the product.",
+          "ordering": "Order by delivered_order_count descending, review_count descending, then product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/25-intersect/q121.sql"
+        },
+        {
+          "id": "Q122",
+          "topic": "INTERSECT",
+          "difficulty": 5,
+          "learning_objective": "Find customers shared by transaction and feedback populations before calculating their metrics.",
+          "statement": "Return customer_id, email, order_count, review_count, last_ordered_at, and last_reviewed_at for customers who have both placed at least one order and submitted at least one review.",
+          "ordering": "Order by customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/25-intersect/q122.sql"
+        },
+        {
+          "id": "Q123",
+          "topic": "INTERSECT",
+          "difficulty": 5,
+          "learning_objective": "Intersect product availability sets from two inventory channels and retain channel-specific counts.",
+          "statement": "Return product_id, sku, warehouse_count, and store_count for active products with positive quantity_on_hand in at least one warehouse and at least one store. warehouse_count and store_count are the numbers of locations with positive quantity for the product in each channel.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/25-intersect/q123.sql"
+        },
+        {
+          "id": "Q124",
+          "topic": "INTERSECT",
+          "difficulty": 5,
+          "learning_objective": "Intersect location populations and combine multiple aggregate measures for the shared countries.",
+          "statement": "Return country_id, country_code, country_name, warehouse_count, store_count, and warehouse_capacity_units for countries that host at least one warehouse and at least one store. warehouse_capacity_units is the sum of capacity_units across the country's warehouses.",
+          "ordering": "Order by country_code ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/25-intersect/q124.sql"
+        },
+        {
+          "id": "Q125",
+          "topic": "INTERSECT",
+          "difficulty": 5,
+          "learning_objective": "Use an order-ID intersection to combine successful payment and delivery states with order totals.",
+          "statement": "Return order_id, customer_id, ordered_at, payment_amount, item_total, and delivered_at for orders whose payment status is completed and whose shipment status is delivered. item_total is the sum of quantity multiplied by unit_price across the order's line items.",
+          "ordering": "Order by ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/25-intersect/q125.sql"
+        }
       ]
     },
     {
@@ -1071,11 +1431,56 @@
       "title": "EXCEPT",
       "description": "Subtract one derived result set from another to identify unmatched business records.",
       "exercises": [
-        {"id":"Q126","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract delivered-sales products from active products and retain related inventory metrics.","statement":"Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products that have never appeared in a delivered order. warehouse_count is the number of warehouses that stock the product, and warehouse_quantity_on_hand is the sum of quantity_on_hand across those warehouses.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q126.sql"},
-        {"id":"Q127","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract feedback participants from purchasers before summarizing purchase history.","statement":"Return customer_id, email, order_count, and last_ordered_at for customers who have placed at least one order but have never submitted a review.","ordering":"Order by last_ordered_at descending, then customer_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q127.sql"},
-        {"id":"Q128","topic":"EXCEPT","difficulty":5,"learning_objective":"Identify products available in warehouses but unavailable in every store using inventory set subtraction.","statement":"Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products with positive quantity_on_hand in at least one warehouse and no positive quantity_on_hand in any store. warehouse_count and warehouse_quantity_on_hand consider only warehouse rows with positive quantity.","ordering":"Order by product_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q128.sql"},
-        {"id":"Q129","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract suppliers associated with returned active products from the active supplier population.","statement":"Return supplier_id, supplier_name, active_product_count, and average_active_unit_price for suppliers that have at least one active product but no active product appearing in returns.","ordering":"Order by average_active_unit_price descending, then supplier_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q129.sql"},
-        {"id":"Q130","topic":"EXCEPT","difficulty":5,"learning_objective":"Subtract completed-payment orders from the full order set before calculating transaction totals.","statement":"Return order_id, customer_id, ordered_at, order_status, payment_status, and item_total for orders whose payment status is not completed. item_total is the sum of quantity multiplied by unit_price across each order's line items.","ordering":"Order by ordered_at ascending, then order_id ascending.","duplicates_matter":true,"official_solution":"solutions/26-except/q130.sql"}
+        {
+          "id": "Q126",
+          "topic": "EXCEPT",
+          "difficulty": 5,
+          "learning_objective": "Subtract delivered-sales products from active products and retain related inventory metrics.",
+          "statement": "Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products that have never appeared in a delivered order. warehouse_count is the number of warehouses that stock the product, and warehouse_quantity_on_hand is the sum of quantity_on_hand across those warehouses.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/26-except/q126.sql"
+        },
+        {
+          "id": "Q127",
+          "topic": "EXCEPT",
+          "difficulty": 5,
+          "learning_objective": "Subtract feedback participants from purchasers before summarizing purchase history.",
+          "statement": "Return customer_id, email, order_count, and last_ordered_at for customers who have placed at least one order but have never submitted a review.",
+          "ordering": "Order by last_ordered_at descending, then customer_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/26-except/q127.sql"
+        },
+        {
+          "id": "Q128",
+          "topic": "EXCEPT",
+          "difficulty": 5,
+          "learning_objective": "Identify products available in warehouses but unavailable in every store using inventory set subtraction.",
+          "statement": "Return product_id, sku, warehouse_count, and warehouse_quantity_on_hand for active products with positive quantity_on_hand in at least one warehouse and no positive quantity_on_hand in any store. warehouse_count and warehouse_quantity_on_hand consider only warehouse rows with positive quantity.",
+          "ordering": "Order by product_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/26-except/q128.sql"
+        },
+        {
+          "id": "Q129",
+          "topic": "EXCEPT",
+          "difficulty": 5,
+          "learning_objective": "Subtract suppliers associated with returned active products from the active supplier population.",
+          "statement": "Return supplier_id, supplier_name, active_product_count, and average_active_unit_price for suppliers that have at least one active product but no active product appearing in returns.",
+          "ordering": "Order by average_active_unit_price descending, then supplier_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/26-except/q129.sql"
+        },
+        {
+          "id": "Q130",
+          "topic": "EXCEPT",
+          "difficulty": 5,
+          "learning_objective": "Subtract completed-payment orders from the full order set before calculating transaction totals.",
+          "statement": "Return order_id, customer_id, ordered_at, order_status, payment_status, and item_total for orders whose payment status is not completed. item_total is the sum of quantity multiplied by unit_price across each order's line items.",
+          "ordering": "Order by ordered_at ascending, then order_id ascending.",
+          "duplicates_matter": true,
+          "official_solution": "solutions/26-except/q130.sql"
+        }
       ]
     },
     {
@@ -1350,7 +1755,7 @@
           "id": "Q151",
           "topic": "CONSTRAINTS",
           "difficulty": 1,
-          "learning_objective": "Add a named CHECK constraint and inspect its PostgreSQL definition.",
+          "learning_objective": "Add a named CHECK constraint and inspect its definition in SQL Server.",
           "statement": "Add a constraint named products_unit_price_ceiling to products that requires unit_price to be at most 1000000. Return constraint_name, constraint_type, and constraint_definition for products_unit_price_ceiling.",
           "ordering": "No ordering is required.",
           "ordering_required": false,
@@ -1474,59 +1879,59 @@
       ]
     },
     {
-      "slug": "33-postgresql-features",
-      "title": "PostgreSQL Features",
-      "description": "Use PostgreSQL-specific operators and query constructs for case-insensitive matching, representative rows, conditional aggregates, per-row lookups, and JSONB results.",
+      "slug": "33-tsql-features",
+      "title": "T-SQL Features",
+      "description": "Use SQL Server (T-SQL) features for top-N ranking with ties, correlated subqueries with CROSS/OUTER APPLY, conditional aggregation with CASE, and string splitting.",
       "exercises": [
         {
           "id": "Q161",
-          "topic": "POSTGRESQL FEATURES",
+          "topic": "T-SQL FEATURES",
           "difficulty": 1,
-          "learning_objective": "Use ILIKE for case-insensitive pattern matching.",
-          "statement": "Return product_id, sku, and name for every product whose name contains 'wireless', regardless of letter case.",
-          "ordering": "Order by product_id ascending.",
+          "learning_objective": "Use TOP WITH TIES for deterministic top-N rank queries.",
+          "statement": "Return product_id, sku, name, and unit_price for the top 5 most expensive products. If there are ties for the 5th price, return all tied products using TOP WITH TIES.",
+          "ordering": "Order by unit_price descending, then product_id ascending.",
           "duplicates_matter": true,
-          "official_solution": "solutions/33-postgresql-features/q161.sql"
+          "official_solution": "solutions/33-tsql-features/q161.sql"
         },
         {
           "id": "Q162",
-          "topic": "POSTGRESQL FEATURES",
+          "topic": "T-SQL FEATURES",
           "difficulty": 2,
-          "learning_objective": "Use DISTINCT ON to select one deterministic representative row from each group.",
-          "statement": "Using DISTINCT ON, return the most recent order for each customer who has placed an order. Return customer_id, order_id, ordered_at, and status.",
+          "learning_objective": "Use CROSS APPLY to select one deterministic representative row from each group.",
+          "statement": "Using CROSS APPLY, return the most recent order for each customer who has placed an order. Return customer_id, order_id, ordered_at, and status.",
           "ordering": "Order by customer_id ascending.",
           "duplicates_matter": true,
-          "official_solution": "solutions/33-postgresql-features/q162.sql"
+          "official_solution": "solutions/33-tsql-features/q162.sql"
         },
         {
           "id": "Q163",
-          "topic": "POSTGRESQL FEATURES",
+          "topic": "T-SQL FEATURES",
           "difficulty": 3,
-          "learning_objective": "Use FILTER with aggregate functions to compute conditional metrics in one grouped query.",
-          "statement": "For every supplier, return supplier_id, name, active_product_count, and inactive_product_count. Count active and inactive products with aggregate FILTER clauses, and include suppliers with no products.",
+          "learning_objective": "Use conditional CASE with aggregate functions to compute conditional metrics in one grouped query.",
+          "statement": "For every supplier, return supplier_id, name, active_product_count, and inactive_product_count. Count active and inactive products using conditional CASE aggregates, and include suppliers with no products.",
           "ordering": "Order by supplier_id ascending.",
           "duplicates_matter": true,
-          "official_solution": "solutions/33-postgresql-features/q163.sql"
+          "official_solution": "solutions/33-tsql-features/q163.sql"
         },
         {
           "id": "Q164",
-          "topic": "POSTGRESQL FEATURES",
+          "topic": "T-SQL FEATURES",
           "difficulty": 4,
-          "learning_objective": "Use a LEFT JOIN LATERAL subquery to attach each row's best related match.",
-          "statement": "For every active product, return product_id, sku, review_id, rating, and created_at for its most recent review. Include active products with no reviews, using NULL for the review columns.",
+          "learning_objective": "Use an OUTER APPLY subquery to attach each row's best related match.",
+          "statement": "For every active product, return product_id, sku, review_id, rating, and created_at for its most recent review using OUTER APPLY. Include active products with no reviews, using NULL for the review columns.",
           "ordering": "Order by product_id ascending.",
           "duplicates_matter": true,
-          "official_solution": "solutions/33-postgresql-features/q164.sql"
+          "official_solution": "solutions/33-tsql-features/q164.sql"
         },
         {
           "id": "Q165",
-          "topic": "POSTGRESQL FEATURES",
+          "topic": "T-SQL FEATURES",
           "difficulty": 5,
-          "learning_objective": "Build ordered nested JSONB results with jsonb_build_object and jsonb_agg.",
-          "statement": "For every delivered order, return order_id, customer_id, and items, where items is a JSONB array ordered by product_id. Each array element must be a JSONB object with keys product_id, sku, quantity, and unit_price for one order item.",
-          "ordering": "Order by order_id ascending.",
+          "learning_objective": "Split delimited strings into table rows using STRING_SPLIT.",
+          "statement": "Using STRING_SPLIT, parse the comma-separated tag list 'electronics,kitchen,laptops,books' into individual rows. Return the distinct trimmed tags as tag.",
+          "ordering": "Order by tag ascending.",
           "duplicates_matter": true,
-          "official_solution": "solutions/33-postgresql-features/q165.sql"
+          "official_solution": "solutions/33-tsql-features/q165.sql"
         }
       ]
     },

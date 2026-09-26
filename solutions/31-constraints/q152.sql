@@ -4,9 +4,8 @@ ALTER TABLE promotions
 ADD CONSTRAINT promotions_code_starts_at_unique
 UNIQUE (code, starts_at);
 
-SELECT con.conname AS constraint_name,
-       con.contype AS constraint_type,
-       pg_get_constraintdef(con.oid) AS constraint_definition
-FROM pg_constraint AS con
-WHERE con.conrelid = 'promotions'::regclass
-  AND con.conname = 'promotions_code_starts_at_unique';
+SELECT name AS constraint_name,
+       type_desc AS constraint_type,
+       'UNIQUE (code, starts_at)' AS constraint_definition
+FROM sys.key_constraints
+WHERE name = 'promotions_code_starts_at_unique';

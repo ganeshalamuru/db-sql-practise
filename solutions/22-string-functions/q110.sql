@@ -18,14 +18,14 @@ WITH product_delivered_revenue AS (
            ) AS revenue_rank
     FROM products AS p
     LEFT JOIN product_delivered_revenue AS r ON r.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
 )
 SELECT c.category_id,
        c.name AS category_name,
-       UPPER(LEFT(c.name, 3)) || '-' || LPAD(c.category_id::TEXT, 2, '0')
+       UPPER(LEFT(c.name, 3)) + '-' + RIGHT('0' + CAST(c.category_id AS VARCHAR(10)), 2)
            AS category_code,
        MAX(p.delivered_revenue) AS top_delivered_revenue,
-       STRING_AGG(p.sku, ' | ' ORDER BY p.sku) AS top_sku_list
+       STRING_AGG(p.sku, ' | ') WITHIN GROUP (ORDER BY p.sku) AS top_sku_list
 FROM categories AS c
 JOIN ranked_active_products AS p ON p.category_id = c.category_id
 WHERE p.revenue_rank = 1

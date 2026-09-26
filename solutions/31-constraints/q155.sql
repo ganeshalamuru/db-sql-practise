@@ -2,11 +2,10 @@
 -- Requirement: No ordering is required.
 ALTER TABLE promotions
 ADD CONSTRAINT promotions_discount_window_limit
-CHECK (ends_at <= starts_at + INTERVAL '730 days');
+CHECK (DATEDIFF(day, starts_at, ends_at) <= 730);
 
-SELECT con.conname AS constraint_name,
-       con.contype AS constraint_type,
-       pg_get_constraintdef(con.oid) AS constraint_definition
-FROM pg_constraint AS con
-WHERE con.conrelid = 'promotions'::regclass
-  AND con.conname = 'promotions_discount_window_limit';
+SELECT name AS constraint_name,
+       type_desc AS constraint_type,
+       definition AS constraint_definition
+FROM sys.check_constraints
+WHERE name = 'promotions_discount_window_limit';

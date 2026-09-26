@@ -5,19 +5,16 @@ select
     c.name as category_name,
     count(p.product_id) as active_product_count
 from categories as c 
-join products as p on c.category_id = p.category_id and p.is_active
-group by c.category_id,category_name
-having count(p.product_id) >= 2 and 
-    count(p.product_id) FILTER (where p.product_id in 
-    (select r.product_id 
-        from reviews as r 
-        join customers as c on r.review_id=c.customer_id 
-        where c.city_id in (
-            select ci.city_id 
-            from cities as ci 
-            join countries as co on ci.country_id=co.country_id
-            where co.name = 'India'))) >=1 
-
-order by active_product_count desc,c.category_id
-
-
+join products as p on c.category_id = p.category_id and p.is_active = 1
+where c.category_id in (
+    select reviewed.category_id
+    from products as reviewed
+    join reviews as r on r.product_id = reviewed.product_id
+    join customers as cu on cu.customer_id = r.customer_id
+    join cities as ci on ci.city_id = cu.city_id
+    join countries as co on co.country_id = ci.country_id
+    where co.name = 'India'
+)
+group by c.category_id, c.name
+having count(p.product_id) >= 2
+order by active_product_count desc, c.category_id

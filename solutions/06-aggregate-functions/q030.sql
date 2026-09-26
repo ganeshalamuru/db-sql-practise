@@ -6,5 +6,5 @@ SELECT
     COUNT(*) AS order_count,
     ROUND(AVG(shipping_fee), 2) AS average_shipping_fee
 FROM orders
-WHERE ordered_at >= TIMESTAMPTZ '2024-01-01 00:00:00+00'
-  AND ordered_at < TIMESTAMPTZ '2025-01-01 00:00:00+00';
+WHERE ordered_at >= '2024-01-01 00:00:00'
+  AND ordered_at < '2025-01-01 00:00:00';

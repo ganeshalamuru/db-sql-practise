@@ -5,4 +5,4 @@ SELECT COUNT(*) AS active_product_count,
        MAX(unit_price) AS highest_active_product_price,
        ROUND(AVG(unit_price), 2) AS average_active_product_price
 FROM products
-WHERE is_active;
+WHERE is_active = 1;

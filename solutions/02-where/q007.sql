@@ -2,6 +2,6 @@
 -- Requirement: Order by unit_price ascending, then product_id ascending.
 SELECT product_id, sku, name, unit_price
 FROM products
-WHERE is_active
+WHERE is_active = 1
   AND unit_price > 1000.00
 ORDER BY unit_price, product_id;

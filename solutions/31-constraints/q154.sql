@@ -4,9 +4,8 @@ ALTER TABLE shipments
 ADD CONSTRAINT shipments_delivered_at_required
 CHECK (status <> 'delivered' OR delivered_at IS NOT NULL);
 
-SELECT con.conname AS constraint_name,
-       con.contype AS constraint_type,
-       pg_get_constraintdef(con.oid) AS constraint_definition
-FROM pg_constraint AS con
-WHERE con.conrelid = 'shipments'::regclass
-  AND con.conname = 'shipments_delivered_at_required';
+SELECT name AS constraint_name,
+       type_desc AS constraint_type,
+       definition AS constraint_definition
+FROM sys.check_constraints
+WHERE name = 'shipments_delivered_at_required';

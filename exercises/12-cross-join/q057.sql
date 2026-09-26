@@ -7,3 +7,4 @@ select
     w.code as warehouse_code
 from stores as s cross join warehouses as w
 where s.city_id != w.city_id
+order by s.store_id, w.warehouse_id

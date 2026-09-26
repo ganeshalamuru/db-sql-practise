@@ -1,0 +1,2 @@
+-- Task (Q163): For every supplier, return supplier_id, name, active_product_count, and inactive_product_count. Count active and inactive products using conditional CASE aggregates, and include suppliers with no products.
+-- Requirement: Order by supplier_id ascending.

@@ -4,10 +4,10 @@ WITH at_or_below_reorder_products AS (
     SELECT product_id
     FROM inventory
     GROUP BY product_id
-    HAVING BOOL_OR(quantity_on_hand <= reorder_point)
+    HAVING MAX(CASE WHEN quantity_on_hand <= reorder_point THEN 1 ELSE 0 END) = 1
 )
-UPDATE inventory AS i
+UPDATE i
 SET reorder_point = i.reorder_point + 5
-FROM at_or_below_reorder_products AS abrp
-WHERE abrp.product_id = i.product_id
-RETURNING i.warehouse_id, i.product_id, i.quantity_on_hand, i.reorder_point;
+OUTPUT inserted.warehouse_id, inserted.product_id, inserted.quantity_on_hand, inserted.reorder_point
+FROM inventory AS i
+JOIN at_or_below_reorder_products AS abrp ON abrp.product_id = i.product_id;

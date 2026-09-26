@@ -14,7 +14,7 @@ WITH product_delivered_quantities AS (
            COALESCE(q.delivered_quantity, 0) AS delivered_quantity
     FROM products AS p
     LEFT JOIN product_delivered_quantities AS q ON q.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
 )
 SELECT c.category_id,
        c.name AS category_name,

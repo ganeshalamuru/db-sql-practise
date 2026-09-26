@@ -2,15 +2,15 @@
 -- Requirement: Order by customer_id ascending.
 WITH daily_orders AS (
     SELECT DISTINCT customer_id,
-           ordered_at::date AS order_date
+           CAST(ordered_at AS DATE) AS order_date
     FROM orders
 ), streak_groups AS (
     SELECT customer_id,
            order_date,
-           order_date - ROW_NUMBER() OVER (
+           DATEADD(day, -CAST(ROW_NUMBER() OVER (
                PARTITION BY customer_id
                ORDER BY order_date
-           )::integer AS streak_group
+           ) AS INT), order_date) AS streak_group
     FROM daily_orders
 ), streaks AS (
     SELECT customer_id,

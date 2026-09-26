@@ -3,8 +3,8 @@
 SELECT o.order_id,
        p.product_id,
        p.sku,
-       'delivered_sale'::TEXT AS event_type,
-       o.ordered_at::DATE AS event_date,
+       'delivered_sale' AS event_type,
+       CAST(o.ordered_at AS DATE) AS event_date,
        oi.quantity
 FROM orders AS o
 JOIN order_items AS oi ON oi.order_id = o.order_id
@@ -16,8 +16,8 @@ UNION ALL
 SELECT r.order_id,
        p.product_id,
        p.sku,
-       'processed_return'::TEXT AS event_type,
-       r.requested_at::DATE AS event_date,
+       'processed_return' AS event_type,
+       CAST(r.requested_at AS DATE) AS event_date,
        r.quantity
 FROM returns AS r
 JOIN products AS p ON p.product_id = r.product_id

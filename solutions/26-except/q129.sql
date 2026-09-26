@@ -3,12 +3,12 @@
 WITH suppliers_with_active_products AS (
     SELECT supplier_id
     FROM products
-    WHERE is_active
+    WHERE is_active = 1
 ), suppliers_with_returned_active_products AS (
     SELECT p.supplier_id
     FROM products AS p
     JOIN returns AS r ON r.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
 ), qualifying_supplier_ids AS (
     SELECT supplier_id FROM suppliers_with_active_products
     EXCEPT
@@ -18,7 +18,7 @@ WITH suppliers_with_active_products AS (
            COUNT(product_id) AS active_product_count,
            AVG(unit_price) AS average_active_unit_price
     FROM products
-    WHERE is_active
+    WHERE is_active = 1
     GROUP BY supplier_id
 )
 SELECT s.supplier_id,

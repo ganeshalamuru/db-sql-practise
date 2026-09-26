@@ -2,4 +2,4 @@
 -- Requirement: Order by manager_id ascending with NULL manager_id values last, then employee_id ascending.
 SELECT employee_id, first_name, last_name, manager_id
 FROM employees
-ORDER BY manager_id ASC NULLS LAST, employee_id;
+ORDER BY CASE WHEN manager_id IS NULL THEN 1 ELSE 0 END, manager_id ASC, employee_id;

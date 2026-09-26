@@ -6,4 +6,4 @@ select
     max(unit_price) as highest_active_product_price,
     round(avg(unit_price),2) as average_active_product_price
 from products
-where is_active=true
+where is_active=1

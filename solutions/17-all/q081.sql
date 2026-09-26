@@ -2,9 +2,9 @@
 -- Requirement: Order by unit_price ascending, then product_id ascending.
 SELECT p.product_id, p.sku, p.name, p.unit_price
 FROM products AS p
-WHERE p.is_active
+WHERE p.is_active = 1
   AND p.unit_price > ALL (
       SELECT peer.unit_price FROM products AS peer
-      WHERE peer.is_active AND peer.supplier_id = 1
+      WHERE peer.is_active = 1 AND peer.supplier_id = 1
   )
 ORDER BY p.unit_price, p.product_id;

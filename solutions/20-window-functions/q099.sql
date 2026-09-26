@@ -14,7 +14,7 @@ WITH product_delivered_revenue AS (
            COALESCE(r.delivered_revenue, 0) AS delivered_revenue
     FROM products AS p
     LEFT JOIN product_delivered_revenue AS r ON r.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
 ), ranked_product_revenue AS (
     SELECT category_id,
            product_id,

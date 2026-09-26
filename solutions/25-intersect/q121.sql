@@ -25,5 +25,5 @@ FROM qualifying_product_ids AS q
 JOIN products AS p ON p.product_id = q.product_id
 JOIN delivered_product_sales AS s ON s.product_id = q.product_id
 JOIN product_reviews AS r ON r.product_id = q.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY s.delivered_order_count DESC, r.review_count DESC, p.product_id;

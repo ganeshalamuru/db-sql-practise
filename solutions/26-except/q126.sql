@@ -3,7 +3,7 @@
 WITH active_product_ids AS (
     SELECT product_id
     FROM products
-    WHERE is_active
+    WHERE is_active = 1
 ), delivered_product_ids AS (
     SELECT oi.product_id
     FROM orders AS o

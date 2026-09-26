@@ -1,10 +1,10 @@
 -- Task (Q149): Delete returns whose order has a payment with status failed. Return return_id, order_id, product_id, and status for each deleted return.
 -- Requirement: No ordering is required.
-DELETE FROM returns AS r
+DELETE FROM returns
+OUTPUT deleted.return_id, deleted.order_id, deleted.product_id, deleted.status
 WHERE EXISTS (
     SELECT 1
     FROM payments AS p
-    WHERE p.order_id = r.order_id
+    WHERE p.order_id = returns.order_id
       AND p.status = 'failed'
-)
-RETURNING r.return_id, r.order_id, r.product_id, r.status;
+);

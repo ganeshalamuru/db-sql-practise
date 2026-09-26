@@ -10,5 +10,5 @@ SELECT w.warehouse_id, w.code AS warehouse_code, l.product_id, p.sku,
 FROM low_stock AS l
 JOIN warehouses AS w ON w.warehouse_id = l.warehouse_id
 JOIN products AS p ON p.product_id = l.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY w.warehouse_id, l.product_id;

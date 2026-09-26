@@ -2,7 +2,7 @@
 -- Requirement: Order by active_product_count descending, then category_id ascending.
 SELECT c.category_id, c.name AS category_name, COUNT(p.product_id) AS active_product_count
 FROM categories AS c
-JOIN products AS p ON p.category_id = c.category_id AND p.is_active
+JOIN products AS p ON p.category_id = c.category_id AND p.is_active = 1
 WHERE c.category_id IN (
     SELECT reviewed.category_id
     FROM products AS reviewed

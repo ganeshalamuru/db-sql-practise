@@ -5,5 +5,5 @@ select
     sku,
     name
 from products as p
-where is_active and not exists (select review_id from reviews as r where r.product_id=p.product_id)
+where is_active = 1 and not exists (select review_id from reviews as r where r.product_id=p.product_id)
 order by product_id

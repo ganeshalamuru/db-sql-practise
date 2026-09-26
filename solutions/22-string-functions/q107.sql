@@ -12,9 +12,9 @@ WITH delivered_customer_totals AS (
     FROM delivered_customer_totals
 )
 SELECT c.customer_id,
-       INITCAP(CONCAT_WS(' ', c.first_name, c.last_name)) AS customer_name,
-       SPLIT_PART(c.email, '@', 1) AS email_username,
-       SPLIT_PART(c.email, '@', 2) AS email_domain,
+       c.first_name + ' ' + c.last_name AS customer_name,
+       LEFT(c.email, CHARINDEX('@', c.email) - 1) AS email_username,
+       SUBSTRING(c.email, CHARINDEX('@', c.email) + 1, LEN(c.email)) AS email_domain,
        d.delivered_item_total
 FROM delivered_customer_totals AS d
 JOIN customers AS c ON c.customer_id = d.customer_id

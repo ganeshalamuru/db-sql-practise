@@ -9,7 +9,7 @@ WITH warehouse_employee_counts AS (
 )
 SELECT co.country_code,
        ci.name AS city_name,
-       'warehouse'::TEXT AS location_type,
+       'warehouse' AS location_type,
        w.code AS location_code,
        w.name AS location_name,
        w.capacity_units,
@@ -23,11 +23,11 @@ UNION ALL
 
 SELECT co.country_code,
        ci.name AS city_name,
-       'store'::TEXT AS location_type,
+       'store' AS location_type,
        s.code AS location_code,
        s.name AS location_name,
-       NULL::INTEGER AS capacity_units,
-       NULL::BIGINT AS employee_count
+       CAST(NULL AS INT) AS capacity_units,
+       CAST(NULL AS BIGINT) AS employee_count
 FROM stores AS s
 JOIN cities AS ci ON ci.city_id = s.city_id
 JOIN countries AS co ON co.country_id = ci.country_id

@@ -4,6 +4,6 @@ SELECT
     product_id,
     name,
     unit_price,
-    unit_price >= 1000.00 AS is_premium
+    CAST(CASE WHEN unit_price >= 1000.00 THEN 1 ELSE 0 END AS BIT) AS is_premium
 FROM products
 ORDER BY product_id;

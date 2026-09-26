@@ -8,7 +8,7 @@ WITH product_revenue AS (
     FROM products AS p
     JOIN order_items AS oi ON oi.product_id = p.product_id
     JOIN orders AS o ON o.order_id = oi.order_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
       AND o.status = 'delivered'
     GROUP BY p.category_id, p.product_id, p.sku
 )

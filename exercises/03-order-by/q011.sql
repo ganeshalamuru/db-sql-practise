@@ -2,5 +2,5 @@
 -- Requirement: Order by unit_price descending, then product_id ascending.
 select product_id,name,unit_price
 from products
-where is_active=true
+where is_active=1
 order by unit_price desc,product_id

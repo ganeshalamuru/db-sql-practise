@@ -9,13 +9,13 @@ INSERT INTO products (
     is_active,
     created_at
 )
+OUTPUT inserted.sku, inserted.name, inserted.unit_price, inserted.is_active, inserted.created_at
 VALUES (
     1,
     1,
     'SKU-PRACTICE-INSERT-137',
     'Practice Insert Product',
     49.99,
-    TRUE,
-    '2024-01-15 09:00:00+00'
-)
-RETURNING sku, name, unit_price, is_active, created_at;
+    1,
+    '2024-01-15 09:00:00'
+);

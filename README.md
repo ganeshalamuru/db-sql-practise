@@ -1,37 +1,59 @@
 # SQL Practice Lab
 
-A PostgreSQL-based SQL curriculum designed as a durable, metadata-driven learning lab. The first module ships with five `SELECT` exercises; future modules are added through the catalog instead of by hand-maintaining hundreds of files.
+A flexible, multi-database SQL curriculum and automated grading lab designed as a durable, metadata-driven learning environment. On this branch, the lab is tailored to **Microsoft SQL Server (T-SQL)**, powered by a pluggable `DatabaseAdapter` architecture that allows swapping underlying database engines (SQL Server, PostgreSQL, and future dialects) seamlessly.
 
 ## Quick start
 
-1. Install PostgreSQL 16+ and Python 3.12+.
-2. Create and activate a virtual environment, then install dependencies: `python -m pip install -r requirements.txt`.
-3. Run the complete setup with your PostgreSQL `postgres` role: `python setup_database.py --recreate --scale dev --password YOUR_PASSWORD`.
-4. Render exercises: `python scripts/build_problems.py`.
-5. The renderer creates a blank answer file beside every problem. Write your query in `exercises/01-select/q001.sql`, then grade it as described in [Grade answers](#grade-answers).
+1. Prerequisites:
+   - Microsoft SQL Server (2019+ / 2022+ / 2025+) with **ODBC Driver 18 for SQL Server** installed.
+   - Python 3.12+.
+2. Create and activate a virtual environment, then install dependencies:
+   ```powershell
+   python -m venv .venv
+   .venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   ```
+3. Initialize the database schema and deterministic seed data (defaults to local SQL Server with Windows Authentication):
+   ```powershell
+   python setup_database.py --recreate --scale dev
+   ```
+4. Render exercise prompts and registry:
+   ```powershell
+   python scripts/build_problems.py
+   ```
+5. Write your query in `exercises/01-select/q001.sql`, then grade it as described in [Grade answers](#grade-answers).
 
-Set `SQL_PRACTICE_DSN` if your PostgreSQL connection differs from the default `postgresql://postgres@localhost:5432/sql_practice`. `setup_database.py` and the grader accept `--password`; alternatively set `PGPASSWORD` before running them so the password does not appear in shell history.
+### Database connection & dialect configuration
+
+By default, the lab connects to local Microsoft SQL Server using Windows Integrated Authentication:
+`DRIVER={ODBC Driver 18 for SQL Server};SERVER=localhost;DATABASE=sql_practice;Trusted_Connection=yes;TrustServerCertificate=yes;`
+
+Environment variables can customize connection behavior:
+- `SQL_PRACTICE_DIALECT`: `sqlserver` (default) or `postgres`.
+- `SQL_PRACTICE_DSN`: Custom ODBC connection string (SQL Server) or PostgreSQL connection URI.
+- `SQL_PASSWORD` / `PGPASSWORD`: Database user password when using SQL authentication.
 
 ## Database setup modes
 
-`python setup_database.py --recreate --scale dev --password YOUR_PASSWORD` terminates active connections, drops `sql_practice`, creates it again, loads `schema.sql`, generates `data.sql`, and loads that file. Use it when you want a clean start.
+`python setup_database.py --recreate --scale dev` terminates active connections, drops and recreates `sql_practice`, loads `schema.sqlserver.sql`, generates dialect-compatible `data.sql`, and seeds all tables. Use it for a clean start.
 
-`python setup_database.py --append --scale dev --password YOUR_PASSWORD` preserves an existing initialized database and all of its rows. If the database does not exist, has no schema, or has a schema with no seed data, it initializes it. It does not re-import the deterministic seed into a populated database because that would create duplicate business records.
+`python setup_database.py --append --scale dev` preserves an existing initialized database and all of its rows. If the database does not exist, has no schema, or has a schema with no seed data, it initializes it.
 
-To use another database name, add `--database my_lab`. You can still run individual manual steps when useful:
+Command-line flags supported by `setup_database.py`:
+- `--dialect {sqlserver,postgres}`: Target engine dialect (default: `sqlserver`).
+- `--database <name>`: Database name (default: `sql_practice`).
+- `--scale {dev,full}`: Dataset scale (`dev` for rapid iteration, `full` for complete scale).
+- `--dsn <conn_str>`: Custom connection string.
+- `--password <pwd>`: Database password (if using SQL authentication).
 
+You can also run manual seed generation if needed:
 ```powershell
-python generate_data.py --scale dev
-psql -U postgres -d sql_practice -f data.sql
+python generate_data.py --dialect sqlserver --scale dev --output data.sql
 ```
 
 ## Database schema
 
-The lab uses PostgreSQL 16+ and models a multi-warehouse retailer. It includes
-18 tables covering geography, customers, products, stock, staff, sales, and
-post-sale activity. Primary keys are identity-backed `BIGINT` columns unless
-noted otherwise; the complete executable definition is in
-[schema.sql](schema.sql).
+The lab models a multi-warehouse retailer across 18 tables covering geography, customers, products, stock, staff, sales, and post-sale activity. In SQL Server, identity-backed columns use `BIGINT IDENTITY(1,1)` and timestamps use `DATETIME2`:
 
 ```mermaid
 erDiagram
@@ -85,66 +107,47 @@ erDiagram
 | `stores` | Retail-store locations with codes, names, and opening dates. | Belongs to `cities`; holds `store_inventory`. |
 | `store_inventory` | Store-level product stock. | Composite primary key: (`store_id`, `product_id`); joins `stores` to `products`. |
 
-Important constraints support realistic practice queries: emails, codes, SKUs,
-and tracking numbers are unique; quantities and prices cannot be negative; and
-status fields are limited to their documented lifecycle values. `order_items`
-are deleted automatically if their parent order is deleted. The schema also
-includes indexes for common order, product, review, and low-stock lookups.
+Important constraints support realistic practice queries: emails, codes, SKUs, and tracking numbers are unique; quantities and prices cannot be negative; and status fields are limited to documented lifecycle values. `order_items` cascade delete when orders are removed. Filtered and unique indexes support fast queries.
 
 ## Grade answers
 
-The grader executes each answer and official solution in separate transactions,
-then compares columns, rows, duplicates, ordering, `NULL`s, and numeric
-values. `SELECT` exercises run read-only; view-definition and
-data-modification exercises are always rolled back after grading.
+The grader executes each answer and official solution inside an isolated transaction sandbox, then rolls back automatically so student queries and solutions never mutate the practice database. Results are compared across column names, row counts, duplicate multiplicity, ordering (when required), `NULL`s, and numeric values with floating-point tolerance.
 
 Grade one exercise:
-
 ```powershell
-python grader.py --problem Q001 --password YOUR_PASSWORD
+python grader.py --problem Q001
 ```
 
 Grade every exercise in a topic:
-
 ```powershell
-python grader.py --topic "OUTER JOIN" --password YOUR_PASSWORD
+python grader.py --topic "CONSTRAINTS"
+python grader.py --topic "T-SQL FEATURES"
 ```
 
-Use `--problem` with an exercise ID such as `Q050`, or use `--topic` with the
-topic name shown in the exercise heading. Both filters may be combined. The
-command exits with status `0` only when every selected answer passes, making it
-suitable for automated checks. Set `PGPASSWORD` to omit `--password`, and set
-`SQL_PRACTICE_DSN` when grading a database other than the default local lab.
+Grade all 175 exercises:
+```powershell
+python grader.py
+```
+
+Use `--problem` with an exercise ID such as `Q050`, or `--topic` with the topic name shown in the exercise heading. The command exits with code `0` only when every selected answer passes.
 
 ## Authoring exercises
 
-Add structured metadata to `exercise_catalog.json`, create the matching instructor solution in `solutions/`, and run `python scripts/build_problems.py`. The renderer creates the Markdown problem statement, a blank answer file beside it in `exercises/<topic>/`, and the registry automatically. Keep `solutions/` in a private instructor repository or release artifact if students must not see answers; GitHub cannot hide files committed to a public repository.
+Add structured metadata to `exercise_catalog.json`, create the matching solution in `solutions/`, and run `python scripts/build_problems.py`.
 
-For curriculum consistency, exercises rated 4/5 or 5/5 should use the current topic together with any concepts covered in earlier modules when that strengthens the exercise. Keep lower-rated exercises focused more tightly on the current topic.
+Each SQL file in `solutions/` and `exercises/` begins with two standardized comments:
+```sql
+-- Task (Q###): <exercise task statement>
+-- Requirement: <exercise ordering requirement>
+```
 
-Existing answer files are never overwritten.
-
-## Dataset scales
-
-`dev` is fast for local iteration. `full` targets approximately 5,000 customers, 2,000 products, 50,000 orders, and 250,000 order items. Both use the same fixed seed.
+Existing answer files with student solutions are preserved.
 
 ## Verify data coverage
 
-The seed data is designed so every released query exercise's official solution
-returns rows, and edge-case exercises have meaningful contrasts (for example,
-both zero and positive counts in outer-join exercises). After creating or recreating the
-database, run:
-
+To verify that seed data makes all official solutions meaningful:
 ```powershell
-python scripts/verify_data_coverage.py --password YOUR_PASSWORD *> coverage-report.txt
+python scripts/verify_data_coverage.py
 ```
 
-The command writes a per-exercise report to `coverage-report.txt` and exits
-with a non-zero status if a solution is empty or an outer-join contrast is
-missing. Use `--recreate` when changing seed-generation logic; `--append`
-preserves the existing data and therefore does not apply new seed scenarios.
-
-See [the architecture notes](docs/architecture.md) for component responsibilities.
-The full sequence and release status are in the [curriculum roadmap](docs/curriculum.md).
-The deterministic seed's exercise-coverage contract is documented in
-[the data coverage notes](docs/data-coverage.md).
+See [architecture documentation](docs/architecture.md) for details on the multi-database abstraction layer and T-SQL support.

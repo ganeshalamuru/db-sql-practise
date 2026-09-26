@@ -1,4 +1,4 @@
--- Task (Q098): Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is ordered_at minus previous_ordered_at.
+-- Task (Q098): Return customer_id, order_id, ordered_at, previous_order_id, previous_ordered_at, and time_since_previous_order for every order except each customer's first order. previous_order_id and previous_ordered_at identify the immediately preceding order for the same customer, ordered by ordered_at and then order_id. time_since_previous_order is the difference between ordered_at and previous_ordered_at in seconds using DATEDIFF_BIG.
 -- Requirement: Order by customer_id ascending, ordered_at ascending, then order_id ascending.
 WITH ordered_orders AS (
     SELECT o.customer_id,
@@ -19,7 +19,7 @@ SELECT customer_id,
        ordered_at,
        previous_order_id,
        previous_ordered_at,
-       ordered_at - previous_ordered_at AS time_since_previous_order
+       DATEDIFF_BIG(second, previous_ordered_at, ordered_at) AS time_since_previous_order
 FROM ordered_orders
 WHERE previous_order_id IS NOT NULL
 ORDER BY customer_id, ordered_at, order_id;

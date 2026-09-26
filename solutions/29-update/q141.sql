@@ -2,5 +2,5 @@
 -- Requirement: No ordering is required.
 UPDATE customers
 SET status = 'suspended'
-WHERE customer_id = 1
-RETURNING customer_id, email, status;
+OUTPUT inserted.customer_id, inserted.email, inserted.status
+WHERE customer_id = 1;

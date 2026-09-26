@@ -23,5 +23,5 @@ SELECT p.product_id,
 FROM warehouse_only_product_ids AS warehouse_only
 JOIN products AS p ON p.product_id = warehouse_only.product_id
 JOIN warehouse_stock AS w ON w.product_id = warehouse_only.product_id
-WHERE p.is_active
+WHERE p.is_active = 1
 ORDER BY p.product_id;

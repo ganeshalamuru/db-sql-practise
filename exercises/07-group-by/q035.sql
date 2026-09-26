@@ -5,6 +5,6 @@ select
     count(*) as active_product_count,
     round(avg(unit_price),2) as average_active_product_price
 from products
-where is_active=true
+where is_active=1
 group by supplier_id
 order by average_active_product_price desc,active_product_count desc,supplier_id

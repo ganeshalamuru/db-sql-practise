@@ -2,5 +2,5 @@
 -- Requirement: Order by product_id ascending.
 SELECT product_id, sku, name, unit_price
 FROM products
-WHERE is_active
+WHERE is_active = 1
 ORDER BY product_id;

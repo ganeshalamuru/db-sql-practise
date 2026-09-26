@@ -4,14 +4,14 @@ WITH active_product_counts AS (
     SELECT category_id,
            COUNT(*) AS active_product_count
     FROM products
-    WHERE is_active
+    WHERE is_active = 1
     GROUP BY category_id
 ), active_inventory_totals AS (
     SELECT p.category_id,
            SUM(i.quantity_on_hand) AS active_inventory_units
     FROM products AS p
     JOIN inventory AS i ON i.product_id = p.product_id
-    WHERE p.is_active
+    WHERE p.is_active = 1
     GROUP BY p.category_id
 )
 SELECT c.category_id,

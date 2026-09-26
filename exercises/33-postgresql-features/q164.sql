@@ -1,2 +1,0 @@
--- Task (Q164): For every active product, return product_id, sku, review_id, rating, and created_at for its most recent review. Include active products with no reviews, using NULL for the review columns.
--- Requirement: Order by product_id ascending.
